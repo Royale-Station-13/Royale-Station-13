@@ -1350,28 +1350,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(TG.id in active_character.equipped_gear)
 				active_character.equipped_gear -= TG.id
 			else
-				var/list/type_blacklist = list()
-				var/list/slot_blacklist = list()
+				var/equipment_count = 0
 				for(var/gear_id in active_character.equipped_gear)
 					var/datum/gear/G = GLOB.gear_datums[gear_id]
 					if(istype(G))
-						type_blacklist += G.subtype_path
-						if((G.slot == TG.slot))
-							to_chat(user, "<span class='warning'>Can't equip [TG.display_name]. You already have an item equipped in that slot.</span>")
+						if(G.subtype_path == /datum/gear/equipment)
+							equipment_count++
+						if(TG.slot && (G.slot == TG.slot))
+							to_chat(user, "<span class='warning'>Can't equip [TG.display_name]. You already have an item equipped in the same slot.</span>")
 							return
-						else
-							continue
+				if(TG.subtype_path == /datum/gear/equipment && equipment_count >= 2)
+					to_chat(user, "<span class='warning'>Can't equip [TG.display_name]. You can only choose two items from the equipment tab.</span>")
+					return
 				if((TG.id in purchased_gear))
-					if(!(TG.subtype_path in type_blacklist) || !(TG.slot in slot_blacklist))
-						active_character.equipped_gear += TG.id
-					else if(TG.subtype_path == /datum/gear/equipment)
-						type_blacklist -= /datum/gear/equipment
-						if(!(TG.subtype_path in type_blacklist))
-							active_character.equipped_gear += TG.id
-						else
-							to_chat(user, "<span class='warning'>Can't equip [TG.display_name]. You can only chose two pieces of combat equipment.</span>")
-					else
-						to_chat(user, "<span class='warning'>Can't equip [TG.display_name]. It conflicts with an already-equipped item.</span>")
+					active_character.equipped_gear += TG.id						
 				else
 					log_href_exploit(user)
 			active_character.save(user.client)
