@@ -15,6 +15,14 @@
     gun_charge = 300
     desc = "It has two settings: Kill and Disable. It isn't very good at either of them, but recharges over time"
 
+/obj/item/gun/ballistic/revolver/royale
+	name = "Colt .38 Panther"
+	desc = "A classic small caliber firearm with a dark finish"
+	fire_sound = 'sound/weapons/revolver38shot.ogg'
+	icon_state = "detective_panther"
+	fire_rate = 2
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+
 /obj/item/gun/energy/plasmacutter/adv/royale
     dead_cell = FALSE
     gun_charge = 100
@@ -205,9 +213,10 @@
     subtype_path = /datum/gear/equipment
     sort_category = "Combat Equipment (pick two)"
 
-/datum/gear/equipment/stechkin
-    display_name = "stechkin"
-    path = /obj/item/gun/ballistic/automatic/pistol
+/datum/gear/equipment/pistol
+    display_name = "colt .38 panther"
+    path = /obj/item/gun/ballistic/revolver/royale
+    description = "Chambered with six lethal rounds. Use them wisely"
 
 /datum/gear/equipment/shotgun
     display_name = "makeshift gun"
@@ -224,7 +233,7 @@
     path = /obj/item/gun/energy/e_gun/mini/heads/royale
 
 /datum/gear/equipment/plascutter
-    display_name = "Plasma Cutter"
+    display_name = "plasma cutter"
     path = /obj/item/gun/energy/plasmacutter/adv/royale
 
 
