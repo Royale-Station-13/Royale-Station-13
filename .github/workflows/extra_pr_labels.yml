@@ -6,11 +6,6 @@ on:
       - master
   pull_request_target:
 
-permissions:
-  actions: read
-  contents: read
-  pull-requests: write
-
 jobs:
   Label:
     runs-on: ubuntu-latest
