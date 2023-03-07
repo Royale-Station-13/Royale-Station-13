@@ -37,6 +37,7 @@
             continue
         active_players += player
         CHECK_TICK
+    //Adjust this to >= for debugging so the game mode doesn't end immediately. 
     if(length(active_players) > 1) //There are two or more living players, round continues
         return ..()
     if(length(active_players) == 0) //There are zero living players, round ends in draw
@@ -47,6 +48,7 @@
 
 /datum/game_mode/battle_royale/check_finished()
     if(winner)
+        GLOB.battle_royale.end_royale() //Comment this out for debugging
         return TRUE
 
 /datum/game_mode/battle_royale/special_report()

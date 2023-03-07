@@ -195,6 +195,9 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	var/list/death_wall
 	var/field_delay = 15
 	var/debug_mode = FALSE
+	var/blue_alert = FALSE
+	var/red_alert = FALSE
+	var/delta_alert = FALSE
 
 /datum/battle_royale_controller/Destroy(force, ...)
 	QDEL_LIST(death_wall)
@@ -210,6 +213,9 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	GLOB.battle_royale = null
 
 //Trigger random events and shit, update the world border
+/datum/battle_royale_controller/proc/end_royale()
+	qdel(src)
+
 /datum/battle_royale_controller/process()
 	process_num++
 	//Once every 50ish seconds
@@ -240,8 +246,20 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 				death_wall -= wall
 			CHECK_TICK
 		radius--
-	if(radius < 70 && prob(1))
+	if(radius < 95 && prob(1))
 		generate_endgame_drop()
+	if(!blue_alert)
+		if(radius < 95)
+			set_security_level(SEC_LEVEL_BLUE)
+			blue_alert = TRUE
+	else if(!red_alert)
+		if(radius < 65)
+			set_security_level(SEC_LEVEL_RED)
+			red_alert = TRUE
+	else if(!delta_alert)
+		if(radius < 35)
+			set_security_level(SEC_LEVEL_DELTA)
+			delta_alert = TRUE
 
 //==================================
 // INITIALIZATION

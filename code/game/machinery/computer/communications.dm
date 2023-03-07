@@ -108,39 +108,7 @@
 			post_status("shuttle")
 			. = TRUE
 		if ("changeSecurityLevel")
-			if (!authenticated_as_silicon_or_captain(usr))
-				return
-
-			// Check if they have
-			if (!issilicon(usr))
-				var/obj/item/held_item = usr.get_active_held_item()
-				var/obj/item/card/id/id_card = held_item?.GetID()
-				if (!istype(id_card))
-					to_chat(usr, "<span class='warning'>You need to swipe your ID!</span>")
-					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
-					return
-				if (!(ACCESS_CAPTAIN in id_card.access))
-					to_chat(usr, "<span class='warning'>You are not authorized to do this!</span>")
-					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
-					return
-
-			var/new_sec_level = seclevel2num(params["newSecurityLevel"])
-			if (new_sec_level != SEC_LEVEL_GREEN && new_sec_level != SEC_LEVEL_BLUE)
-				return
-			if (GLOB.security_level == new_sec_level)
-				return
-
-			set_security_level(new_sec_level)
-
-			to_chat(usr, "<span class='notice'>Authorization confirmed. Modifying security level.</span>")
-			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
-
-			// Only notify people if an actual change happened
-			log_game("[key_name(usr)] has changed the security level to [params["newSecurityLevel"]] with [src] at [AREACOORD(usr)].")
-			message_admins("[ADMIN_LOOKUPFLW(usr)] has changed the security level to [params["newSecurityLevel"]] with [src] at [AREACOORD(usr)].")
-			deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> has changed the security level to [params["newSecurityLevel"]] with [src] at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
-
-			alert_level_tick += 1
+			to_chat(usr, "<span class='notice'>This function has been disabled. Get back to killing.</span>")
 			. = TRUE
 		if ("deleteMessage")
 			if (!authenticated(usr))
