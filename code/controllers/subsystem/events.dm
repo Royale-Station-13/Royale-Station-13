@@ -8,8 +8,8 @@ SUBSYSTEM_DEF(events)
 	var/list/currentrun = list()
 
 	var/scheduled = 0			//The next world.time that a naturally occuring random event can be selected.
-	var/frequency_lower = 1 MINUTES	//1 minutes lower bound.
-	var/frequency_upper = 3 MINUTES	//3 minutes upper bound. Basically an event will happen every 1 to 3 minutes.
+	var/frequency_lower = 2 MINUTES	//1 minutes lower bound.
+	var/frequency_upper = 4 MINUTES	//3 minutes upper bound. Basically an event will happen every 1 to 3 minutes.
 
 	var/list/holidays			//List of all holidays occuring today or null if no holidays
 	var/wizardmode = FALSE
