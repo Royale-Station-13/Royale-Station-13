@@ -19,7 +19,7 @@
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
 	rpg_title = "Peasant"
 	allow_bureaucratic_error = FALSE
-	outfit = /datum/outfit/job/gimmick
+	outfit = /datum/outfit/job/default_royale
 /datum/outfit/job/gimmick
 	can_be_admin_equipped = FALSE // we want just the parent outfit to be unequippable since this leads to problems
 /datum/job/gimmick/barber
@@ -29,7 +29,7 @@
 	supervisors = "the head of personnel"
 	gimmick = TRUE
 
-	outfit = /datum/outfit/job/gimmick/barber
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_MORGUE, ACCESS_MAINT_TUNNELS)
 	minimal_access = list(ACCESS_MORGUE, ACCESS_MAINT_TUNNELS)
@@ -61,7 +61,7 @@
 	supervisors = "the head of personnel"
 	gimmick = TRUE
 
-	outfit = /datum/outfit/job/gimmick/stage_magician
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_THEATRE, ACCESS_MAINT_TUNNELS)
 	minimal_access = list(ACCESS_THEATRE, ACCESS_MAINT_TUNNELS)
@@ -96,7 +96,7 @@
 	supervisors = "the chief medical officer"
 	gimmick = TRUE
 
-	outfit = /datum/outfit/job/gimmick/psychiatrist
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MEDICAL)
 	minimal_access = list(ACCESS_MAINT_TUNNELS, ACCESS_MEDICAL)
@@ -128,7 +128,7 @@
 	flag = CELEBRITY
 	gimmick = TRUE
 
-	outfit = /datum/outfit/job/gimmick/vip
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_MAINT_TUNNELS) //Assistants with shitloads of money, what could go wrong?
 	minimal_access = list(ACCESS_MAINT_TUNNELS)

@@ -173,12 +173,7 @@ GLOBAL_LIST_INIT(security_depts_prefs, sortList(list(
 
 GLOBAL_LIST_INIT(backbaglist, list(
 	DBACKPACK,
-	DDUFFELBAG,
-	DSATCHEL,
-	GBACKPACK,
-	GDUFFELBAG,
-	GSATCHEL,
-	LSATCHEL
+	DDUFFELBAG
 ))
 
 

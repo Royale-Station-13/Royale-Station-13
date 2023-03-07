@@ -14,7 +14,7 @@
 	exp_type = EXP_TYPE_COMMAND
 	exp_type_department = EXP_TYPE_COMMAND
 
-	outfit = /datum/outfit/job/captain
+	outfit = /datum/outfit/job/default_royale
 
 	access = list() 			//See get_access()
 	minimal_access = list() 	//See get_access()

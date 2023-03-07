@@ -1,5 +1,3 @@
-/*
-
 // DO NOT CHANGE display_name
 // Colorizers should ideally be restricted to the jobs that they are most relevant to
 // This prevents people with lots of colorizer's bags overflowing with useless ones on spawn
@@ -40,5 +38,3 @@
 	display_name = "Transparent PDA Colorizer"
 	path = /obj/item/colorizer/pdatransparent
 	cost = 20000
-
-*/

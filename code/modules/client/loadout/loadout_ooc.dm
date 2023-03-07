@@ -1,6 +1,3 @@
-// Disabled due to having no relevance to this server
-
-/*
 /datum/gear/ooc
 	subtype_path = /datum/gear/ooc
 	sort_category = "OOC"
@@ -23,4 +20,3 @@
 	C.inc_antag_token_count(1)
 	message_admins("[C.ckey] has purchased a genuine antag token.")
 	log_game("[C.ckey] has purchased a genuine antag token.")
-*/

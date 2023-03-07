@@ -9,7 +9,7 @@
 	selection_color = "#bbe291"
 	var/cooks = 0 //Counts cooks amount
 
-	outfit = /datum/outfit/job/cook
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_HYDROPONICS, ACCESS_BAR, ACCESS_KITCHEN, ACCESS_MORGUE, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_KITCHEN, ACCESS_MORGUE, ACCESS_MINERAL_STOREROOM)

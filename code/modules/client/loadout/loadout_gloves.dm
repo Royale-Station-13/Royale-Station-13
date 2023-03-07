@@ -1,6 +1,6 @@
 /datum/gear/hands
     subtype_path = /datum/gear/hands
-    slot = ITEM_SLOT_HANDS
+    slot = ITEM_SLOT_GLOVES
     sort_category = "Gloves"
     cost = 500
 

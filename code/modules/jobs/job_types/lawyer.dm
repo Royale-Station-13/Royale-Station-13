@@ -9,7 +9,7 @@
 	selection_color = "#dddddd"
 	var/lawyers = 0 //Counts lawyer amount
 
-	outfit = /datum/outfit/job/lawyer
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)
 	minimal_access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)

@@ -15,7 +15,7 @@
 	exp_type = EXP_TYPE_SCIENCE
 	exp_type_department = EXP_TYPE_SCIENCE
 
-	outfit = /datum/outfit/job/research_director
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_RD, ACCESS_HEADS, ACCESS_TOX, ACCESS_MORGUE, ACCESS_EXPLORATION,
 			            ACCESS_TOX_STORAGE, ACCESS_TELEPORTER, ACCESS_SEC_DOORS, ACCESS_MECH_SCIENCE,
