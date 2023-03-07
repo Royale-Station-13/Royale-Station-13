@@ -122,13 +122,8 @@
 #define JP_HIGH 3
 
 //Backpacks
-#define GBACKPACK "Grey Backpack"
-#define GSATCHEL "Grey Satchel"
-#define GDUFFELBAG "Grey Duffel Bag"
-#define LSATCHEL "Leather Satchel"
-#define DBACKPACK "Department Backpack"
-#define DSATCHEL "Department Satchel"
-#define DDUFFELBAG "Department Duffel Bag"
+#define DBACKPACK "Normal capacity"
+#define DDUFFELBAG "Extra capacity, with slowdown"
 
 //Suit/Skirt
 #define PREF_SUIT "Jumpsuit"
