@@ -8,7 +8,7 @@
 	spawn_positions = 1
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/curator
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_LIBRARY, ACCESS_AUX_BASE, ACCESS_MINING_STATION)
 	minimal_access = list(ACCESS_LIBRARY, ACCESS_AUX_BASE, ACCESS_MINING_STATION)

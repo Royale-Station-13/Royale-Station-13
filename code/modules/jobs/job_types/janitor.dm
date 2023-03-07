@@ -8,7 +8,7 @@
 	spawn_positions = 1
 	selection_color = "#bbe291"
 
-	outfit = /datum/outfit/job/janitor
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_JANITOR, ACCESS_MAINT_TUNNELS, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_JANITOR, ACCESS_MAINT_TUNNELS, ACCESS_MINERAL_STOREROOM)

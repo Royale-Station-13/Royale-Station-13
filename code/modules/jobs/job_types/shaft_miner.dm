@@ -8,7 +8,7 @@
 	spawn_positions = 3
 	selection_color = "#dcba97"
 
-	outfit = /datum/outfit/job/miner
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING,
 					ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_AUX_BASE)

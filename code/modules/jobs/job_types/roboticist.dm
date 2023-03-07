@@ -10,7 +10,7 @@
 	exp_requirements = 120
 	exp_type = EXP_TYPE_CREW
 
-	outfit = /datum/outfit/job/roboticist
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_ROBOTICS, ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_TECH_STORAGE, ACCESS_MORGUE, ACCESS_MECH_SCIENCE,
 					ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_XENOBIOLOGY, ACCESS_AUX_BASE)

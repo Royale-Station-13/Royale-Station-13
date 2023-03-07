@@ -10,7 +10,7 @@
 	minimal_player_age = 7
 	exp_requirements = 120
 	exp_type = EXP_TYPE_CREW
-	outfit = /datum/outfit/job/brig_physician
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_SEC_DOORS, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_MEDICAL, ACCESS_BRIGPHYS)
 	minimal_access = list(ACCESS_SEC_DOORS, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_MEDICAL, ACCESS_BRIGPHYS)

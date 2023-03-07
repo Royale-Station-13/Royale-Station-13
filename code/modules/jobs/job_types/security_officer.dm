@@ -12,7 +12,7 @@
 	exp_requirements = 840
 	exp_type = EXP_TYPE_CREW
 
-	outfit = /datum/outfit/job/security_officer
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_SEC_RECORDS, ACCESS_BRIG, ACCESS_COURT, ACCESS_MAINT_TUNNELS,
 					ACCESS_MECH_SECURITY, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS,

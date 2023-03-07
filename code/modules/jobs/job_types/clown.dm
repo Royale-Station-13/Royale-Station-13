@@ -8,7 +8,7 @@
 	spawn_positions = 1
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/clown
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_THEATRE)
 	minimal_access = list(ACCESS_THEATRE)

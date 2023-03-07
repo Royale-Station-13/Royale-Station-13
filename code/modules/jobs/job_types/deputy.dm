@@ -11,7 +11,7 @@
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 
-	outfit = /datum/outfit/job/deputy
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_WEAPONS)
 	minimal_access = list(ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_WEAPONS)

@@ -11,7 +11,7 @@ Assistant
 	selection_color = "#dddddd"
 	antag_rep = 7
 
-	outfit = /datum/outfit/job/assistant
+	outfit = /datum/outfit/job/default_royale
 
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
