@@ -1,6 +1,3 @@
-//Server will not have donor items. Keeping list for posterity. 
-
-/*
 /datum/gear/donator
 	subtype_path = /datum/gear/donator
 	sort_category = "Donator"
@@ -136,5 +133,3 @@
 /datum/gear/donator/item/plush_opa
 	display_name = "metal opa plushie"
 	path = /obj/item/toy/plush/opa
-
-*/
