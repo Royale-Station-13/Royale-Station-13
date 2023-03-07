@@ -19,6 +19,11 @@
     duffelbag = /obj/item/storage/backpack/duffelbag
     box = /obj/item/storage/box/supplies
 
+/datum/outfit/job/default_royale/post_equip(mob/living/carbon/human/H)
+    var/obj/item/implant/royale/gps = new/obj/item/implant/royale(H)
+    gps.implant(H)
+    . = ..()
+
 /datum/job/default_royale
     title = JOB_FIGHTER
     flag = ASSISTANT
@@ -40,11 +45,6 @@
 /obj/item/card/id/silver/royale
     var/gpstag = "Combatant"
     desc = "Grants access to nearly all locations within the station."
-
-/obj/item/card/id/silver/royale/Initialize()
-    ADD_TRAIT(src, TRAIT_NODROP, ROYALE) //can't drop your ID
-    AddComponent(/datum/component/gps/item, gpstag) //because it is also a GPS tracker. 
-    . = ..()
 
 /datum/job/default_royale/get_access()
 	return get_most_accesses() //Everything except for weapon permits and armory access. Will this actually do much to slow most people down? No, but it'll be funny when armsky gets someone. 
@@ -74,3 +74,13 @@
 /obj/item/storage/box/supplies/PopulateContents()
     new /obj/item/reagent_containers/pill/patch/styptic(src)
     new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
+
+/obj/item/implant/royale
+    name = "tracking implant"
+    desc = "For ensuring combatants stay in the fight, whether they want to or not"
+    icon_state = "gps-m"
+    var/gpstag = "Combatant"
+
+/obj/item/implant/royale/Initialize(mapload)
+    AddComponent(/datum/component/gps/item, gpstag)
+    . = ..()
