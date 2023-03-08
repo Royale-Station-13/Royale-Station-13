@@ -27,4 +27,4 @@
 	desc = "An illegally modified .50 cal sniper rifle with suppression compatibility. Quickscoping still doesn't work."
 	can_suppress = TRUE
 	can_unsuppress = TRUE
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin

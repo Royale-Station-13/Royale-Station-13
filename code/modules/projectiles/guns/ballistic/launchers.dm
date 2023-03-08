@@ -9,7 +9,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 	spread_unwielded = 15
 	bolt_type = BOLT_TYPE_NO_BOLT
 	weapon_weight = WEAPON_MEDIUM
@@ -53,7 +53,7 @@
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	can_suppress = FALSE
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 	burst_size = 1
 	fire_delay = 0
 	casing_ejector = FALSE
