@@ -382,7 +382,7 @@
 /obj/item/clothing/suit/hooded/cloak/goliath/royale/invisible
     alpha = 120
     name = "invisibility cloak"
-    desc = "A tattered cloak made of goliath leather. This one was once used by a wizard and is great against lasers."
+    desc = "A tattered cloak made of goliath leather. This one makes light and lasers pass right through you but offers no physical protection."
     icon_state = "goliath_cloak_grey"
     //The alpha makes lasers 80% likely to pass through you, so this one has no actual armor.
     armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60, "stamina" = 0)
