@@ -19,10 +19,10 @@
 		if (SSmapping.config.planet_name)
 			name = "[SSmapping.config.planet_name] (Outpost 13)"
 
-#ifdef LOWMEMORYMODE
+//#ifdef LOWMEMORYMODE
 	var/datum/orbital_map/linked_map = SSorbits.orbital_maps[orbital_map_index]
 	linked_map.center = src
-#endif
+//#endif
 
 /datum/orbital_object/z_linked/station/explode()
 	. = ..()

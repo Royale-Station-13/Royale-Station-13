@@ -28,7 +28,7 @@ EMOJIS
 
 ## BADGES ##
 ## Comment this out if you want to disable badges
-BADGES
+#BADGES
 
 ## MOB MOVEMENT ###
 
@@ -78,12 +78,12 @@ MULTIPLICATIVE_MOVESPEED /mob/living/simple_animal 1
 
 
 ## ALERT LEVELS ###
-ALERT_GREEN All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced.
-ALERT_BLUE_UPTO The station has received reliable information about possible hostile activity on the station. Security staff may have weapons visible, random searches are permitted.
-ALERT_BLUE_DOWNTO The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed.
-ALERT_RED_UPTO There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised. Additionally, access requirements on some doors have been lifted.
-ALERT_RED_DOWNTO The station's destruction has been averted. There is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised.
-ALERT_DELTA Destruction of the station is imminent. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.
+ALERT_GREEN 
+ALERT_BLUE_UPTO The walls are closing in and higher quality drops have been enabled for supply drops!
+ALERT_BLUE_DOWNTO 
+ALERT_RED_UPTO Those walls aren't going to stop until there is only one survivor left!
+ALERT_RED_DOWNTO 
+ALERT_DELTA The final moments are drawing close, get to the center or you will be killed by the walls!
 
 
 
@@ -311,11 +311,11 @@ ALLOW_RANDOM_EVENTS
 
 ## Multiplier for earliest start time of dangerous events.
 ## Set to 0 to make dangerous events avaliable from round start.
-EVENTS_MIN_TIME_MUL 1
+EVENTS_MIN_TIME_MUL 0
 
 ## Multiplier for minimal player count (players = alive non-AFK humans) for dangerous events to start.
 ## Set to 0 to make dangerous events avaliable for all populations.
-EVENTS_MIN_PLAYERS_MUL 1
+EVENTS_MIN_PLAYERS_MUL 0
 
 
 ## AI ###
@@ -349,7 +349,7 @@ GATEWAY_DELAY 180000
 ## If the number of players ready at round starts exceeds this threshold, JOBS_HAVE_MINIMAL_ACCESS will automatically be enabled. Otherwise, it will be disabled.
 ## This is useful for accomodating both low and high population rounds on the same server.
 ## Comment this out or set to 0 to disable this automatic toggle.
-MINIMAL_ACCESS_THRESHOLD 20
+MINIMAL_ACCESS_THRESHOLD 0
 
 ## Comment this out this if you wish to use the setup where jobs have more access.
 ## This is intended for servers with low populations - where there are not enough
@@ -533,7 +533,7 @@ OVERFLOW_CAP -1
 
 ## Starlight for exterior walls and breaches. Uncomment for starlight!
 ## This is disabled by default to make testing quicker, should be enabled on production servers or testing servers messing with lighting
-#STARLIGHT
+STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
 GREY_ASSISTANTS
@@ -566,19 +566,20 @@ REACTIONARY_EXPLOSIONS
 ## Small (3, 7, 14)
 #BOMBCAP 14
 ## Default (6, 12, 24) (recommended if you enable REACTIONARY_EXPLOSIONS above)
-BOMBCAP 24
+#BOMBCAP 24
 ## LagHell (7, 14, 28)
 #BOMBCAP 28
+#BOMBCAP 12
 
 ## Lavaland "Budget"
 ## Lavaland ruin spawning has an imaginary budget to spend on ruins, where
 ## a less lootfilled or smaller or less round effecting ruin costs less to
 ## spawn, while the converse is true. Alter this number to affect the amount
 ## of ruins.
-LAVALAND_BUDGET 60
+LAVALAND_BUDGET 0
 
 ## Space Ruin Budget
-Space_Budget 8
+Space_Budget 0
 
 ## Time in ds from when a player latejoins till the arrival shuttle docks at the station
 ## Must be at least 30. At least 55 recommended to be visually/aurally appropriate
@@ -592,7 +593,7 @@ ARRIVALS_SHUTTLE_DOCK_WINDOW 55
 
 ## How many wirechewing rodents you want to spawn on exposed maintenane wires at the start of the round. You may wish to set this to 0 if you're testing powernets.
 
-MICE_ROUNDSTART 10
+MICE_ROUNDSTART 0
 
 ## If the percentage of players alive (doesn't count conversions) drops below this threshold the emergency shuttle will be forcefully called (provided it can be)
 #EMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2
@@ -608,7 +609,7 @@ ROUNDSTART_TRAITS
 #DISABLE_HUMAN_MOOD
 
 ## Enable night shifts ##
-ENABLE_NIGHT_SHIFTS
+#ENABLE_NIGHT_SHIFTS
 
 ## Enable randomized shift start times##
 RANDOMIZE_SHIFT_TIME
@@ -620,21 +621,21 @@ RANDOMIZE_SHIFT_TIME
 #ALLOW_CREW_OBJECTIVES
 
 ## Mob spam prevention. The number of each mobtype that can be alive at once. Stops people from crashing the server with chickens/monkeycubes/slimes. Altering these values is recommended based on server hardware.
-MAX_CUBE_MONKEYS 100
-MAX_CHICKENS 100
-MAX_SLIMES 100
+MAX_CUBE_MONKEYS 30
+MAX_CHICKENS 30
+MAX_SLIMES 30
 
 ## Max amount of bodies allowed to slimepeople. Has balance considerations as well as technical ones.
-MAX_SLIMEPERSON_BODIES 10
+MAX_SLIMEPERSON_BODIES 2
 
 ## Uncomment to restrict suiciding. Adds an additional confirmation dialogue, additional logging, and prevents suicide within the first 15 minutes of the round.
-RESTRICTED_SUICIDE
+#RESTRICTED_SUICIDE
 
 ## Uncomment to enable donator items in the cosmetic shop. Only works if a patreon list has been setup
-DONATOR_ITEMS
+#DONATOR_ITEMS
 
 ## Do we want all the heads to get codes to spare safe, or just one highest in CoC?
-SPARE_ENFORCE_COC
+#SPARE_ENFORCE_COC
 
 ## Uncomment to disable local bans, effectively enforcing only global bans
 DISABLE_LOCAL_BANS

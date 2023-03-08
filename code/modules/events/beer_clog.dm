@@ -1,7 +1,6 @@
 /datum/round_event_control/beer_clog
 	name = "Foamy beer stationwide"
 	typepath = /datum/round_event/beer_clog
-	max_occurrences = 0
 	auto_add = FALSE
 
 /datum/round_event/beer_clog

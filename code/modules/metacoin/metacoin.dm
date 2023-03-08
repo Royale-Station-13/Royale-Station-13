@@ -3,16 +3,9 @@
     var/mob/M = mob
     if(M.mind && !isnewplayer(M))
         if(M.stat != DEAD && !isbrain(M))
-            if(EMERGENCY_ESCAPED_OR_ENDGAMED)
-                if(!M.onCentCom() && !M.onSyndieBase())
-                    var/reward_type = ((isAI(M)|| iscyborg(M) ? METACOIN_ESCAPE_REWARD : METACOIN_SURVIVE_REWARD))
-                    inc_metabalance(reward_type, reason="Survived the shift.")
-                else
-                    inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Survived the shift and escaped!")
-            else
-                inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Survived the shift.")
+            inc_metabalance(METACOIN_SURVIVE_REWARD, reason="Won the battle!")
         else
-            inc_metabalance(METACOIN_NOTSURVIVE_REWARD, reason="You tried.")
+            inc_metabalance(METACOIN_NOTSURVIVE_REWARD, reason="Fell in battle")
 
 /client/proc/process_greentext()
 	src.give_award(/datum/award/achievement/misc/greentext, src.mob)

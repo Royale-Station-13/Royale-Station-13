@@ -3,6 +3,7 @@
 	typepath = /datum/round_event/brain_trauma
 	weight = 25
 	min_players = 20 //this shit ain't fun on a small crew
+	max_occurrences = 0 //this shit ain't fun in general for battle royale
 
 /datum/round_event/brain_trauma
 	fakeable = FALSE

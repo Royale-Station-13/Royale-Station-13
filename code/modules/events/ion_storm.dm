@@ -3,6 +3,7 @@
 	typepath = /datum/round_event/ion_storm
 	weight = 15
 	min_players = 2
+	max_occurrences = 0
 	can_malf_fake_alert = TRUE
 
 /datum/round_event/ion_storm

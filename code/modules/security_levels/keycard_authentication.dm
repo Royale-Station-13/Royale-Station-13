@@ -115,12 +115,14 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 	var/area/A2 = get_area(confirmer)
 	deadchat_broadcast("<span class='deadsay'><span class='name'>[confirmer]</span> confirmed [event] at <span class='name'>[A2.name]</span>.</span>", confirmer)
 	switch(event)
-		if(KEYCARD_RED_ALERT)
-			set_security_level(SEC_LEVEL_RED)
+//		if(KEYCARD_RED_ALERT)
+//			set_security_level(SEC_LEVEL_RED)
 		if(KEYCARD_EMERGENCY_MAINTENANCE_ACCESS)
 			make_maint_all_access()
 		if(KEYCARD_BSA_UNLOCK)
 			toggle_bluespace_artillery()
+		else
+			return
 
 GLOBAL_VAR_INIT(emergency_access, FALSE)
 /proc/make_maint_all_access()

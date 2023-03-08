@@ -195,6 +195,9 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	var/list/death_wall
 	var/field_delay = 15
 	var/debug_mode = FALSE
+	var/blue_alert = FALSE
+	var/red_alert = FALSE
+	var/delta_alert = FALSE
 
 /datum/battle_royale_controller/Destroy(force, ...)
 	QDEL_LIST(death_wall)
@@ -210,6 +213,9 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	GLOB.battle_royale = null
 
 //Trigger random events and shit, update the world border
+/datum/battle_royale_controller/proc/end_royale()
+	qdel(src)
+
 /datum/battle_royale_controller/process()
 	process_num++
 	//Once every 50ish seconds
@@ -240,8 +246,20 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 				death_wall -= wall
 			CHECK_TICK
 		radius--
-	if(radius < 70 && prob(1))
+	if(radius < 95 && prob(1))
 		generate_endgame_drop()
+	if(!blue_alert)
+		if(radius < 95)
+			set_security_level(SEC_LEVEL_BLUE)
+			blue_alert = TRUE
+	else if(!red_alert)
+		if(radius < 65)
+			set_security_level(SEC_LEVEL_RED)
+			red_alert = TRUE
+	else if(!delta_alert)
+		if(radius < 35)
+			set_security_level(SEC_LEVEL_DELTA)
+			delta_alert = TRUE
 
 //==================================
 // INITIALIZATION
@@ -372,13 +390,13 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	var/list/good_drops = list()
 	for(var/i in 1 to rand(1,3))
 		good_drops += pick(GLOB.battle_royale_good_loot)
-	send_item(good_drops, announce = "Incoming extended supply materials.", force_time = 300)
+	send_item(good_drops, announce = "Incoming extended supply materials.", force_time = 30 SECONDS)
 
 /datum/battle_royale_controller/proc/generate_endgame_drop()
 	var/obj/item = pick(GLOB.battle_royale_insane_loot)
-	send_item(item, announce = "We found a weird looking package in the back of our warehouse. We have no idea what is in it, but it is marked as incredibily dangerous and could be a superweapon.", force_time = 600)
+	send_item(item, announce = "We found a weird looking package in the back of our warehouse. We have no idea what is in it, but it is marked as incredibily dangerous and could be a superweapon.", force_time = 60 SECONDS)
 
-/datum/battle_royale_controller/proc/send_item(item_path, style = STYLE_BOX, announce=FALSE, force_time = 0)
+/datum/battle_royale_controller/proc/send_item(item_path, style = STYLE_BOX, announce=FALSE, force_time = 10 SECONDS)
 	if(!item_path)
 		return
 	var/turf/target = get_safe_random_station_turfs()
@@ -389,7 +407,8 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	else
 		new item_path(pod)
 	if(force_time)
-		pod.delays[POD_FALLING]= force_time
+		pod.delays[POD_TRANSIT]= force_time
+	pod.delays[POD_FALLING]= 10
 	new /obj/effect/pod_landingzone(target, pod)
 	if(announce)
 		priority_announce("[announce] \nExpected Drop Location: [get_area(target)]\n ETA: [force_time/10] Seconds.", "High Command Supply Control", SSstation.announcer.get_rand_alert_sound())

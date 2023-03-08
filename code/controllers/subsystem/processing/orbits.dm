@@ -10,9 +10,9 @@ PROCESSING_SUBSYSTEM_DEF(orbits)
 
 	var/datum/orbital_map_tgui/orbital_map_tgui = new()
 
-	var/initial_space_ruins = 2
-	var/initial_objective_beacons = 3
-	var/initial_asteroids = 6
+	var/initial_space_ruins = 0
+	var/initial_objective_beacons = 0
+	var/initial_asteroids = 0
 
 	var/orbits_setup = FALSE
 
@@ -24,7 +24,7 @@ PROCESSING_SUBSYSTEM_DEF(orbits)
 
 	var/list/runnable_events
 
-	var/event_probability = 60
+	var/event_probability = 0
 
 	//key = port_id
 	//value = orbital shuttle object
@@ -148,6 +148,7 @@ PROCESSING_SUBSYSTEM_DEF(orbits)
 	SSorbits.orbital_map_tgui.ui_interact(src)
 
 /datum/controller/subsystem/processing/orbits/proc/create_objective()
+/*
 	var/static/list/valid_objectives = list(
 		/datum/orbital_objective/recover_blackbox = 3,
 		/datum/orbital_objective/nuclear_bomb = 1,
@@ -165,6 +166,7 @@ PROCESSING_SUBSYSTEM_DEF(orbits)
 	objective.generate_payout()
 	possible_objectives += objective
 	update_objective_computers()
+*/
 
 /datum/controller/subsystem/processing/orbits/proc/assign_objective(objective_computer, datum/orbital_objective/objective)
 	if(!possible_objectives.Find(objective))

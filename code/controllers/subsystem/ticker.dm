@@ -234,7 +234,6 @@ SUBSYSTEM_DEF(ticker)
 		failsafe_pre_setup()
 		return
 	//Let's try this again.
-	fail_counter++
 	current_state = GAME_STATE_STARTUP
 	start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 5)
 	timeLeft = null
@@ -242,7 +241,9 @@ SUBSYSTEM_DEF(ticker)
 	pre_setup_completed = FALSE
 	//Return to default mode
 	load_mode()
-	message_admins("Failed to setup. Failures: ([fail_counter] / 3).")
+	if(SSticker.start_immediately)
+		fail_counter++
+		message_admins("Failed to setup. Failures: ([fail_counter] / 3).")
 	log_game("Setup failed.")
 
 //Fallback presetup that sets up extended.
