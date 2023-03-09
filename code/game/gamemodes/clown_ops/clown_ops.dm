@@ -36,7 +36,7 @@
 	ears = /obj/item/radio/headset/syndicate/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
 	r_pocket = /obj/item/bikehorn
-	id = /obj/item/card/id/syndicate
+	id = /obj/item/card/id/silver/royale
 	backpack_contents = list(/obj/item/storage/box/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival,
 		/obj/item/reagent_containers/spray/waterflower/lube)
