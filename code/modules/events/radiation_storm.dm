@@ -1,7 +1,6 @@
 /datum/round_event_control/radiation_storm
 	name = "Radiation Storm"
 	typepath = /datum/round_event/radiation_storm
-	max_occurrences = 1
 	can_malf_fake_alert = TRUE
 
 /datum/round_event/radiation_storm

@@ -1,107 +1,301 @@
 //Global lists so they can be editted by admins
 GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
-		/obj/item/soap,
-		/obj/item/kitchen/knife,
-		/obj/item/kitchen/knife/combat,
-		/obj/item/kitchen/knife/poison,
-		/obj/item/throwing_star,
-		/obj/item/syndie_glue,
-		/obj/item/book_of_babel,
-		/obj/item/card/emag,
-		/obj/item/storage/box/emps,
-		/obj/item/storage/box/lethalshot,
-		/obj/item/storage/box/gorillacubes,
-		/obj/item/storage/box/teargas,
-		/obj/item/storage/box/security/radio,
-		/obj/item/storage/box/medsprays,
-		/obj/item/storage/toolbox/syndicate,
-		/obj/item/storage/box/syndie_kit/bee_grenades,
-		/obj/item/storage/box/syndie_kit/centcom_costume,
-		/obj/item/storage/box/syndie_kit/chameleon,
-		/obj/item/storage/box/syndie_kit/chemical,
-		/obj/item/storage/box/syndie_kit/emp,
-		/obj/item/storage/box/syndie_kit/imp_adrenal,
-		/obj/item/storage/box/syndie_kit/imp_freedom,
-		/obj/item/storage/box/syndie_kit/imp_radio,
-		/obj/item/storage/box/syndie_kit/imp_stealth,
-		/obj/item/storage/box/syndie_kit/imp_storage,
-		/obj/item/storage/box/syndie_kit/imp_uplink,
-		/obj/item/storage/box/syndie_kit/origami_bundle,
-		/obj/item/storage/box/syndie_kit/throwing_weapons,
-		/obj/item/storage/box/syndie_kit/bundle_A,
-		/obj/item/storage/box/syndie_kit/bundle_B,
+//Weapons included in loadout options + other items of similar power
 		/obj/item/gun/ballistic/automatic/pistol,
+		/obj/item/gun/ballistic/revolver/reverse, //Honk
+		/obj/item/gun/ballistic/revolver/royale,
+		/obj/item/gun/energy/kinetic_accelerator/crossbow,
+		/obj/item/gun/ballistic/shotgun/doublebarrel/improvised,
+		/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn,
+		/obj/item/reagent_containers/spray/flame,
+//		/obj/item/reagent_containers/spray/lube,
+//		/obj/item/reagent_containers/spray/acid,
+//		/obj/item/reagent_containers/spray/combo,
+		/obj/item/gun/energy/e_gun/mini/heads,
+		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/energy/disabler,
-		/obj/item/construction/rcd,
+		/obj/item/gun/energy/plasmacutter/adv/royale,
+		/obj/item/kitchen/knife/poison/royale,
+		/obj/item/kitchen/knife/combat,
+		/obj/item/switchblade,
+		/obj/item/melee/transforming/energy/sword/bananium,
+		/obj/item/holo/esword,
+		/obj/item/holo/esword, //listed twice on purpose
+		/obj/item/claymore/bone/royale,
+		/obj/item/melee/ghost_sword,
+		/obj/item/melee/baton/loaded,
+		/obj/item/melee/classic_baton,
+		/obj/item/melee/powerfist,
+		/obj/item/spear,
+		/obj/item/spear/bonespear,
+		/obj/item/spear/bamboospear,
+//Nullrods deemed suitable
+		/obj/item/nullrod/godhand,
+		/obj/item/nullrod/staff/blue,
+		/obj/item/nullrod/claymore/darkblade,
+		/obj/item/nullrod/claymore/katana,
+		/obj/item/nullrod/claymore/bostaff,
+		/obj/item/nullrod/scythe,
+		/obj/item/nullrod/pride_hammer,
+		/obj/item/nullrod/fedora,
+		/obj/item/nullrod/armblade,
+		/obj/item/nullrod/spear,
+//Shields
+		/obj/item/shield/energy,
+
+//Various armors, including duplicates for the sake of weight
+		/obj/item/clothing/suit/armor/riot,
+		/obj/item/clothing/suit/armor/vest,
+		/obj/item/clothing/suit/armor/vest/alt,
+		/obj/item/clothing/suit/armor/vest/blueshirt,
+		/obj/item/clothing/suit/armor/vest/corporate,
+		/obj/item/clothing/suit/armor/vest/russian_coat,
+		/obj/item/clothing/suit/armor/vest/det_suit,
+		/obj/item/clothing/suit/armor/vest/warden,
+		/obj/item/clothing/suit/armor/hos,
+		/obj/item/clothing/suit/armor/hos/trenchcoat,
+		/obj/item/clothing/suit/armor/vest/capcarapace,
+		/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
+		/obj/item/clothing/suit/armor/vest/capcarapace/alt,
+		/obj/item/clothing/suit/armor/riot,
+		/obj/item/clothing/suit/armor/riot,
+		/obj/item/clothing/suit/armor/laserproof,
+		/obj/item/clothing/suit/armor/riot/knight,
+		/obj/item/clothing/suit/armor/bone,
+		/obj/item/clothing/suit/armor/bone,
+		/obj/item/clothing/suit/hooded/cloak/bone,
+		/obj/item/clothing/suit/hooded/cloak/bone,
+		/obj/item/clothing/suit/hooded/cloak/goliath/royale,
+		/obj/item/clothing/suit/hooded/cloak/goliath/royale/blue,
+		/obj/item/clothing/suit/hooded/cloak/goliath/royale/brown,
+		/obj/item/clothing/suit/hooded/cloak/goliath/royale/green,
+		/obj/item/clothing/suit/hooded/cloak/goliath/royale/grey,
+		/obj/item/clothing/suit/hooded/cloak/goliath/royale/magenta,
+		/obj/item/clothing/suit/hooded/cloak/goliath/royale/gold,
+		/obj/item/clothing/suit/hooded/cloak/goliath/royale/invisible,
+//Hardsuits, also technically armor
+		/obj/item/clothing/suit/space/hardsuit/swat/captain,
+		/obj/item/clothing/suit/space/hardsuit/engine,
+		/obj/item/clothing/suit/space/hardsuit/engine/atmos,
+		/obj/item/clothing/suit/space/hardsuit/engine/elite,
+		/obj/item/clothing/suit/space/hardsuit/security,
+		/obj/item/clothing/suit/space/hardsuit/security/head_of_security,
+		/obj/item/clothing/suit/space/hardsuit/medical/cmo,
+		/obj/item/clothing/suit/space/hardsuit/research_director,
+		/obj/item/clothing/suit/space/hardsuit/mining,
+		/obj/item/clothing/suit/space/hardsuit/exploration,
+		/obj/item/clothing/suit/space/hardsuit/syndi,
+//Other equippables
 		/obj/item/clothing/glasses/chameleon/flashproof,
-		/obj/item/book/granter/spell/knock,
 		/obj/item/clothing/glasses/sunglasses/advanced,
 		/obj/item/clothing/glasses/thermal/eyepatch,
 		/obj/item/clothing/glasses/thermal/syndi,
-		/obj/item/clothing/suit/space,
-		/obj/item/clothing/suit/armor/riot,
-		/obj/item/clothing/suit/armor/vest,
-		/obj/item/clothing/suit/armor/vest/russian_coat,
-		/obj/item/clothing/suit/armor/hos/trenchcoat,
-		/obj/item/clothing/mask/chameleon,
-		/obj/item/clothing/head/centhat,
-		/obj/item/clothing/head/crown,
-		/obj/item/clothing/head/HoS/syndicate,
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/head/helmet/clockcult,
-		/obj/item/clothing/head/helmet/space,
-		/obj/item/clothing/head/helmet/sec,
-		/obj/item/clothing/under/syndicate,
 		/obj/item/clothing/gloves/combat,
-		/obj/item/deployablemine/stun,
-		/obj/item/switchblade,
-		/obj/item/club/tailclub,
-		/obj/item/nullrod/tribal_knife,
-		/obj/item/nullrod/fedora,
-		/obj/item/nullrod/godhand,
-		/obj/item/melee/baton/loaded,
-		/obj/item/melee/chainofcommand/tailwhip/kitty,
-		/obj/item/melee/classic_baton,
-		/obj/item/melee/ghost_sword,
-		/obj/item/melee/powerfist,
-		/obj/item/storage/firstaid/advanced,
-		/obj/item/storage/firstaid/brute,
-		/obj/item/storage/firstaid/fire,
-		/obj/item/storage/firstaid/medical,
+		/obj/item/clothing/gloves/combat,
+		/obj/item/clothing/shoes/clown_shoes/taeclowndo,
+		/obj/item/clothing/shoes/chameleon/noslip,
+		/obj/item/clothing/glasses/thermal/syndi,
+
+
+//Ammunition
+/*
+
+		/obj/item/ammo_box/a762 //mosin
+
+		/obj/item/ammo_box/magazine/m10mm //stechkin
+		/obj/item/ammo_box/magazine/m10mm/hp
+		/obj/item/ammo_box/magazine/m10mm/ap
+		/obj/item/ammo_box/magazine/m10mm/fire
+
+		/obj/item/storage/backpack/duffelbag/syndie/ammo/shotgun //shotgun
+		/obj/item/ammo_box/magazine/m12g
+		/obj/item/ammo_box/magazine/m12g/dragon
+		/obj/item/ammo_box/magazine/m12g/slug
+
+		/obj/item/ammo_box/a357			//Revolver
+		/obj/item/ammo_box/a357/match	
+
+		/obj/item/storage/backpack/duffelbag/syndie/ammo/smg //SMG
+		/obj/item/ammo_box/magazine/smgm45
+
+		/obj/item/ammo_box/magazine/sniper_rounds //Sniper
+		/obj/item/ammo_box/sniper
+		/obj/item/ammo_box/sniper/penetrator
+		/obj/item/ammo_box/sniper/soporific
+		/obj/item/ammo_casing/p50/emp
+		/obj/item/ammo_casing/p50/explosive
+		/obj/item/ammo_casing/p50/inferno
+
+		/obj/item/ammo_box/magazine/m556 //carbine
+
+		/obj/item/ammo_box/magazine/mm712x82 //L6 Saw HMG
+		/obj/item/ammo_box/magazine/mm712x82/ap
+		/obj/item/ammo_box/magazine/mm712x82/hollow
+		/obj/item/ammo_box/magazine/mm712x82/incen
+		/obj/item/ammo_box/magazine/mm712x82/match
+
+*/
+//Reagent warfare
+		/obj/item/gun/chem, //No syringes needed
+
+		/obj/item/storage/pill_bottle/floorpill/full,
+		/obj/item/reagent_containers/glass/bottle/romerol,
+		/obj/item/reagent_containers/hypospray/medipen/magillitis, //Gorilla transform
+/*
+	/obj/item/storage/box/syndie_kit/chemical
+
+	new /obj/item/reagent_containers/glass/bottle/polonium(src)
+	new /obj/item/reagent_containers/glass/bottle/venom(src)
+	new /obj/item/reagent_containers/glass/bottle/fentanyl(src)
+	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
+	new /obj/item/reagent_containers/glass/bottle/spewium(src)
+	new /obj/item/reagent_containers/glass/bottle/cyanide(src)
+	new /obj/item/reagent_containers/glass/bottle/histamine(src)
+	new /obj/item/reagent_containers/glass/bottle/initropidril(src)
+	new /obj/item/reagent_containers/glass/bottle/pancuronium(src)
+	new /obj/item/reagent_containers/glass/bottle/sodium_thiopental(src)
+	new /obj/item/reagent_containers/glass/bottle/coniine(src)
+	new /obj/item/reagent_containers/glass/bottle/curare(src)
+	new /obj/item/reagent_containers/glass/bottle/amanitin(src)
+*/
+
+//Uplink and crystals
+		/obj/item/storage/box/syndie_kit/imp_uplink, //0 TC, just the uplink
+		/obj/item/storage/box/syndie_kit/imp_uplink,
+		/obj/item/stack/sheet/telecrystal/five,
+		/obj/item/stack/sheet/telecrystal/five,
+		/obj/item/stack/sheet/telecrystal/five,
+		/obj/item/stack/sheet/telecrystal/five,
+		
+
+
+//Medical supplies
+		/obj/item/reagent_containers/hypospray/medipen/stimulants,
 		/obj/item/storage/firstaid/tactical,
-		/obj/item/gun/energy/ionrifle,
-		/obj/item/organ/regenerative_core/battle_royale
+		/obj/item/autosurgeon/syndicate/xray_eyes,
+
+//Grenades
+		/obj/item/grenade/empgrenade,
+		/obj/item/grenade/chem_grenade/ez_clean, //acid foam
+		/obj/item/grenade/clusterbuster/soap,
+		/obj/item/grenade/chem_grenade/teargas/moustache,
+		/obj/item/grenade/syndieminibomb,
+		/obj/item/grenade/discogrenade,
+		/obj/item/hot_potato/syndicate,
+
+//Various consumables
+		/obj/item/book/granter/action/origami,
+		/obj/item/storage/box/syndie_kit/imp_microbomb,
+		/obj/item/storage/box/syndie_kit/imp_adrenal,
+		/obj/item/storage/box/syndie_kit/cultconstructkit,
+		/obj/item/toy/plush/carpplushie/dehy_carp,
+		/obj/item/book/granter/martial/karate,
+		/obj/item/throwing_star,
+		/obj/item/restraints/legcuffs/bola/tactical,
+		/obj/item/book/granter/martial/tribal_claw,
+		/obj/item/reagent_containers/food/snacks/monkeycube/gorilla,
+		/obj/item/sharpener,
+//Misc
+		/obj/item/storage/briefcase/launchpad,
+		/obj/item/antag_spawner/nuke_ops/clown,
+		/obj/item/antag_spawner/nuke_ops,
+		/obj/item/storage/toolbox/syndicate,
+		/obj/item/syndie_glue,
+		/obj/item/soap/syndie,
+		/obj/item/soap,
+		/obj/item/voodoo,
+		/obj/item/reverse_bear_trap,
+		/obj/item/toy/syndicateballoon/glued, //honk
+		
+
+
+
+/*
+	Some of the weaker syndicate kits
+	Single grenades and similar consumables
+	Sharpening stone
+*/
+	
+
+
 	))
 
 GLOBAL_LIST_INIT(battle_royale_good_loot, list(
-		/obj/item/hand_tele,
-		/obj/item/gun/ballistic/bow/clockbolt,
+		/obj/item/uplink/old, //10 TC
+		/obj/item/uplink, //20 TC
+		/obj/machinery/porta_turret/syndicate/pod,
+		/obj/machinery/porta_turret/syndicate/energy/heavy, //Honk honk
+		/obj/item/gun/ballistic/shotgun/lethal,
+		/obj/item/gun/ballistic/shotgun/doublebarrel, //Lethal
+		/obj/item/gun/ballistic/shotgun/riot, //Non-lethal
+		/obj/item/gun/ballistic/shotgun/automatic/combat, //Very lethal
 		/obj/item/gun/ballistic/rifle/boltaction,
-		/obj/item/gun/ballistic/shotgun/doublebarrel,
-		/obj/item/gun/energy/laser/captain,
+		/obj/item/gun/ballistic/rifle/boltaction,
+		/obj/item/gun/ballistic/rocketlauncher,
+		/obj/item/gun/ballistic/revolver,
+		/obj/item/gun/ballistic/bow/clockwork,
 		/obj/item/gun/ballistic/revolver/mateba,
-		/obj/item/gun/ballistic/automatic/c20r,
-		/obj/item/ammo_box/magazine/smgm45,
-		/obj/item/ammo_box/magazine/pistolm9mm,
+		/obj/item/gun/energy/laser,
+		/obj/item/gun/energy/e_gun,
+		/obj/item/gun/energy/e_gun,
+		/obj/item/gun/energy/e_gun/advtaser,
+		/obj/item/gun/energy/e_gun/old,
+		/obj/item/gun/energy/e_gun/hos,
+		/obj/item/gun/energy/e_gun/stun, //Basically just HoS gun again
+
+		/obj/item/pen/sleepy,
+		/obj/item/storage/box/syndie_kit/bundle_A,
+		/obj/item/storage/box/syndie_kit/bundle_B,
+		/obj/item/storage/backpack/duffelbag/syndie/c4,
+		/obj/item/deployablemine/traitor,
+		/obj/vehicle/sealed/car/clowncar,
+		/obj/item/book/granter/spell/mimery_blockade,
+		/obj/item/book/granter/spell/mimery_guns,
+
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/radbow,
+		/obj/item/pneumatic_cannon/pie/selfcharge,
+		/obj/item/shield/energy/bananium,
+		/obj/item/clothing/gloves/rapid,
+		/obj/item/stand_arrow,
+		/obj/item/melee/transforming/energy/sword/saber/green,
+		/obj/item/melee/transforming/energy/sword/saber/blue,
+		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+		/obj/item/book/granter/martial/cqc,
+		/obj/item/hand_tele,
+
+		/obj/item/gun/energy/laser/captain,
+
 		/obj/item/katana,
-		/obj/item/melee/transforming/energy/sword,
-		/obj/item/dualsaber,
-		/obj/item/fireaxe,
-		/obj/item/stack/sheet/telecrystal/five,
-		/obj/item/stack/sheet/telecrystal/twenty,
-		/obj/item/clothing/suit/space/hardsuit/syndi
+		/obj/item/fireaxe
 	))
 
 GLOBAL_LIST_INIT(battle_royale_insane_loot, list(
-		/obj/item/gun/ballistic/automatic/l6_saw/unrestricted,
-		/obj/item/energy_katana,
+//The absolute jackpot (Both items are hardcoded to re-roll once, they will be exceedingly rare)
+		/obj/item/uplink/nuclear, //Fully loaded!
+		/obj/item/melee/supermatter_sword, //Exactly what you think it is
+//The REALLY good shit
+		/obj/item/storage/backpack/duffelbag/syndie/bulldogbundle,
+		/obj/item/storage/backpack/duffelbag/syndie/c20rbundle,
+		/obj/item/storage/briefcase/sniperbundle,
+		/obj/item/reagent_containers/spray/chemsprayer/bioterror,
+		/obj/item/chainsaw/energy/doom,
+		/obj/mecha/combat/gygax/dark/loaded,
+//Still good, but not as good
+		/obj/item/storage/belt/grenade/full,
+		/obj/item/gun/ballistic/shotgun/bulldog,
+		/obj/item/gun/ballistic/automatic/c20r,
+		/obj/item/gun/ballistic/sniper_rifle/syndicate,
+		/obj/item/gun/ballistic/automatic/l6_saw,
+		/obj/item/gun/ballistic/automatic/m90,
+		/obj/item/dualsaber,
+		/obj/item/guardiancreator/tech,
+		/obj/item/book/granter/martial/carp,
 		/obj/item/clothing/suit/space/hardsuit/shielded/syndi,
 		/obj/item/his_grace,
-		/obj/mecha/combat/marauder/mauler/loaded,
-		/obj/item/guardiancreator/tech,
 		/obj/item/mjolnir,
-		/obj/item/pneumatic_cannon/pie/selfcharge,
-		/obj/item/uplink/nuclear
+		/obj/item/energy_katana
 	))
 
 GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
@@ -195,6 +389,9 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	var/list/death_wall
 	var/field_delay = 15
 	var/debug_mode = FALSE
+	var/blue_alert = FALSE
+	var/red_alert = FALSE
+	var/delta_alert = FALSE
 
 /datum/battle_royale_controller/Destroy(force, ...)
 	QDEL_LIST(death_wall)
@@ -210,33 +407,19 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	GLOB.battle_royale = null
 
 //Trigger random events and shit, update the world border
+/datum/battle_royale_controller/proc/end_royale()
+	qdel(src)
+
 /datum/battle_royale_controller/process()
 	process_num++
-	//Once every 25 seconds
-	if(prob(4))
-		generate_basic_loot(5)
-	//Once every 50 seconds.
-	if(prob(2))
-		generate_good_drop()
-	var/living_victims = 0
-	var/mob/winner
-	for(var/mob/living/M as() in players)
-		if(QDELETED(M))
-			players -= M
-			continue
-		if(M.stat == DEAD)	//We aren't going to remove them from the list in case they somehow revive.
-			continue
-		var/turf/T = get_turf(M)
-		if(T.x > 128 + radius || T.x < 128 - radius || T.y > 128 + radius || T.y < 128 - radius)
-			to_chat(M, "<span class='warning'>You have left the zone!</span>")
-			M.gib()
-		if(!SSmapping.level_trait(T.z, ZTRAIT_STATION) && !SSmapping.level_trait(T.z, ZTRAIT_RESERVED))
-			to_chat(M, "<span class='warning'>You have left the z-level!</span>")
-			M.gib()
-		living_victims++
-		winner = M
-		CHECK_TICK
-	if(living_victims <= 1 && !debug_mode)
+	//Once every 100ish seconds.
+	if(prob(1))
+		if(prob(10) && blue_alert)
+			generate_endgame_drop()
+		else
+			generate_good_drop()
+
+/*	if(living_victims <= 1 && !debug_mode)
 		to_chat(world, "<span class='ratvar'><font size=18>VICTORY ROYALE!!</font></span>")
 		if(winner)
 			winner.client?.process_greentext()
@@ -244,17 +427,33 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 			new /obj/item/melee/supermatter_sword(get_turf(winner))
 		qdel(src)
 		return
+*/
 	//Once every 15 seconsd
 	// 1,920 seconds (about 32 minutes per game)
+	if(process_num % 15)
+		if(SSticker.mode)
+			SSticker.mode.check_win()
 	if(process_num % (field_delay) == 0)
+		generate_basic_loot(1)
 		for(var/obj/effect/death_wall/wall as() in death_wall)
 			wall.decrease_size()
 			if(QDELETED(wall))
 				death_wall -= wall
 			CHECK_TICK
 		radius--
-	if(radius < 70 && prob(1))
-		generate_endgame_drop()
+
+	if(!blue_alert)
+		if(radius < 95)
+			set_security_level(SEC_LEVEL_BLUE)
+			blue_alert = TRUE
+	else if(!red_alert)
+		if(radius < 65)
+			set_security_level(SEC_LEVEL_RED)
+			red_alert = TRUE
+	else if(!delta_alert)
+		if(radius < 35)
+			set_security_level(SEC_LEVEL_DELTA)
+			delta_alert = TRUE
 
 //==================================
 // INITIALIZATION
@@ -265,15 +464,18 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	for(var/client/C in GLOB.admins)
 		if(check_rights_for(C, R_ADMIN))
 			C.add_verb(BATTLE_ROYALE_AVERBS)
-	toggle_ooc(FALSE)
-	to_chat(world, "<span class='ratvar'><font size=24>Battle Royale will begin soon...</span></span>")
+
+//	toggle_ooc(FALSE)
+//	to_chat(world, "<span class='ratvar'><font size=24>Battle Royale will begin soon...</span></span>")
 	//Stop new player joining
 	GLOB.enter_allowed = FALSE
 
 	//Don't let anyone join as posibrains/golems etc
-	DISABLE_BITFIELD(GLOB.ghost_role_flags, (GHOSTROLE_SPAWNER | GHOSTROLE_SILICONS))
+//	DISABLE_BITFIELD(GLOB.ghost_role_flags, (GHOSTROLE_SPAWNER | GHOSTROLE_SILICONS))
 
 	world.update_status()
+
+/*
 	if(SSticker.current_state < GAME_STATE_PREGAME)
 		to_chat(world, "<span class=boldannounce>Battle Royale: Waiting for server to be ready...</span>")
 		SSticker.start_immediately = FALSE
@@ -288,6 +490,8 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 			player.make_me_an_observer(TRUE)
 		to_chat(world, "<span class='boldannounce'>Battle Royale: Force-starting game.</span>")
 		SSticker.start_immediately = TRUE
+
+
 	SEND_SOUND(world, sound('sound/misc/server-ready.ogg'))
 	sleep(50)
 	//Clear all living mobs
@@ -306,6 +510,10 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	sleep(50)
 	to_chat(world, "<span class='boldannounce'>Battle Royale: Starting game.</span>")
 	titanfall()
+*/
+	//spawn one basic loot drop per player after 30 second. Everyone already has a starting loadout of their choice, so no need for super spam
+	addtimer(CALLBACK(src, .proc/generate_basic_loot, GLOB.player_list.len), 300) 
+
 	death_wall = list()
 	var/z_level = SSmapping.station_start
 	var/turf/center = SSmapping.get_station_center()
@@ -321,6 +529,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 		CHECK_TICK
 	START_PROCESSING(SSprocessing, src)
 
+//unused
 /datum/battle_royale_controller/proc/titanfall()
 	var/list/participants = pollGhostCandidates("Would you like to partake in BATTLE ROYALE?")
 	var/turf/spawn_turf = get_safe_random_station_turfs()
@@ -371,17 +580,33 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 		send_item(pick(GLOB.battle_royale_basic_loot))
 		stoplag()
 
-/datum/battle_royale_controller/proc/generate_good_drop()
+/datum/battle_royale_controller/proc/generate_good_drop(silent)
 	var/list/good_drops = list()
 	for(var/i in 1 to rand(1,3))
 		good_drops += pick(GLOB.battle_royale_good_loot)
-	send_item(good_drops, announce = "Incoming extended supply materials.", force_time = 150)
+	if(!silent)
+		send_item(good_drops, announce = "Incoming extended supply materials.", force_time = 30 SECONDS)
 
-/datum/battle_royale_controller/proc/generate_endgame_drop()
+/datum/battle_royale_controller/proc/admin_good_drop(amount=1)
+	priority_announce("Incoming extended supply materials: \n[amount] crates in various locations\n ETA: 30 Seconds.", "High Command Supply Control", SSstation.announcer.get_rand_alert_sound())
+	for(var/i in 1 to amount)
+		generate_good_drop(TRUE)
+		stoplag()
+
+/datum/battle_royale_controller/proc/generate_endgame_drop(silent)
 	var/obj/item = pick(GLOB.battle_royale_insane_loot)
-	send_item(item, announce = "We found a weird looking package in the back of our warehouse. We have no idea what is in it, but it is marked as incredibily dangerous and could be a superweapon.", force_time = 600)
+	if(item == /obj/item/uplink/nuclear || item == /obj/item/melee/supermatter_sword)
+		item = pick(GLOB.battle_royale_insane_loot) //Reroll once if either "jackpot" item rolls. Makes both of them exceedingly rare
+	if(!silent)
+		send_item(item, announce = "We found a weird looking package in the back of our warehouse. We have no idea what is in it, but it is marked as incredibily dangerous and could be a superweapon.", force_time = 60 SECONDS)
 
-/datum/battle_royale_controller/proc/send_item(item_path, style = STYLE_BOX, announce=FALSE, force_time = 0)
+/datum/battle_royale_controller/proc/admin_endgame_drop(amount=1)
+	priority_announce("Incoming (REDACTED) grade supplies\n[amount] crates in various locations\n ETA: 60 Seconds.", "High Command Supply Control", SSstation.announcer.get_rand_alert_sound())
+	for(var/i in 1 to amount)
+		generate_endgame_drop(TRUE)
+		stoplag()
+
+/datum/battle_royale_controller/proc/send_item(item_path, style = STYLE_BOX, announce=FALSE, force_time = 10 SECONDS)
 	if(!item_path)
 		return
 	var/turf/target = get_safe_random_station_turfs()
@@ -392,7 +617,8 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	else
 		new item_path(pod)
 	if(force_time)
-		pod.delays[POD_FALLING]= force_time
+		pod.delays[POD_TRANSIT]= force_time
+	pod.delays[POD_FALLING]= 10
 	new /obj/effect/pod_landingzone(target, pod)
 	if(announce)
 		priority_announce("[announce] \nExpected Drop Location: [get_area(target)]\n ETA: [force_time/10] Seconds.", "High Command Supply Control", SSstation.announcer.get_rand_alert_sound())

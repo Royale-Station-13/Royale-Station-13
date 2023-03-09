@@ -10,7 +10,7 @@
 	exp_requirements = 120
 	exp_type = EXP_TYPE_CREW
 
-	outfit = /datum/outfit/job/atmospheric_technician
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_MAINT_TUNNELS, ACCESS_MECH_ENGINE,
 									ACCESS_EXTERNAL_AIRLOCKS, ACCESS_CONSTRUCTION, ACCESS_ATMOSPHERICS, ACCESS_MINERAL_STOREROOM, ACCESS_AUX_BASE)

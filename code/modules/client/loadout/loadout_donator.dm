@@ -133,4 +133,3 @@
 /datum/gear/donator/item/plush_opa
 	display_name = "metal opa plushie"
 	path = /obj/item/toy/plush/opa
-

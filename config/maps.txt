@@ -17,42 +17,49 @@ endmap
 #Active Rotation
 
 map corgstation
-	minplayers 15
+	minplayers 0
+	maxplayers 0
 	votable
 endmap
 
 map boxstation
-	maxplayers 60
-	votable
-endmap
-
-map metastation
+	minplayers 0
+	maxplayers 0
 	default
 	votable
 endmap
 
+map metastation
+	minplayers 0
+	maxplayers 0
+	votable
+endmap
+
 map pubbystation
-	maxplayers 50
+	minplayers 0
+	maxplayers 0
 	votable
 endmap
 
 map deltastation
-	minplayers 40
+	minplayers 30
+	maxplayers 0
 	votable
 endmap
 
 map kilostation
-	maxplayers 50
+	minplayers 30
+	maxplayers 0
 	votable
 endmap
 
 map glowstation
-	minplayers 40
-	votable
+	disabled
 endmap
 
 map flandstation
-	minplayers 40
+	minplayers 0
+	maxplayers 0
 	votable
 endmap
 

@@ -38,4 +38,3 @@
 	display_name = "Transparent PDA Colorizer"
 	path = /obj/item/colorizer/pdatransparent
 	cost = 20000
-

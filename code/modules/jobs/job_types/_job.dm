@@ -132,10 +132,32 @@
 					continue
 
 				if(G.slot)
-					if(H.equip_to_slot_or_del(G.spawn_item(H), G.slot))
-						to_chat(M, "<span class='notice'>Equipping you with [G.display_name]!</span>")
+					if(G.slot == ITEM_SLOT_BACK)
+						var/obj/item/storage/backpack/oldbag = H.get_item_by_slot(ITEM_SLOT_BACK)
+						var/metadata = M.client.prefs.active_character.equipped_gear[G.id]
+						var/obj/item/storage/backpack/newbag = G.spawn_item(null, metadata)
+						//This was much cleaner than trying to safely transfer contents in the correct orientation
+						oldbag.name = newbag.name
+						oldbag.desc = newbag.desc
+						if(oldbag.slowdown && !newbag.slowdown)
+							oldbag.name += " XL" //indicates it is dufflebag sized and weighted, in case the appearance wasn't already a duffel
+							oldbag.desc += "\nHolds as much as a duffel bag, and just as hard on your back too!"
+						if(newbag.slowdown && !oldbag.slowdown)
+							oldbag.name += " lite"
+							oldbag.desc += "\nDoesn't hold as much as you would think, and it's weighted well on the back!"
+						oldbag.icon_state = newbag.icon_state
+						oldbag.item_state = newbag.item_state
+						H.update_inv_back()
+						to_chat(H, "<span class='notice'>Equipping you with [G.display_name]!</span>")
+						qdel(newbag)
 					else
-						gear_leftovers += G
+						var/obj/o = H.get_item_by_slot(G.slot)
+						H.doUnEquip(H.get_item_by_slot(G.slot), newloc = H.drop_location(), invdrop = FALSE, silent = TRUE)
+						if(H.equip_to_slot_or_del(G.spawn_item(H), G.slot))
+							to_chat(H, "<span class='notice'>Equipping you with [G.display_name]!</span>")
+							qdel(o)
+						else
+							gear_leftovers += G
 				else
 					gear_leftovers += G
 
@@ -144,16 +166,17 @@
 
 	if(gear_leftovers.len)
 		for(var/datum/gear/G in gear_leftovers)
+			var/obj/item/storage/B = (locate() in H)
 			var/metadata = M.client.prefs.active_character.equipped_gear[G.id]
-			var/item = G.spawn_item(null, metadata)
-			var/atom/placed_in = human.equip_or_collect(item)
 
-			if(istype(placed_in))
-				if(isturf(placed_in))
-					to_chat(M, "<span class='notice'>Placing [G.display_name] on [placed_in]!</span>")
-				else
-					to_chat(M, "<span class='noticed'>Placing [G.display_name] in [placed_in.name]]")
+			//Try putting it in their bag first. All roles spawn with a bag, so this should always succeed unless that has changed. 
+			if(B)
+				G.spawn_item(B, metadata)
+				to_chat(M, "<span class='notice'>Placing [G.display_name] in [B.name]!</span>")
 				continue
+
+			//This is where it is placed at their feet - the next two steps try to move it before we give up and send an error message. 
+			var/item = G.spawn_item(H.loc, metadata) 
 
 			if(H.equip_to_appropriate_slot(item))
 				to_chat(M, "<span class='notice'>Placing [G.display_name] in your inventory!</span>")
@@ -162,14 +185,7 @@
 				to_chat(M, "<span class='notice'>Placing [G.display_name] in your hands!</span>")
 				continue
 
-			var/obj/item/storage/B = (locate() in H)
-			if(B)
-				G.spawn_item(B, metadata)
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in [B.name]!</span>")
-				continue
-
-			to_chat(M, "<span class='danger'>Failed to locate a storage object on your mob, either you spawned with no hands free and no backpack or this is a bug.</span>")
-			qdel(item)
+			to_chat(M, "<span class='danger'>Failed to locate a storage object on your mob, either you spawned with no hands free and no backpack or this is a bug. [G.display_name] has been placed at your feet.</span>")
 
 /datum/job/proc/announce(mob/living/carbon/human/H)
 	if(head_announce)
@@ -290,20 +306,10 @@
 
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	switch(H.backbag)
-		if(GBACKPACK)
-			back = /obj/item/storage/backpack //Grey backpack
-		if(GSATCHEL)
-			back = /obj/item/storage/backpack/satchel //Grey satchel
-		if(GDUFFELBAG)
-			back = /obj/item/storage/backpack/duffelbag //Grey Duffel bag
-		if(LSATCHEL)
-			back = /obj/item/storage/backpack/satchel/leather //Leather Satchel
-		if(DSATCHEL)
-			back = satchel //Department satchel
 		if(DDUFFELBAG)
-			back = duffelbag //Department duffel bag
+			back = duffelbag //Large size bag
 		else
-			back = backpack //Department backpack
+			back = backpack //Normal size bag
 
 	//converts the uniform string into the path we'll wear, whether it's the skirt or regular variant
 	var/holder

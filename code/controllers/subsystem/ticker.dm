@@ -234,7 +234,6 @@ SUBSYSTEM_DEF(ticker)
 		failsafe_pre_setup()
 		return
 	//Let's try this again.
-	fail_counter++
 	current_state = GAME_STATE_STARTUP
 	start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 5)
 	timeLeft = null
@@ -242,7 +241,9 @@ SUBSYSTEM_DEF(ticker)
 	pre_setup_completed = FALSE
 	//Return to default mode
 	load_mode()
-	message_admins("Failed to setup. Failures: ([fail_counter] / 3).")
+	if(SSticker.start_immediately)
+		fail_counter++
+		message_admins("Failed to setup. Failures: ([fail_counter] / 3).")
 	log_game("Setup failed.")
 
 //Fallback presetup that sets up extended.
@@ -342,7 +343,7 @@ SUBSYSTEM_DEF(ticker)
 	round_start_timeofday = world.timeofday
 	SSdbcore.SetRoundStart()
 
-	to_chat(world, "<span class='notice'><B>Welcome to [station_name()], enjoy your stay!</B></span>")
+	to_chat(world, "<h2><B>Welcome to [station_name()], Happy killing!</B></h2>")
 	SEND_SOUND(world, sound(SSstation.announcer.get_rand_welcome_sound()))
 
 	current_state = GAME_STATE_PLAYING

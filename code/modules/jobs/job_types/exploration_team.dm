@@ -11,7 +11,7 @@
 	exp_type = EXP_TYPE_CREW
 	selection_color = "#ffeeff"
 
-	outfit = /datum/outfit/job/exploration_crew
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_RESEARCH, ACCESS_EXPLORATION, ACCESS_TOX,ACCESS_TOX_STORAGE, ACCESS_MECH_SCIENCE, ACCESS_XENOBIOLOGY)
 	minimal_access = list(ACCESS_RESEARCH, ACCESS_EXPLORATION, ACCESS_TOX, ACCESS_MECH_SCIENCE)

@@ -15,7 +15,7 @@
 	exp_type = EXP_TYPE_SECURITY
 	exp_type_department = EXP_TYPE_SECURITY
 
-	outfit = /datum/outfit/job/head_of_security
+	outfit = /datum/outfit/job/default_royale
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_SEC_RECORDS, ACCESS_BRIG, ACCESS_BRIGPHYS, ACCESS_ARMORY, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MECH_SECURITY,

@@ -15,7 +15,7 @@
 	exp_type = EXP_TYPE_ENGINEERING
 	exp_type_department = EXP_TYPE_ENGINEERING
 
-	outfit = /datum/outfit/job/chief_engineer
+	outfit = /datum/outfit/job/default_royale
 
 	access = list(ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_MAINT_TUNNELS,
 			            ACCESS_EXTERNAL_AIRLOCKS, ACCESS_ATMOSPHERICS, ACCESS_EVA, ACCESS_AUX_BASE,

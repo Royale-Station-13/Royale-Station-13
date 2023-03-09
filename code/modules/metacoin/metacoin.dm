@@ -3,16 +3,9 @@
     var/mob/M = mob
     if(M.mind && !isnewplayer(M))
         if(M.stat != DEAD && !isbrain(M))
-            if(EMERGENCY_ESCAPED_OR_ENDGAMED)
-                if(!M.onCentCom() && !M.onSyndieBase())
-                    var/reward_type = ((isAI(M)|| iscyborg(M) ? METACOIN_ESCAPE_REWARD : METACOIN_SURVIVE_REWARD))
-                    inc_metabalance(reward_type, reason="Survived the shift.")
-                else
-                    inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Survived the shift and escaped!")
-            else
-                inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Survived the shift.")
+            inc_metabalance(METACOIN_SURVIVE_REWARD, reason="Won the battle!")
         else
-            inc_metabalance(METACOIN_NOTSURVIVE_REWARD, reason="You tried.")
+            inc_metabalance(METACOIN_NOTSURVIVE_REWARD, reason="Fell in battle")
 
 /client/proc/process_greentext()
 	src.give_award(/datum/award/achievement/misc/greentext, src.mob)
@@ -54,6 +47,6 @@
 	qdel(query_inc_metacoins)
 	if(ann)
 		if(reason)
-			to_chat(src, "<span class='rose bold'>[abs(mc_count)] [CONFIG_GET(string/metacurrency_name)]\s have been [mc_count >= 0 ? "deposited to" : "withdrawn from"] your account! Reason: [reason]</span>")
+			to_chat(src, "<span class='rose bold'>[abs(mc_count)] [CONFIG_GET(string/metacurrency_name)]\s have been [mc_count >= 1 ? "deposited to" : "withdrawn from"] your account! Reason: [reason]</span>")
 		else
-			to_chat(src, "<span class='rose bold'>[abs(mc_count)] [CONFIG_GET(string/metacurrency_name)]\s have been [mc_count >= 0 ? "deposited to" : "withdrawn from"] your account!</span>")
+			to_chat(src, "<span class='rose bold'>[abs(mc_count)] [CONFIG_GET(string/metacurrency_name)]\s have been [mc_count >= 1 ? "deposited to" : "withdrawn from"] your account!</span>")
