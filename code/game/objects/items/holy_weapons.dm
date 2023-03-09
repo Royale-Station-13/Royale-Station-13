@@ -268,6 +268,7 @@
 /obj/item/nullrod/proc/reskin_holy_weapon(mob/M)
 	if(isnull(unique_reskin))
 		unique_reskin = list(
+
 			"Null Rod" = /obj/item/nullrod,
 			"God Hand" = /obj/item/nullrod/godhand,
 			"Red Holy Staff" = /obj/item/nullrod/staff,
@@ -724,7 +725,7 @@
 /obj/item/nullrod/armblade/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
-//	ADD_TRAIT(src, TRAIT_DOOR_PRYER, INNATE_TRAIT)	//uncomment if you want chaplains to have AA as a null rod option. The armblade will behave even more like a changeling one then!
+	ADD_TRAIT(src, TRAIT_DOOR_PRYER, INNATE_TRAIT)	//uncomment if you want chaplains to have AA as a null rod option. The armblade will behave even more like a changeling one then!
 	AddComponent(/datum/component/butchering, 80, 70)
 
 /obj/item/nullrod/armblade/tentacle

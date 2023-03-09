@@ -158,7 +158,7 @@
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 	spread_unwielded = 15
 	actions_types = list()
 	mag_display = TRUE

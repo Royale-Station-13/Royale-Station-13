@@ -30,6 +30,11 @@
 
 // MELEE WEAPONS
 
+/datum/gear/equipment/knife
+    display_name = "poison knife"
+    description = "Comes pre-loaded with 40u of paralytic spider venom"
+    path = /obj/item/kitchen/knife/poison/royale
+
 /datum/gear/equipment/holosword/blue
     display_name = "blue holo sword"
     path = /obj/item/holo/esword/blue
@@ -58,6 +63,7 @@
     display_name = "metal spear"
     path = /obj/item/spear
 
+//just reskins of normal spear for flavor
 /datum/gear/equipment/spear/bone
     display_name = "bone spear"
     path = /obj/item/spear/bonespear
@@ -65,6 +71,12 @@
 /datum/gear/equipment/spear/bamboo
     display_name = "bamboo spear"
     path = /obj/item/spear/bamboospear
+
+/datum/gear/equipment/spear/brass
+    display_name = "brass spear"
+    path = /obj/item/nullrod/spear/royale
+
+// SHIELDS
 
 /datum/gear/equipment/eshield
     display_name = "energy shield"
@@ -138,14 +150,42 @@
     path = /obj/item/reagent_containers/hypospray/medipen/survival
     description = "A medipen for surviving in the harshest of environments, heals and protects from environmental hazards."
 
-//ARMOR
+//ARMOR (mostly cloaks, really)
 
 /datum/gear/equipment/armor
     slot = ITEM_SLOT_OCLOTHING
 
 /datum/gear/equipment/armor/cloak
-    display_name = "goliath cloak"
+    display_name = "red cloak"
     path = /obj/item/clothing/suit/hooded/cloak/goliath/royale
+
+/datum/gear/equipment/armor/cloak/blue
+    display_name = "blue cloak"
+    path = /obj/item/clothing/suit/hooded/cloak/goliath/royale/blue
+
+/datum/gear/equipment/armor/cloak/brown
+    display_name = "brown cloak"
+    path = /obj/item/clothing/suit/hooded/cloak/goliath/royale/brown
+
+/datum/gear/equipment/armor/cloak/green
+    display_name = "green cloak"
+    path = /obj/item/clothing/suit/hooded/cloak/goliath/royale/green
+
+/datum/gear/equipment/armor/cloak/grey
+    display_name = "grey cloak"
+    path = /obj/item/clothing/suit/hooded/cloak/goliath/royale/grey
+
+/datum/gear/equipment/armor/cloak/magenta
+    display_name = "magenta cloak"
+    path = /obj/item/clothing/suit/hooded/cloak/goliath/royale/magenta
+
+/datum/gear/equipment/armor/cloak/gold
+    display_name = "gold cloak"
+    path = /obj/item/clothing/suit/hooded/cloak/goliath/royale/gold
+
+/datum/gear/equipment/armor/cloak/invisible
+    display_name = "invisibility cloak"
+    path = /obj/item/clothing/suit/hooded/cloak/goliath/royale/invisible
 
 /datum/gear/equipment/armor/stealth
     display_name = "reactive stealth armor"
@@ -177,6 +217,12 @@
     description = "Honk"
     cost = 5000
 
+/datum/gear/equipment/balloon
+    display_name = "Badass Balloon"
+    path = /obj/item/toy/syndicateballoon/glued
+    cost = 5000
+    description = "You're so bad-ass that you think you can take everyone on with just one hand!"
+
 //ALL THE NEW SHIT ADDED JUST FOR THE EQUIPMENT HERE
 
 /obj/item/storage/box/loadout
@@ -195,12 +241,12 @@
     desc = "It has two settings: Kill and Disable. It isn't very good at either of them, but recharges over time"
 
 /obj/item/gun/ballistic/revolver/royale
-	name = "Colt .38 Panther"
-	desc = "A classic small caliber firearm with a dark finish"
-	fire_sound = 'sound/weapons/revolver38shot.ogg'
-	icon_state = "detective_panther"
-	fire_rate = 2
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+    name = "Colt .38 Panther"
+    desc = "A classic small caliber firearm with a dark finish"
+    fire_sound = 'sound/weapons/revolver38shot.ogg'
+    icon_state = "detective_panther"
+    fire_rate = 2
+    mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 
 /obj/item/gun/energy/plasmacutter/adv/royale
     dead_cell = FALSE
@@ -213,17 +259,27 @@
     list_reagents = list(/datum/reagent/clf3 = 50)
     desc = "A spray bottle, with an unscrewable top. This one came filled with chlorine triflouride"
 
+/obj/item/kitchen/knife/poison/royale/Initialize(mapload)
+    . = ..()
+    reagents.add_reagent(/datum/reagent/toxin/spidervenom, 40)
+
 /obj/item/holo/esword/blue/Initialize(mapload)
-	. = ..()
-	saber_color = "blue"
+    . = ..()
+    saber_color = "blue"
 
 /obj/item/holo/esword/purple/Initialize(mapload)
-	. = ..()
-	saber_color = "purple"
+    . = ..()
+    saber_color = "purple"
 
 /obj/item/claymore/bone/royale
     block_level = 1
     desc = "Jagged pieces of bone are tied to what looks like a goliaths femur. This one has improved blocking capabilities."
+
+/obj/item/nullrod/spear/royale
+    name = "brass spear"
+    desc = "A replica of the spears used by the knights of Rat'var"
+    armour_penetration = 0
+    slot_flags = ITEM_SLOT_BACK
 
 /obj/item/shield/energy/royale
     max_integrity = 25
@@ -248,24 +304,116 @@
 /obj/item/storage/firstaid/royale/PopulateContents()
     var/static/items_inside = list(
         /obj/item/healthanalyzer = 1,
-		/obj/item/stack/medical/gauze = 1,
-		/obj/item/stack/medical/bruise_pack = 1,
-		/obj/item/stack/medical/ointment = 1,
+        /obj/item/stack/medical/gauze = 1,
+        /obj/item/stack/medical/bruise_pack = 1,
+        /obj/item/stack/medical/ointment = 1,
         /obj/item/storage/pill_bottle/penacid = 1,
         /obj/item/storage/pill_bottle/happy = 1,
-		/obj/item/reagent_containers/hypospray/medipen/atropine = 1)
+        /obj/item/reagent_containers/hypospray/medipen/atropine = 1)
     generate_items_inside(items_inside,src)
 
 /obj/item/syndie_glue/royale
     uses = 3
 
 /obj/item/clothing/suit/hooded/cloak/goliath/royale
+    name = "red cloak"
     desc = "A tattered cloak made of goliath leather. Offers well-rounded protection without hindering movement but leaves the legs exposed."
     armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60, "stamina" = 30)
     hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/royale
 
 /obj/item/clothing/head/hooded/cloakhood/goliath/royale
+    name = "red cloak hood"
     armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60, "stamina" = 30)
+
+/obj/item/clothing/suit/hooded/cloak/goliath/royale/blue
+    name = "blue cloak"
+    desc = "A tattered cloak made of goliath leather. This one has been dyed deep blue."
+    icon_state = "goliath_cloak_blue"
+    hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/royale/blue
+
+/obj/item/clothing/head/hooded/cloakhood/goliath/royale/blue
+    name = "blue cloak hood"
+    icon_state = "golhood_blue"
+
+/obj/item/clothing/suit/hooded/cloak/goliath/royale/brown
+    name = "brown cloak"
+    desc = "A tattered cloak made of goliath leather. This one has been dyed cargo brown."
+    icon_state = "goliath_cloak_brown"
+    hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/royale/brown
+
+/obj/item/clothing/head/hooded/cloakhood/goliath/royale/brown
+    name = "brown cloak hood"
+    icon_state = "golhood_brown"
+
+/obj/item/clothing/suit/hooded/cloak/goliath/royale/green
+    name = "green cloak"
+    desc = "A tattered cloak made of goliath leather. This one has been dyed a verdant green."
+    icon_state = "goliath_cloak_green"
+    hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/royale/green
+
+/obj/item/clothing/head/hooded/cloakhood/goliath/royale/green
+    name = "green cloak hood"
+    icon_state = "golhood_green"
+
+/obj/item/clothing/suit/hooded/cloak/goliath/royale/grey
+    desc = "A tattered cloak made of goliath leather. This one has been dyed a dark ashen grey."
+    name = "grey cloak"
+    icon_state = "goliath_cloak_grey"
+    hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/royale/grey
+
+/obj/item/clothing/head/hooded/cloakhood/goliath/royale/grey
+    name = "grey cloak hood"
+    icon_state = "golhood_grey"
+
+/obj/item/clothing/suit/hooded/cloak/goliath/royale/magenta
+    name = "magenta cloak"
+    desc = "A tattered cloak made of goliath leather. This one has been dyed magenta and definitely not purple."
+    icon_state = "goliath_cloak_purple" //it's not purple. 
+    hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/royale/magenta
+
+/obj/item/clothing/head/hooded/cloakhood/goliath/royale/magenta
+    name = "magenta cloak hood"
+    icon_state = "golhood_purple"
+
+/obj/item/clothing/suit/hooded/cloak/goliath/royale/gold
+    name = "gold cloak"
+    desc = "A tattered cloak made of goliath leather. This one has been dyed in a bright golden yellow."
+    icon_state = "goliath_cloak_yellow"
+    hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/royale/gold
+
+/obj/item/clothing/head/hooded/cloakhood/goliath/royale/gold
+    name = "gold cloak hood"
+    icon_state = "golhood_yellow"
+
+/obj/item/clothing/suit/hooded/cloak/goliath/royale/invisible
+    alpha = 120
+    name = "invisibility cloak"
+    desc = "A tattered cloak made of goliath leather. This one makes light and lasers pass right through you but offers no physical protection."
+    icon_state = "goliath_cloak_grey"
+    //The alpha makes lasers 80% likely to pass through you, so this one has no actual armor.
+    armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60, "stamina" = 0)
+    hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/royale/invisible
+
+/obj/item/clothing/head/hooded/cloakhood/goliath/royale/invisible
+    name = "invisibility cloak hood"
+    icon_state = "golhood_grey"
+    armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60, "stamina" = 0)
+
+/obj/item/clothing/head/hooded/cloakhood/goliath/royale/invisible/equipped(mob/user, slot)
+    . = ..()
+    if(iscarbon(user))
+        var/mob/living/carbon/C = user
+        var/obj/cloak = C.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+        C.alpha = 50
+        cloak.alpha = 255
+
+/obj/item/clothing/head/hooded/cloakhood/goliath/royale/invisible/dropped(mob/user)
+    if(iscarbon(user))
+        var/mob/living/carbon/C = user
+        var/obj/cloak = C.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+        C.alpha = initial(C.alpha)
+        cloak.alpha = initial(cloak.alpha)
+    . = ..()
 
 /obj/item/clothing/suit/armor/reactive/stealth/royale
     name = "reactive stealth armor"
@@ -385,3 +533,7 @@
             new /obj/item/dice/d20/fate/one_use/stealth(src)
     else
         new /obj/item/dice/d20(src)
+
+/obj/item/toy/syndicateballoon/glued/Initialize(mapload)
+    . = ..()
+    ADD_TRAIT(src, TRAIT_NODROP, ROYALE)  //So badass you'll fight with one hand

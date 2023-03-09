@@ -31,7 +31,7 @@
 	. = ..()
 
 /obj/item/gun/energy/pulse/loyalpin
-	pin = /obj/item/firing_pin/implant/mindshield
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/pulse/carbine
 	name = "pulse carbine"
@@ -46,7 +46,7 @@
 	flight_y_offset = 12
 
 /obj/item/gun/energy/pulse/carbine/loyalpin
-	pin = /obj/item/firing_pin/implant/mindshield
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/pulse/carbine/cyborg
 	name = "pulse carbine"
@@ -74,7 +74,7 @@
 	weapon_weight = WEAPON_LIGHT
 
 /obj/item/gun/energy/pulse/pistol/loyalpin
-	pin = /obj/item/firing_pin/implant/mindshield
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/pulse/destroyer
 	name = "pulse destroyer"

@@ -26,8 +26,6 @@
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 50, "energy" = 35, "bomb" = 20, "bio" = 0, "rad" =20, "fire" = 100, "acid" = 100, "stamina" = 0)
 	max_temperature = 35000
 	leg_overload_coeff = 70
-	operation_req_access = list(ACCESS_SYNDICATE)
-	internals_req_access = list(ACCESS_SYNDICATE)
 	wreckage = /obj/structure/mecha_wreckage/gygax/dark
 	max_equip = 5
 	destruction_sleep_duration = 20
