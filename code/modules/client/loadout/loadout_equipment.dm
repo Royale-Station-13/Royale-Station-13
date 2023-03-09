@@ -217,6 +217,12 @@
     description = "Honk"
     cost = 5000
 
+/datum/gear/equipment/balloon
+    display_name = "Badass Balloon"
+    path = /obj/item/toy/syndicateballoon/glued
+    cost = 5000
+    description = "You're so bad-ass that you think you can take everyone on with just one hand!"
+
 //ALL THE NEW SHIT ADDED JUST FOR THE EQUIPMENT HERE
 
 /obj/item/storage/box/loadout
@@ -527,3 +533,7 @@
             new /obj/item/dice/d20/fate/one_use/stealth(src)
     else
         new /obj/item/dice/d20(src)
+
+/obj/item/toy/syndicateballoon/glued/Initialize(mapload)
+    . = ..()
+    ADD_TRAIT(src, TRAIT_NODROP, ROYALE)  //So badass you'll fight with one hand
