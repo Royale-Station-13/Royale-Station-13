@@ -35,6 +35,11 @@
     description = "Comes pre-loaded with 40u of paralytic spider venom"
     path = /obj/item/kitchen/knife/poison/royale
 
+/datum/gear/equipment/toolbox
+    display_name = "strange toolbox"
+    description = "This toolbox looks a bit strange. There is a note inside"
+    path = /obj/item/storage/toolbox/mechanical/old/clean/royale
+
 /datum/gear/equipment/holosword/blue
     display_name = "blue holo sword"
     path = /obj/item/holo/esword/blue
@@ -196,6 +201,11 @@
     display_name = "syndicate playing cards"
     path = /obj/item/toy/cards/deck/syndicate
 
+/datum/gear/equipment/telecrystals
+    display_name = "syndicate telecrystals"
+    description = "Five tiny red crystals without much use. At least unless you can get your hands on an uplink somehow"
+    path = /obj/item/stack/sheet/telecrystal/five
+
 /datum/gear/equipment/glue
     display_name = "bottle of super glue"
     path = /obj/item/syndie_glue/royale
@@ -236,6 +246,144 @@
     new /obj/item/grenade/plastic/x4(src)
     new /obj/item/grenade/plastic/x4(src)
 
+/obj/item/storage/toolbox/ammo/royale
+    name = "ammo box"
+    desc = "Contains a random assortment of ammunition"
+    var/quantity = 14
+
+/obj/item/storage/toolbox/ammo/royale/PopulateContents()
+    var/static/revolversmall = list(
+                /obj/item/ammo_box/c38,
+                /obj/item/ammo_box/c38/match,
+                /obj/item/ammo_box/c38/match/bouncy,
+//              /obj/item/ammo_box/c38/dumdum,   //decided this one was a bit much due to the availability of this weapon, but left it here in case I change my mind later
+                /obj/item/ammo_box/c38/hotshot,
+                /obj/item/ammo_box/c38/iceblox
+    )
+    var/static/stechkin = list(
+                /obj/item/ammo_box/magazine/m10mm,
+                /obj/item/ammo_box/magazine/m10mm/hp,
+                /obj/item/ammo_box/magazine/m10mm/ap,
+                /obj/item/ammo_box/magazine/m10mm/fire
+    )
+    var/static/revolver = list(
+                /obj/item/ammo_box/a357,
+                /obj/item/ammo_box/a357/match
+    )
+    var/static/shotgun = list(
+                /obj/item/storage/box/lethalshot,
+                /obj/item/storage/box/rubbershot,
+                /obj/item/storage/box/incendiary,
+                /obj/item/storage/box/taser,
+                /obj/item/storage/box/ion,
+                /obj/item/storage/box/laser
+    )
+    var/static/rifle = list(
+                /obj/item/ammo_box/a762, //Mosin Nagant
+                /obj/item/ammo_box/magazine/m10mm/rifle // Surplus Rifle
+    )
+    var/static/bulldog = list(
+                /obj/item/ammo_box/magazine/m12g,
+                /obj/item/ammo_box/magazine/m12g/dragon,
+                /obj/item/ammo_box/magazine/m12g/slug,
+                /obj/item/ammo_box/magazine/m12g/stun
+    )
+    var/static/smg = list(
+                /obj/item/ammo_box/magazine/smgm9mm,
+                /obj/item/ammo_box/magazine/smgm9mm/ap,
+                /obj/item/ammo_box/magazine/smgm9mm/fire
+    )
+    var/static/secrifle = list(
+                /obj/item/ammo_box/magazine/wt550m9,
+                /obj/item/ammo_box/magazine/wt550m9/wtap,
+                /obj/item/ammo_box/magazine/wt550m9/wtic,
+                /obj/item/ammo_box/magazine/wt550m9/rubber
+    )
+    var/static/sniper = list(
+                /obj/item/ammo_box/magazine/sniper_rounds,
+                /obj/item/ammo_box/magazine/sniper_rounds/soporific,
+                /obj/item/ammo_box/magazine/sniper_rounds/penetrator,
+                /obj/item/ammo_box/magazine/sniper_rounds/emp,
+                /obj/item/ammo_box/magazine/sniper_rounds/explosive,
+                /obj/item/ammo_box/magazine/sniper_rounds/inferno
+    )
+    var/static/lmg = list(
+                /obj/item/ammo_box/magazine/mm712x82, 
+                /obj/item/ammo_box/magazine/mm712x82/ap,
+                /obj/item/ammo_box/magazine/mm712x82/hollow,
+                /obj/item/ammo_box/magazine/mm712x82/incen,
+                /obj/item/ammo_box/magazine/mm712x82/match
+    )
+    var/rng
+    var/ammunition
+    for(var/i in 1 to quantity)
+        rng = roll(5)
+        switch(rng)
+            if(1)
+                ammunition = pick(revolversmall)
+            if(2)
+                ammunition = pick(stechkin)
+            if(3)
+                ammunition = pick(shotgun)
+            if(4)
+                ammunition = pick(rifle)
+            if(5)
+                rng = roll(6)   //Layer the RNG - common weapon types will comprise most of the ammo
+                switch(rng)
+                    if(1)
+                        ammunition = pick(bulldog)
+                    if(2)
+                        ammunition = pick(smg)
+                    if(3)
+                        ammunition = pick(secrifle)
+                    if(4)
+                        ammunition = pick(sniper)
+                    if(5)
+                        ammunition = pick(lmg)
+                    if(6)
+                        ammunition = pick(revolver)
+        new ammunition(src)
+
+/obj/item/storage/box/incendiary
+    name = "box of incendiary shotgun shells"
+    desc = "A box full of incendiary shotgun shells"
+    icon_state = "breachershot_box"
+    illustration = null
+
+/obj/item/storage/box/incendiary/PopulateContents()
+    for(var/i in 1 to 7)
+        new /obj/item/projectile/bullet/incendiary/shotgun(src)
+
+/obj/item/storage/box/taser
+    name = "box of taser slugs"
+    desc = "A box full of taser slugs"
+    icon_state = "breachershot_box"
+    illustration = null
+
+/obj/item/storage/box/incendiary/PopulateContents()
+    for(var/i in 1 to 7)
+        new /obj/item/ammo_casing/shotgun/stunslug(src)
+
+/obj/item/storage/box/ion
+    name = "box of ionizing shotgun shells"
+    desc = "A box full of ionizing shotgun shells"
+    icon_state = "breachershot_box"
+    illustration = null
+
+/obj/item/storage/box/incendiary/PopulateContents()
+    for(var/i in 1 to 7)
+        new /obj/item/ammo_casing/shotgun/ion(src)
+
+/obj/item/storage/box/laser
+    name = "box of laser shotgun shells"
+    desc = "A box full of laser shotgun shells"
+    icon_state = "breachershot_box"
+    illustration = null
+
+/obj/item/storage/box/incendiary/PopulateContents()
+    for(var/i in 1 to 7)
+        new /obj/item/ammo_casing/shotgun/laserslug(src)
+
 /obj/item/gun/energy/e_gun/mini/heads/royale
     gun_charge = 300
     desc = "It has two settings: Kill and Disable. It isn't very good at either of them, but recharges over time"
@@ -255,9 +403,33 @@
     desc = "A mining tool capable of expelling concentrated plasma bursts. Not very strong, but good at removing limbs"
 
 /obj/item/reagent_containers/spray/flame
+    color = "#ff6600ff"
     volume = 50
-    list_reagents = list(/datum/reagent/clf3 = 50)
-    desc = "A spray bottle, with an unscrewable top. This one came filled with chlorine triflouride"
+    list_reagents = list(/datum/reagent/clf3 = 30)
+    desc = "A spray bottle, with an unscrewable top. This one came filled with liquid fire"
+
+/obj/item/reagent_containers/spray/lube
+    color = "#ee52c7"
+    volume = 100
+    list_reagents = list(/datum/reagent/lube = 50)
+    desc = "A spray bottle, with an unscrewable top. This one came filled with space lube"
+
+/obj/item/reagent_containers/spray/combo
+    color = "#ff0000"
+    volume = 100
+    list_reagents = list(/datum/reagent/lube = 60, /datum/reagent/clf3 = 40)
+    desc = "A spray bottle, with an unscrewable top. This one came filled with flaming space lube"
+
+/obj/item/storage/toolbox/mechanical/old/clean/royale
+    force = 15
+    throwforce = 18
+
+/obj/item/storage/toolbox/mechanical/old/clean/royale/PopulateContents()
+    new /obj/item/paper/royale_toolbox(src)
+
+/obj/item/paper/royale_toolbox
+    name = "Note"
+    info = "If you find any tiny red crystals, keep them in here. The box feeds on them to make you stronger."
 
 /obj/item/kitchen/knife/poison/royale/Initialize(mapload)
     . = ..()
@@ -283,7 +455,7 @@
 
 /obj/item/shield/energy/royale
     max_integrity = 25
-    block_power = 75
+    block_power = 75  //blocking easily destroys the shield instead of player stamina
     desc = "An advanced hard-light shield able to reflect lasers, but not very good at blocking physical attacks. Recharges in ten seconds."
 
 /obj/item/book/granter/martial/karate/royale

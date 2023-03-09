@@ -8,9 +8,8 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/gun/ballistic/shotgun/doublebarrel/improvised,
 		/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn,
 		/obj/item/reagent_containers/spray/flame,
-//		/obj/item/reagent_containers/spray/lube,
-//		/obj/item/reagent_containers/spray/acid,
-//		/obj/item/reagent_containers/spray/combo,
+		/obj/item/reagent_containers/spray/lube,
+		/obj/item/reagent_containers/spray/combo,
 		/obj/item/gun/energy/e_gun/mini/heads,
 		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/energy/disabler,
@@ -29,6 +28,7 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/spear,
 		/obj/item/spear/bonespear,
 		/obj/item/spear/bamboospear,
+		/obj/item/storage/toolbox/mechanical/old/clean, //TC toolbox
 //Nullrods deemed suitable
 		/obj/item/nullrod/godhand,
 		/obj/item/nullrod/staff/blue,
@@ -42,7 +42,11 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/nullrod/spear,
 //Shields
 		/obj/item/shield/energy,
-
+		/obj/item/shield/riot/roman,
+		/obj/item/shield/riot/buckler,
+		/obj/item/shield/riot/goliath,
+		/obj/item/shield/riot/flash,
+		/obj/item/shield/riot/tele,
 //Various armors, including duplicates for the sake of weight
 		/obj/item/clothing/suit/armor/riot,
 		/obj/item/clothing/suit/armor/vest,
@@ -97,46 +101,16 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/clothing/shoes/clown_shoes/taeclowndo,
 		/obj/item/clothing/shoes/chameleon/noslip,
 		/obj/item/clothing/glasses/thermal/syndi,
-
-
-//Ammunition
-/*
-
-		/obj/item/ammo_box/a762 //mosin
-
-		/obj/item/ammo_box/magazine/m10mm //stechkin
-		/obj/item/ammo_box/magazine/m10mm/hp
-		/obj/item/ammo_box/magazine/m10mm/ap
-		/obj/item/ammo_box/magazine/m10mm/fire
-
-		/obj/item/storage/backpack/duffelbag/syndie/ammo/shotgun //shotgun
-		/obj/item/ammo_box/magazine/m12g
-		/obj/item/ammo_box/magazine/m12g/dragon
-		/obj/item/ammo_box/magazine/m12g/slug
-
-		/obj/item/ammo_box/a357			//Revolver
-		/obj/item/ammo_box/a357/match	
-
-		/obj/item/storage/backpack/duffelbag/syndie/ammo/smg //SMG
-		/obj/item/ammo_box/magazine/smgm45
-
-		/obj/item/ammo_box/magazine/sniper_rounds //Sniper
-		/obj/item/ammo_box/sniper
-		/obj/item/ammo_box/sniper/penetrator
-		/obj/item/ammo_box/sniper/soporific
-		/obj/item/ammo_casing/p50/emp
-		/obj/item/ammo_casing/p50/explosive
-		/obj/item/ammo_casing/p50/inferno
-
-		/obj/item/ammo_box/magazine/m556 //carbine
-
-		/obj/item/ammo_box/magazine/mm712x82 //L6 Saw HMG
-		/obj/item/ammo_box/magazine/mm712x82/ap
-		/obj/item/ammo_box/magazine/mm712x82/hollow
-		/obj/item/ammo_box/magazine/mm712x82/incen
-		/obj/item/ammo_box/magazine/mm712x82/match
-
-*/
+		/obj/item/clothing/shoes/galoshes,
+//Ammunition (Roughly 5% of crates)
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
 //Reagent warfare
 		/obj/item/gun/chem, //No syringes needed
 
@@ -168,14 +142,11 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/stack/sheet/telecrystal/five,
 		/obj/item/stack/sheet/telecrystal/five,
 		/obj/item/stack/sheet/telecrystal/five,
-		
-
-
 //Medical supplies
 		/obj/item/reagent_containers/hypospray/medipen/stimulants,
 		/obj/item/storage/firstaid/tactical,
 		/obj/item/autosurgeon/syndicate/xray_eyes,
-
+		
 //Grenades
 		/obj/item/grenade/empgrenade,
 		/obj/item/grenade/chem_grenade/ez_clean, //acid foam
@@ -231,12 +202,16 @@ GLOBAL_LIST_INIT(battle_royale_good_loot, list(
 		/obj/item/gun/ballistic/shotgun/doublebarrel, //Lethal
 		/obj/item/gun/ballistic/shotgun/riot, //Non-lethal
 		/obj/item/gun/ballistic/shotgun/automatic/combat, //Very lethal
+		/obj/item/gun/ballistic/automatic/surplus,
+		/obj/item/gun/ballistic/automatic/surplus,
 		/obj/item/gun/ballistic/rifle/boltaction,
 		/obj/item/gun/ballistic/rifle/boltaction,
+		/obj/item/gun/ballistic/automatic/wt550,
+		/obj/item/gun/ballistic/automatic/wt550,
 		/obj/item/gun/ballistic/rocketlauncher,
 		/obj/item/gun/ballistic/revolver,
-		/obj/item/gun/ballistic/bow/clockwork,
 		/obj/item/gun/ballistic/revolver/mateba,
+		/obj/item/gun/ballistic/bow/clockwork,
 		/obj/item/gun/energy/laser,
 		/obj/item/gun/energy/e_gun,
 		/obj/item/gun/energy/e_gun,
@@ -244,7 +219,6 @@ GLOBAL_LIST_INIT(battle_royale_good_loot, list(
 		/obj/item/gun/energy/e_gun/old,
 		/obj/item/gun/energy/e_gun/hos,
 		/obj/item/gun/energy/e_gun/stun, //Basically just HoS gun again
-
 		/obj/item/pen/sleepy,
 		/obj/item/storage/box/syndie_kit/bundle_A,
 		/obj/item/storage/box/syndie_kit/bundle_B,
@@ -253,7 +227,6 @@ GLOBAL_LIST_INIT(battle_royale_good_loot, list(
 		/obj/vehicle/sealed/car/clowncar,
 		/obj/item/book/granter/spell/mimery_blockade,
 		/obj/item/book/granter/spell/mimery_guns,
-
 		/obj/item/gun/energy/kinetic_accelerator/crossbow/radbow,
 		/obj/item/pneumatic_cannon/pie/selfcharge,
 		/obj/item/shield/energy/bananium,
@@ -285,10 +258,11 @@ GLOBAL_LIST_INIT(battle_royale_insane_loot, list(
 //Still good, but not as good
 		/obj/item/storage/belt/grenade/full,
 		/obj/item/gun/ballistic/shotgun/bulldog,
-		/obj/item/gun/ballistic/automatic/c20r,
+		/obj/item/gun/ballistic/automatic/proto, // NT Saber SMG
+//		/obj/item/gun/ballistic/automatic/c20r,   //Included above as part of a bundle. Kept out of this pool to keep from diluting ammo pools
 		/obj/item/gun/ballistic/sniper_rifle/syndicate,
 		/obj/item/gun/ballistic/automatic/l6_saw,
-		/obj/item/gun/ballistic/automatic/m90,
+		/obj/item/gun/ballistic/automatic/m90, //As-is, with no additional ammo available after unloading to keep from diluting ammo pools
 		/obj/item/dualsaber,
 		/obj/item/guardiancreator/tech,
 		/obj/item/book/granter/martial/carp,
