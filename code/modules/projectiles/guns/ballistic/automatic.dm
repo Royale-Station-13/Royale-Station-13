@@ -15,7 +15,6 @@
 	desc = "A prototype three-round burst 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors."
 	icon_state = "saber"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	pin = null
 	fire_rate = 5
 	fire_delay = 2
 	bolt_type = BOLT_TYPE_LOCKING
