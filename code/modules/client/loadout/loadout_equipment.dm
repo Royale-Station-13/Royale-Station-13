@@ -79,7 +79,7 @@
 
 /datum/gear/equipment/spear/brass
     display_name = "brass spear"
-    path = /obj/item/nullrod/spear/royale
+    path = /obj/item/nullrod/spear/royale //technically slightly stronger than normal spear in a few edge cases
 
 // SHIELDS
 
@@ -214,6 +214,12 @@
 /datum/gear/equipment/fate
     display_name = "fateful bag of dice"
     path = /obj/item/storage/pill_bottle/dicefate
+    cost = 3000
+
+/datum/gear/equipment/floorpills
+    display_name = "bottle of floorpills"
+    description = "You can never really know what you're going to get"
+    path = /obj/item/storage/pill_bottle/floorpill/full
     cost = 3000
 
 /datum/gear/equipment/skub
@@ -483,6 +489,199 @@
         /obj/item/storage/pill_bottle/happy = 1,
         /obj/item/reagent_containers/hypospray/medipen/atropine = 1)
     generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/royale/assorted_syringes
+    name = "box of syringes"
+    desc = "A random assortment of syringes, some of which lost their labels"
+    icon_state = "hugbox"
+    illustration = "syringe"
+
+/obj/item/storage/box/royale/assorted_syringes/PopulateContents()
+    for(var/i in 1 to 14) //twice as many
+        new /obj/item/reagent_containers/syringe/royale/random(src)
+    
+/obj/item/storage/box/royale/unlabeled_syringes
+    name = "box of syringes"
+    desc = "None of these have labels, what am I supposed to do with this?"
+    icon_state = "box"
+    illustration = "syringe"
+
+/obj/item/storage/box/royale/unlabeled_syringes/PopulateContents()
+    for(var/i in 1 to 7)
+        new /obj/item/reagent_containers/syringe/royale/unlabeled(src)
+
+/obj/item/storage/box/royale/med_syringes
+    name = "box of syringes"
+    desc = "All of these are labeled as medicine, but not what kind"
+    icon_state = "alienbox"
+    illustration = "syringe"
+
+/obj/item/storage/box/royale/med_syringes/PopulateContents()
+    for(var/i in 1 to 7)
+        new /obj/item/reagent_containers/syringe/royale/med(src)
+
+/obj/item/storage/box/royale/tox_syringes
+    name = "box of syringes"
+    desc = "Pretty sure all of these could kill me"
+    icon_state = "syndiebox"
+    illustration = "syringe"
+
+/obj/item/storage/box/royale/tox_syringes/PopulateContents()
+    for(var/i in 1 to 7)
+        new /obj/item/reagent_containers/syringe/royale/tox(src)
+
+/obj/item/storage/box/royale/dna_syringes
+    name = "box of injectors"
+    desc = "Seems risky, what if I melt?"
+    icon_state = "secbox"
+    illustration = "dna"
+
+/obj/item/storage/box/royale/dna_syringes/PopulateContents()
+    for(var/i in 1 to 4) //These are pretty strong stuff
+        new /obj/item/dnainjector/random(src)
+
+/obj/item/storage/secure/briefcase/medgun_kit
+    name = "Briefcase of warcrimes"
+    desc = "There's no Geneva in space!"
+
+/obj/item/storage/secure/briefcase/medgun_kit/PopulateContents()
+    var/selection = roll(6) //33% normal syringe gun, 33% advanced syringe gun, 33% DNA gun
+    switch(selection)
+        if(1 to 2) //Normal syringe gun, 14 toxin syringes
+            new /obj/item/gun/syringe(src)
+            new /obj/item/storage/box/royale/tox_syringes(src)
+            new /obj/item/storage/box/royale/tox_syringes(src)
+        if(3) //Rapid syringe gun, 28 random syringes
+            new /obj/item/gun/syringe/rapidsyringe(src)
+            new /obj/item/storage/box/royale/assorted_syringes(src)
+            new /obj/item/storage/box/royale/assorted_syringes(src)
+        if(4) //Dartgun, takes bottles instead of syringes, gets high quality toxins to make up for lack of fire rate
+            new /obj/item/gun/chem(src)
+            new /obj/item/storage/box/syndie_kit/chemical(src)
+        if(5 to 6) //DNA gun, eight injectors
+            new /obj/item/gun/syringe/dna(src)
+            new /obj/item/storage/box/royale/dna_syringes(src)
+            new /obj/item/storage/box/royale/dna_syringes(src)
+
+
+/obj/item/reagent_containers/syringe/royale/random/Initialize(mapload)
+    ..()
+    var/obj/item/reagent_containers/syringe/syringe = pick(\
+        /obj/item/reagent_containers/syringe/random,\
+        /obj/item/reagent_containers/syringe/randmed,\
+        /obj/item/reagent_containers/syringe/randtox,\
+        /obj/item/reagent_containers/syringe/piercing/random,\
+        /obj/item/reagent_containers/syringe/piercing/randmed,\
+        /obj/item/reagent_containers/syringe/piercing/randtox,\
+        /obj/item/reagent_containers/syringe/bluespace/random,\
+        /obj/item/reagent_containers/syringe/bluespace/randmed,\
+        /obj/item/reagent_containers/syringe/bluespace/randtox,\
+        /obj/item/dnainjector/random)
+    new syringe(loc)
+    return INITIALIZE_HINT_QDEL
+
+/obj/item/reagent_containers/syringe/royale/unlabeled/Initialize(mapload)
+    ..()
+    var/obj/item/reagent_containers/syringe/syringe = pick(\
+        /obj/item/reagent_containers/syringe/random,\
+        /obj/item/reagent_containers/syringe/piercing/random,\
+        /obj/item/reagent_containers/syringe/bluespace/random)
+    new syringe(loc)
+    return INITIALIZE_HINT_QDEL
+
+/obj/item/reagent_containers/syringe/royale/med/Initialize(mapload)
+    ..()
+    var/obj/item/reagent_containers/syringe/syringe = pick(\
+        /obj/item/reagent_containers/syringe/randmed,\
+        /obj/item/reagent_containers/syringe/piercing/randmed,\
+        /obj/item/reagent_containers/syringe/bluespace/randmed)
+    new syringe(loc)
+    return INITIALIZE_HINT_QDEL
+
+/obj/item/reagent_containers/syringe/royale/tox/Initialize(mapload)
+    ..()
+    var/obj/item/reagent_containers/syringe/syringe = pick(\
+        /obj/item/reagent_containers/syringe/randtox,\
+        /obj/item/reagent_containers/syringe/piercing/randtox,\
+        /obj/item/reagent_containers/syringe/bluespace/randtox)
+    new syringe(loc)
+    return INITIALIZE_HINT_QDEL
+
+/obj/item/reagent_containers/syringe/random
+    name = "unlabeled syringe"
+    desc = "This syringe has no markings at all, what it contains is anyone's guess"
+
+/obj/item/reagent_containers/syringe/random/Initialize(mapload)
+	list_reagents = list(get_random_reagent_id(CHEMICAL_RNG_FUN) = volume)
+	. = ..()
+
+/obj/item/reagent_containers/syringe/randmed
+    name = "medicinal syringe"
+    desc = "This syringe has a little blue cross on it"
+
+/obj/item/reagent_containers/syringe/randmed/Initialize(mapload)
+	list_reagents = list(pick(subtypesof(/datum/reagent/medicine)) = volume)
+	. = ..()
+
+/obj/item/reagent_containers/syringe/randtox
+    name = "toxic syringe"
+    desc = "This syringe has a little skull and crossbones on it"
+
+/obj/item/reagent_containers/syringe/randtox/Initialize(mapload)
+	list_reagents = list(pick(subtypesof(/datum/reagent/toxin)) = volume)
+	. = ..()
+
+/obj/item/reagent_containers/syringe/piercing/random
+    name = "unlabeled piercing syringe"
+
+/obj/item/reagent_containers/syringe/piercing/random/Initialize(mapload)
+	list_reagents = list(get_random_reagent_id(CHEMICAL_RNG_FUN) = volume)
+	. = ..()
+
+/obj/item/reagent_containers/syringe/piercing/randmed
+    name = "medicinal piercing syringe"
+    desc = "This syringe has a little blue cross on it"
+
+/obj/item/reagent_containers/syringe/piercing/randmed/Initialize(mapload)
+	list_reagents = list(pick(subtypesof(/datum/reagent/medicine)) = volume)
+	. = ..()
+
+/obj/item/reagent_containers/syringe/piercing/randtox
+    name = "toxic piercing syringe"
+    desc = "This syringe has a little skull and crossbones on it"
+
+/obj/item/reagent_containers/syringe/piercing/randtox/Initialize(mapload)
+	list_reagents = list(pick(subtypesof(/datum/reagent/toxin)) = volume)
+	. = ..()
+
+/obj/item/reagent_containers/syringe/bluespace/random
+	name = "unlabeled bluespace syringe"
+
+/obj/item/reagent_containers/syringe/bluespace/random/Initialize(mapload)
+	list_reagents = list(get_random_reagent_id(CHEMICAL_RNG_FUN) = 60)
+	. = ..()
+
+/obj/item/reagent_containers/syringe/bluespace/randmed
+    name = "medicinal bluespace syringe"
+    desc = "This syringe has a little blue cross on it. Be wary of overdosing"
+
+/obj/item/reagent_containers/syringe/bluespace/randmed/Initialize(mapload)
+	list_reagents = list(pick(subtypesof(/datum/reagent/medicine)) = volume)
+	. = ..()
+
+/obj/item/reagent_containers/syringe/bluespace/randtox
+    name = "toxic bluespace syringe"
+    desc = "This syringe has a little skull and crossbones on it. Definitely contains a lethal dose. Probably."
+
+/obj/item/reagent_containers/syringe/bluespace/randtox/Initialize(mapload)
+	list_reagents = list(pick(subtypesof(/datum/reagent/toxin)) = volume)
+	. = ..()
+
+/obj/item/dnainjector/random/Initialize(mapload)
+    ..()
+    var/obj/item/dnainjector/dna = pick(subtypesof(/obj/item/dnainjector) - typesof(/obj/item/dnainjector/anti) - /obj/item/dnainjector/random - /obj/item/dnainjector/activator - /obj/item/dnainjector/telemut/darkbundle)
+    new dna(loc)
+    return INITIALIZE_HINT_QDEL
 
 /obj/item/syndie_glue/royale
     uses = 3
