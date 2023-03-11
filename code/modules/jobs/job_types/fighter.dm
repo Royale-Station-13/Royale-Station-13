@@ -67,8 +67,8 @@
     desc = "A box containing the same basic supplies all fighters get"
 
 /obj/item/storage/box/supplies/PopulateContents()
-    new /obj/item/stack/sheet/sandbags/ten(src)
-    new /obj/item/stack/sheet/wood/fifty(src)
+    new /obj/item/stack/sheet/sandbags/five(src)
+    new /obj/item/stack/sheet/wood/twenty(src)
     new /obj/item/crowbar(src)
     new /obj/item/geiger_counter(src)
     new /obj/item/flashlight(src)
