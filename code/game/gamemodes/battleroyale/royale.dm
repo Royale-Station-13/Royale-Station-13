@@ -308,10 +308,10 @@
 
 /obj/item/mop/advanced/sharp
     name = "Sharpened Adv. Mop"
-    desc = "The most advanced tool in a custodian's arsenal, now with a pointy tip!
-	force = 15
-	throwforce = 18
-
+    desc = "The most advanced tool in a custodian's arsenal, now with a pointy tip!"
+    force = 15
+    throwforce = 18
+	
 /datum/crafting_recipe/sharpmop_advanced
 	name = "Sharpened Advanced Mop"
 	result = /obj/item/mop/advanced/sharp
