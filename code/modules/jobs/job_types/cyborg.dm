@@ -27,3 +27,6 @@
 
 /datum/job/cyborg/radio_help_message(mob/M)
 	to_chat(M, "<b>Prefix your message with :b to speak with other cyborgs and AI.</b>")
+
+/datum/job/cyborg/config_check()
+	return CONFIG_GET(flag/allow_ai) //disabled alongside AI 
