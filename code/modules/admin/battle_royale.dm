@@ -8,9 +8,8 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/gun/ballistic/shotgun/doublebarrel/improvised,
 		/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn,
 		/obj/item/reagent_containers/spray/flame,
-//		/obj/item/reagent_containers/spray/lube,
-//		/obj/item/reagent_containers/spray/acid,
-//		/obj/item/reagent_containers/spray/combo,
+		/obj/item/reagent_containers/spray/lube,
+		/obj/item/reagent_containers/spray/combo,
 		/obj/item/gun/energy/e_gun/mini/heads,
 		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/energy/disabler,
@@ -29,6 +28,7 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/spear,
 		/obj/item/spear/bonespear,
 		/obj/item/spear/bamboospear,
+		/obj/item/storage/toolbox/mechanical/old/clean, //TC toolbox
 //Nullrods deemed suitable
 		/obj/item/nullrod/godhand,
 		/obj/item/nullrod/staff/blue,
@@ -42,7 +42,11 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/nullrod/spear,
 //Shields
 		/obj/item/shield/energy,
-
+		/obj/item/shield/riot/roman,
+		/obj/item/shield/riot/buckler,
+		/obj/item/shield/riot/goliath,
+		/obj/item/shield/riot/flash,
+		/obj/item/shield/riot/tele,
 //Various armors, including duplicates for the sake of weight
 		/obj/item/clothing/suit/armor/riot,
 		/obj/item/clothing/suit/armor/vest,
@@ -97,70 +101,27 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/clothing/shoes/clown_shoes/taeclowndo,
 		/obj/item/clothing/shoes/chameleon/noslip,
 		/obj/item/clothing/glasses/thermal/syndi,
-
-
-//Ammunition
-/*
-
-		/obj/item/ammo_box/a762 //mosin
-
-		/obj/item/ammo_box/magazine/m10mm //stechkin
-		/obj/item/ammo_box/magazine/m10mm/hp
-		/obj/item/ammo_box/magazine/m10mm/ap
-		/obj/item/ammo_box/magazine/m10mm/fire
-
-		/obj/item/storage/backpack/duffelbag/syndie/ammo/shotgun //shotgun
-		/obj/item/ammo_box/magazine/m12g
-		/obj/item/ammo_box/magazine/m12g/dragon
-		/obj/item/ammo_box/magazine/m12g/slug
-
-		/obj/item/ammo_box/a357			//Revolver
-		/obj/item/ammo_box/a357/match	
-
-		/obj/item/storage/backpack/duffelbag/syndie/ammo/smg //SMG
-		/obj/item/ammo_box/magazine/smgm45
-
-		/obj/item/ammo_box/magazine/sniper_rounds //Sniper
-		/obj/item/ammo_box/sniper
-		/obj/item/ammo_box/sniper/penetrator
-		/obj/item/ammo_box/sniper/soporific
-		/obj/item/ammo_casing/p50/emp
-		/obj/item/ammo_casing/p50/explosive
-		/obj/item/ammo_casing/p50/inferno
-
-		/obj/item/ammo_box/magazine/m556 //carbine
-
-		/obj/item/ammo_box/magazine/mm712x82 //L6 Saw HMG
-		/obj/item/ammo_box/magazine/mm712x82/ap
-		/obj/item/ammo_box/magazine/mm712x82/hollow
-		/obj/item/ammo_box/magazine/mm712x82/incen
-		/obj/item/ammo_box/magazine/mm712x82/match
-
-*/
+		/obj/item/clothing/shoes/galoshes,
+//Ammunition (Roughly 5% of crates)
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
+		/obj/item/storage/toolbox/ammo/royale,
 //Reagent warfare
-		/obj/item/gun/chem, //No syringes needed
-
+		/obj/item/storage/box/royale/assorted_syringes, //Random assortment of the four boxes below, with twice as many total syringes.
+		/obj/item/storage/box/royale/unlabeled_syringes, //contains completely unlabeled syringes containing CHEMICAL_RNG_FUN reagents
+		/obj/item/storage/box/royale/med_syringes, //contains unknown syringes identified only as "medicinal" which contain random /datum/reagent/medicine
+		/obj/item/storage/box/royale/tox_syringes, //contains unknown syringes identified only as "toxic" which contain random /datum/reagent/toxin
+		/obj/item/storage/box/royale/dna_syringes, //contains four random but correctly labeled dna injectors, excluding "anti" injectors
+		/obj/item/storage/box/syndie_kit/chemical, //really powerful assorted toxins, but no means of application included
 		/obj/item/storage/pill_bottle/floorpill/full,
 		/obj/item/reagent_containers/glass/bottle/romerol,
-		/obj/item/reagent_containers/hypospray/medipen/magillitis, //Gorilla transform
-/*
-	/obj/item/storage/box/syndie_kit/chemical
-
-	new /obj/item/reagent_containers/glass/bottle/polonium(src)
-	new /obj/item/reagent_containers/glass/bottle/venom(src)
-	new /obj/item/reagent_containers/glass/bottle/fentanyl(src)
-	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
-	new /obj/item/reagent_containers/glass/bottle/spewium(src)
-	new /obj/item/reagent_containers/glass/bottle/cyanide(src)
-	new /obj/item/reagent_containers/glass/bottle/histamine(src)
-	new /obj/item/reagent_containers/glass/bottle/initropidril(src)
-	new /obj/item/reagent_containers/glass/bottle/pancuronium(src)
-	new /obj/item/reagent_containers/glass/bottle/sodium_thiopental(src)
-	new /obj/item/reagent_containers/glass/bottle/coniine(src)
-	new /obj/item/reagent_containers/glass/bottle/curare(src)
-	new /obj/item/reagent_containers/glass/bottle/amanitin(src)
-*/
-
+		/obj/item/reagent_containers/hypospray/medipen/magillitis, //Gorilla pen
+		/obj/item/reagent_containers/hypospray/medipen/snail, //Get snailed. Slow to work.
 //Uplink and crystals
 		/obj/item/storage/box/syndie_kit/imp_uplink, //0 TC, just the uplink
 		/obj/item/storage/box/syndie_kit/imp_uplink,
@@ -168,34 +129,53 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/stack/sheet/telecrystal/five,
 		/obj/item/stack/sheet/telecrystal/five,
 		/obj/item/stack/sheet/telecrystal/five,
-		
-
-
-//Medical supplies
+//Medical supplies and autosurgeons
+		/obj/item/reagent_containers/hypospray/medipen/survival,
+		/obj/item/reagent_containers/hypospray/medipen/survival,
 		/obj/item/reagent_containers/hypospray/medipen/stimulants,
 		/obj/item/storage/firstaid/tactical,
+		/obj/item/storage/firstaid/brute,
+		/obj/item/storage/firstaid/fire,
+		/obj/item/storage/firstaid/advanced,
 		/obj/item/autosurgeon/syndicate/xray_eyes,
-
+		/obj/item/autosurgeon/syndicate/thermal_eyes,
+		/obj/item/autosurgeon/syndicate/reviver,
+		/obj/item/autosurgeon/cmo,
 //Grenades
 		/obj/item/grenade/empgrenade,
-		/obj/item/grenade/chem_grenade/ez_clean, //acid foam
-		/obj/item/grenade/clusterbuster/soap,
-		/obj/item/grenade/chem_grenade/teargas/moustache,
+		/obj/item/grenade/stingbang,
+		/obj/item/grenade/plastic/x4,
+		/obj/item/grenade/frag/mega,
+		/obj/item/grenade/gluon,
 		/obj/item/grenade/syndieminibomb,
 		/obj/item/grenade/discogrenade,
 		/obj/item/hot_potato/syndicate,
-
+		/obj/item/grenade/chem_grenade/ez_clean, //acid foam
+		/obj/item/grenade/chem_grenade/clf3, //lesser helfoam, still very fiery
+		/obj/item/grenade/chem_grenade/bioterrorfoam,
+		/obj/item/grenade/chem_grenade/holy,
+		/obj/item/grenade/chem_grenade/teargas/moustache,
+		/obj/item/grenade/clusterbuster,
+		/obj/item/grenade/clusterbuster/soap,
+		/obj/item/grenade/clusterbuster/emp,
+		/obj/item/grenade/clusterbuster/syndieminibomb,
+		/obj/item/grenade/clusterbuster/spawner_spesscarp,
+//Xenobio crossbreed boxes
+		/obj/item/storage/box/royale/random_slimes,
+		/obj/item/storage/box/royale/random_slimes,
+		/obj/item/storage/box/royale/random_slimes,
 //Various consumables
 		/obj/item/book/granter/action/origami,
 		/obj/item/storage/box/syndie_kit/imp_microbomb,
 		/obj/item/storage/box/syndie_kit/imp_adrenal,
 		/obj/item/storage/box/syndie_kit/cultconstructkit,
 		/obj/item/toy/plush/carpplushie/dehy_carp,
+		/obj/item/reagent_containers/food/snacks/monkeycube/gorilla,
 		/obj/item/book/granter/martial/karate,
 		/obj/item/throwing_star,
 		/obj/item/restraints/legcuffs/bola/tactical,
 		/obj/item/book/granter/martial/tribal_claw,
-		/obj/item/reagent_containers/food/snacks/monkeycube/gorilla,
+		/obj/item/sharpener,
 		/obj/item/sharpener,
 //Misc
 		/obj/item/storage/briefcase/launchpad,
@@ -207,45 +187,57 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/soap,
 		/obj/item/voodoo,
 		/obj/item/reverse_bear_trap,
-		/obj/item/toy/syndicateballoon/glued, //honk
-		
-
-
-
-/*
-	Some of the weaker syndicate kits
-	Single grenades and similar consumables
-	Sharpening stone
-*/
-	
-
-
+		/obj/item/toy/syndicateballoon/glued //honk
 	))
 
 GLOBAL_LIST_INIT(battle_royale_good_loot, list(
+		//Uplinks with varying TC
 		/obj/item/uplink/old, //10 TC
 		/obj/item/uplink, //20 TC
+		//Hostile turrets as a prank
 		/obj/machinery/porta_turret/syndicate/pod,
 		/obj/machinery/porta_turret/syndicate/energy/heavy, //Honk honk
+		//Ballistic guns
 		/obj/item/gun/ballistic/shotgun/lethal,
 		/obj/item/gun/ballistic/shotgun/doublebarrel, //Lethal
 		/obj/item/gun/ballistic/shotgun/riot, //Non-lethal
 		/obj/item/gun/ballistic/shotgun/automatic/combat, //Very lethal
+		/obj/item/gun/ballistic/automatic/surplus,
+		/obj/item/gun/ballistic/automatic/surplus,
 		/obj/item/gun/ballistic/rifle/boltaction,
 		/obj/item/gun/ballistic/rifle/boltaction,
+		/obj/item/gun/ballistic/automatic/wt550,
+		/obj/item/gun/ballistic/automatic/wt550,
 		/obj/item/gun/ballistic/rocketlauncher,
 		/obj/item/gun/ballistic/revolver,
-		/obj/item/gun/ballistic/bow/clockwork,
 		/obj/item/gun/ballistic/revolver/mateba,
-		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/e_gun,
-		/obj/item/gun/energy/e_gun,
+		/obj/item/gun/ballistic/bow/clockwork,
+		//Energy guns
 		/obj/item/gun/energy/e_gun/advtaser,
 		/obj/item/gun/energy/e_gun/old,
 		/obj/item/gun/energy/e_gun/hos,
 		/obj/item/gun/energy/e_gun/stun, //Basically just HoS gun again
-
+		/obj/item/gun/energy/laser/scatter,
+		/obj/item/gun/energy/laser/scatter/shotty,
+		/obj/item/gun/energy/laser/captain,
+		/obj/item/gun/energy/laser/captain/scattershot,
+		/obj/item/gun/energy/beam_rifle,
+		/obj/item/gun/energy/ionrifle,
+		/obj/item/gun/energy/ionrifle/carbine,
+		/obj/item/gun/energy/tesla_revolver,
+		/obj/item/gun/energy/vortex,
+		/obj/item/gun/energy/xray,
+		//Megafauna/mining loot
+		/obj/structure/closet/crate/necropolis,
+		/obj/structure/closet/crate/necropolis,
+		/obj/structure/closet/crate/necropolis/random,
+		/obj/structure/closet/crate/necropolis/random,
+		//Various other items
+		/obj/item/storage/secure/briefcase/medgun_kit, //Random syringe gun and matching ammo. 50% syringe guns, 33% dna gun, 17% dart gun + bottles
+		/obj/item/storage/secure/briefcase/medgun_kit,
 		/obj/item/pen/sleepy,
+		/obj/item/storage/box/syndie_kit/bundle_A,
+		/obj/item/storage/box/syndie_kit/bundle_B,
 		/obj/item/storage/box/syndie_kit/bundle_A,
 		/obj/item/storage/box/syndie_kit/bundle_B,
 		/obj/item/storage/backpack/duffelbag/syndie/c4,
@@ -253,7 +245,6 @@ GLOBAL_LIST_INIT(battle_royale_good_loot, list(
 		/obj/vehicle/sealed/car/clowncar,
 		/obj/item/book/granter/spell/mimery_blockade,
 		/obj/item/book/granter/spell/mimery_guns,
-
 		/obj/item/gun/energy/kinetic_accelerator/crossbow/radbow,
 		/obj/item/pneumatic_cannon/pie/selfcharge,
 		/obj/item/shield/energy/bananium,
@@ -264,9 +255,6 @@ GLOBAL_LIST_INIT(battle_royale_good_loot, list(
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
 		/obj/item/book/granter/martial/cqc,
 		/obj/item/hand_tele,
-
-		/obj/item/gun/energy/laser/captain,
-
 		/obj/item/katana,
 		/obj/item/fireaxe
 	))
@@ -282,13 +270,14 @@ GLOBAL_LIST_INIT(battle_royale_insane_loot, list(
 		/obj/item/reagent_containers/spray/chemsprayer/bioterror,
 		/obj/item/chainsaw/energy/doom,
 		/obj/mecha/combat/gygax/dark/loaded,
+		/obj/item/minigunpack,
 //Still good, but not as good
 		/obj/item/storage/belt/grenade/full,
 		/obj/item/gun/ballistic/shotgun/bulldog,
-		/obj/item/gun/ballistic/automatic/c20r,
+		/obj/item/gun/ballistic/automatic/proto, // NT Saber SMG
 		/obj/item/gun/ballistic/sniper_rifle/syndicate,
 		/obj/item/gun/ballistic/automatic/l6_saw,
-		/obj/item/gun/ballistic/automatic/m90,
+		/obj/item/gun/ballistic/automatic/m90, //As-is, with no additional ammo available after unloading to keep from diluting ammo pools
 		/obj/item/dualsaber,
 		/obj/item/guardiancreator/tech,
 		/obj/item/book/granter/martial/carp,

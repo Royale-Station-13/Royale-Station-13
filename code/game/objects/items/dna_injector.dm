@@ -78,7 +78,7 @@
 	desc += " This one is spent, you better recycle it!"
 
 
-/obj/item/dnainjector/antihulk
+/obj/item/dnainjector/anti/hulk
 	name = "\improper DNA injector (Anti-Hulk)"
 	desc = "Cures green skin."
 	remove_mutations = list(HULK)
@@ -93,13 +93,13 @@
 	desc = "Finally you can see what the Captain does."
 	add_mutations = list(XRAY)
 
-/obj/item/dnainjector/antixray
+/obj/item/dnainjector/anti/xray
 	name = "\improper DNA injector (Anti-X-ray)"
 	desc = "It will make you see harder."
 	remove_mutations = list(XRAY)
 
 /////////////////////////////////////
-/obj/item/dnainjector/antiglasses
+/obj/item/dnainjector/anti/glasses
 	name = "\improper DNA injector (Anti-Glasses)"
 	desc = "Toss away those glasses!"
 	remove_mutations = list(BADSIGHT)
@@ -114,12 +114,12 @@
 	desc = "Shake shake shake the room!"
 	add_mutations = list(EPILEPSY)
 
-/obj/item/dnainjector/antiepi
+/obj/item/dnainjector/anti/epi
 	name = "\improper DNA injector (Anti-Epi.)"
 	desc = "Will fix you up from shaking the room."
 	remove_mutations = list(EPILEPSY)
 ////////////////////////////////////
-/obj/item/dnainjector/anticough
+/obj/item/dnainjector/anti/cough
 	name = "\improper DNA injector (Anti-Cough)"
 	desc = "Will stop that awful noise."
 	remove_mutations = list(COUGH)
@@ -129,7 +129,7 @@
 	desc = "Will bring forth a sound of horror from your throat."
 	add_mutations = list(COUGH)
 
-/obj/item/dnainjector/antidwarf
+/obj/item/dnainjector/anti/dwarf
 	name = "\improper DNA injector (Anti-Dwarfism)"
 	desc = "Helps you grow big and strong."
 	remove_mutations = list(DWARFISM)
@@ -144,7 +144,7 @@
 	desc = "Makes clown minions."
 	add_mutations = list(CLOWNMUT)
 
-/obj/item/dnainjector/anticlumsy
+/obj/item/dnainjector/anti/clumsy
 	name = "\improper DNA injector (Anti-Clumsy)"
 	desc = "Apply this for Security Clown."
 	remove_mutations = list(CLOWNMUT)
@@ -154,12 +154,12 @@
 	desc = "This is your last chance to turn back."
 	add_mutations = list(CLOWNMUT)
 
-/obj/item/dnainjector/anticluwne
+/obj/item/dnainjector/anti/cluwne
 	name = "\improper DNA injector (Anti-Cluwne)"
 	desc = "This isn't going to work."
 	remove_mutations = list(CLOWNMUT)
 
-/obj/item/dnainjector/antitour
+/obj/item/dnainjector/anti/tour
 	name = "\improper DNA injector (Anti-Tour.)"
 	desc = "Will cure Tourette's."
 	remove_mutations = list(TOURETTES)
@@ -174,12 +174,12 @@
 	desc = "Makes you s-s-stuttterrr."
 	add_mutations = list(NERVOUS)
 
-/obj/item/dnainjector/antistutt
+/obj/item/dnainjector/anti/stutt
 	name = "\improper DNA injector (Anti-Stutt.)"
 	desc = "Fixes that speaking impairment."
 	remove_mutations = list(NERVOUS)
 
-/obj/item/dnainjector/antifire
+/obj/item/dnainjector/anti/fire
 	name = "\improper DNA injector (Anti-Fire)"
 	desc = "Cures fire."
 	remove_mutations = list(SPACEMUT)
@@ -194,12 +194,12 @@
 	desc = "Makes you not see anything."
 	add_mutations = list(BLINDMUT)
 
-/obj/item/dnainjector/antiblind
+/obj/item/dnainjector/anti/blind
 	name = "\improper DNA injector (Anti-Blind)"
 	desc = "IT'S A MIRACLE!!!"
 	remove_mutations = list(BLINDMUT)
 
-/obj/item/dnainjector/antitele
+/obj/item/dnainjector/anti/tele
 	name = "\improper DNA injector (Anti-Tele.)"
 	desc = "Will make you not able to control your mind."
 	remove_mutations = list(TK)
@@ -218,7 +218,7 @@
 	desc = "Sorry, what did you say?"
 	add_mutations = list(DEAFMUT)
 
-/obj/item/dnainjector/antideaf
+/obj/item/dnainjector/anti/deaf
 	name = "\improper DNA injector (Anti-Deaf)"
 	desc = "Will make you hear once more."
 	remove_mutations = list(DEAFMUT)
@@ -233,7 +233,7 @@
 	desc = "Will make you...less hairy."
 	remove_mutations = list(RACEMUT)
 
-/obj/item/dnainjector/antichameleon
+/obj/item/dnainjector/anti/chameleon
 	name = "\improper DNA injector (Anti-Chameleon)"
 	remove_mutations = list(CHAMELEON)
 
@@ -241,7 +241,7 @@
 	name = "\improper DNA injector (Chameleon)"
 	add_mutations = list(CHAMELEON)
 
-/obj/item/dnainjector/antiwacky
+/obj/item/dnainjector/anti/wacky
 	name = "\improper DNA injector (Anti-Wacky)"
 	remove_mutations = list(WACKY)
 
@@ -249,7 +249,7 @@
 	name = "\improper DNA injector (Wacky)"
 	add_mutations = list(WACKY)
 
-/obj/item/dnainjector/antimute
+/obj/item/dnainjector/anti/mute
 	name = "\improper DNA injector (Anti-Mute)"
 	remove_mutations = list(MUT_MUTE)
 
@@ -257,7 +257,7 @@
 	name = "\improper DNA injector (Mute)"
 	add_mutations = list(MUT_MUTE)
 
-/obj/item/dnainjector/antismile
+/obj/item/dnainjector/anti/smile
 	name = "\improper DNA injector (Anti-Smile)"
 	remove_mutations = list(SMILE)
 
@@ -269,7 +269,7 @@
 	name = "\improper DNA injector (Unintelligible)"
 	add_mutations = list(UNINTELLIGIBLE)
 
-/obj/item/dnainjector/antiunintelligible
+/obj/item/dnainjector/anti/unintelligible
 	name = "\improper DNA injector (Anti-Unintelligible)"
 	remove_mutations = list(UNINTELLIGIBLE)
 
@@ -277,7 +277,7 @@
 	name = "\improper DNA injector (Swedish)"
 	add_mutations = list(SWEDISH)
 
-/obj/item/dnainjector/antiswedish
+/obj/item/dnainjector/anti/swedish
 	name = "\improper DNA injector (Anti-Swedish)"
 	remove_mutations = list(SWEDISH)
 
@@ -285,7 +285,7 @@
 	name = "\improper DNA injector (Chav)"
 	add_mutations = list(CHAV)
 
-/obj/item/dnainjector/antichav
+/obj/item/dnainjector/anti/chav
 	name = "\improper DNA injector (Anti-Chav)"
 	remove_mutations = list(CHAV)
 
@@ -293,7 +293,7 @@
 	name = "\improper DNA injector (Elvis)"
 	add_mutations = list(ELVIS)
 
-/obj/item/dnainjector/antielvis
+/obj/item/dnainjector/anti/elvis
 	name = "\improper DNA injector (Anti-Elvis)"
 	remove_mutations = list(ELVIS)
 
@@ -301,7 +301,7 @@
 	name = "\improper DNA injector (Laser Eyes)"
 	add_mutations = list(LASEREYES)
 
-/obj/item/dnainjector/antilasereyes
+/obj/item/dnainjector/anti/lasereyes
 	name = "\improper DNA injector (Anti-Laser Eyes)"
 	remove_mutations = list(LASEREYES)
 
@@ -309,7 +309,7 @@
 	name = "\improper DNA injector (Void)"
 	add_mutations = list(VOID)
 
-/obj/item/dnainjector/antivoid
+/obj/item/dnainjector/anti/void
 	name = "\improper DNA injector (Anti-Void)"
 	remove_mutations = list(VOID)
 
@@ -317,7 +317,7 @@
 	name = "\improper DNA injector (Antenna)"
 	add_mutations = list(ANTENNA)
 
-/obj/item/dnainjector/antiantenna
+/obj/item/dnainjector/anti/antenna
 	name = "\improper DNA injector (Anti-Antenna)"
 	remove_mutations = list(ANTENNA)
 
@@ -325,7 +325,7 @@
 	name = "\improper DNA injector (Paranoia)"
 	add_mutations = list(PARANOIA)
 
-/obj/item/dnainjector/antiparanoia
+/obj/item/dnainjector/anti/paranoia
 	name = "\improper DNA injector (Anti-Paranoia)"
 	remove_mutations = list(PARANOIA)
 
@@ -333,14 +333,14 @@
 	name = "\improper DNA injector (Radioactive)"
 	add_mutations = list(RADIOACTIVE)
 
-/obj/item/dnainjector/antiradioactive
+/obj/item/dnainjector/anti/radioactive
 	name = "\improper DNA injector (Anti-Radioactive)"
 	remove_mutations = list(RADIOACTIVE)
 /obj/item/dnainjector/olfaction
 	name = "\improper DNA injector (Olfaction)"
 	add_mutations = list(OLFACTION)
 
-/obj/item/dnainjector/antiolfaction
+/obj/item/dnainjector/anti/olfaction
 	name = "\improper DNA injector (Anti-Olfaction)"
 	remove_mutations = list(OLFACTION)
 
@@ -348,7 +348,7 @@
 	name = "\improper DNA injector (Insulated)"
 	add_mutations = list(INSULATED)
 
-/obj/item/dnainjector/antiinsulated
+/obj/item/dnainjector/anti/insulated
 	name = "\improper DNA injector (Anti-Insulated)"
 	remove_mutations = list(INSULATED)
 
@@ -356,7 +356,7 @@
 	name = "\improper DNA injector (Shock Touch)"
 	add_mutations = list(SHOCKTOUCH)
 
-/obj/item/dnainjector/antishock
+/obj/item/dnainjector/anti/shock
 	name = "\improper DNA injector (Anti-Shock Touch)"
 	remove_mutations = list(SHOCKTOUCH)
 
@@ -364,7 +364,7 @@
 	name = "\improper DNA injector (Spatial Instability)"
 	add_mutations = list(BADBLINK)
 
-/obj/item/dnainjector/antispatialinstability
+/obj/item/dnainjector/anti/spatialinstability
 	name = "\improper DNA injector (Anti-Spatial Instability)"
 	remove_mutations = list(BADBLINK)
 
@@ -372,7 +372,7 @@
 	name = "\improper DNA injector (Acid Flesh)"
 	add_mutations = list(ACIDFLESH)
 
-/obj/item/dnainjector/antiacidflesh
+/obj/item/dnainjector/anti/acidflesh
 	name = "\improper DNA injector (Acid Flesh)"
 	remove_mutations = list(ACIDFLESH)
 
@@ -380,7 +380,7 @@
 	name = "\improper DNA injector (Gigantism)"
 	add_mutations = list(GIGANTISM)
 
-/obj/item/dnainjector/antigigantism
+/obj/item/dnainjector/anti/gigantism
 	name = "\improper DNA injector (Anti-Gigantism)"
 	remove_mutations = list(GIGANTISM)
 
@@ -388,7 +388,7 @@
 	name = "\improper DNA injector (Spastic)"
 	add_mutations = list(SPASTIC)
 
-/obj/item/dnainjector/antispastic
+/obj/item/dnainjector/anti/spastic
 	name = "\improper DNA injector (Anti-Spastic)"
 	remove_mutations = list(SPASTIC)
 
@@ -396,7 +396,7 @@
 	name = "\improper DNA injector (Two Left Feet)"
 	add_mutations = list(EXTRASTUN)
 
-/obj/item/dnainjector/antitwoleftfeet
+/obj/item/dnainjector/anti/twoleftfeet
 	name = "\improper DNA injector (Anti-Two Left Feet)"
 	remove_mutations = list(EXTRASTUN)
 
@@ -404,7 +404,7 @@
 	name = "\improper DNA injector (Geladikinesis)"
 	add_mutations = list(GELADIKINESIS)
 
-/obj/item/dnainjector/antigeladikinesis
+/obj/item/dnainjector/anti/geladikinesis
 	name = "\improper DNA injector (Anti-Geladikinesis)"
 	remove_mutations = list(GELADIKINESIS)
 
@@ -412,7 +412,7 @@
 	name = "\improper DNA injector (Cryokinesis)"
 	add_mutations = list(CRYOKINESIS)
 
-/obj/item/dnainjector/anticryokinesis
+/obj/item/dnainjector/anti/cryokinesis
 	name = "\improper DNA injector (Anti-Cryokinesis)"
 	remove_mutations = list(CRYOKINESIS)
 
@@ -420,7 +420,7 @@
 	name = "\improper DNA injector (Thermal Vision)"
 	add_mutations = list(THERMAL)
 
-/obj/item/dnainjector/antithermal
+/obj/item/dnainjector/anti/thermal
 	name = "\improper DNA injector (Anti-Thermal Vision)"
 	remove_mutations = list(THERMAL)
 
@@ -436,7 +436,7 @@
 	name = "\improper DNA injector (Antiglowy)"
 	add_mutations = list(ANTIGLOWY)
 
-/obj/item/dnainjector/removeantiglow
+/obj/item/dnainjector/anti/antiglow
 	name = "\improper DNA injector (Anti-Antiglowy)"
 	remove_mutations = list(ANTIGLOWY)
 
@@ -444,7 +444,7 @@
 	name = "\improper DNA injector (Strong Wings)"
 	add_mutations = list(STRONGWINGS)
 
-/obj/item/dnainjector/antistrongwings
+/obj/item/dnainjector/anti/strongwings
 	name = "\improper DNA injector (Anti-Strong Wings)"
 	remove_mutations = list(STRONGWINGS)
 
@@ -452,7 +452,7 @@
 	name = "\improper DNA injector (Cat Claws)"
 	add_mutations = list(CATCLAWS)
 
-/obj/item/dnainjector/anticatclaws
+/obj/item/dnainjector/anti/catclaws
 	name = "\improper DNA injector (Anti-Cat Claws)"
 	remove_mutations = list(CATCLAWS)
 
@@ -460,7 +460,7 @@
 	name = "\improper DNA injector (Overload)"
 	add_mutations = list(OVERLOAD)
 
-/obj/item/dnainjector/antioverload
+/obj/item/dnainjector/anti/overload
 	name = "\improper DNA injector (Anti-Overload)"
 	remove_mutations = list(OVERLOAD)
 
@@ -468,7 +468,7 @@
 	name = "\improper DNA injector (Acid Ooze)"
 	add_mutations = list(ACIDOOZE)
 
-/obj/item/dnainjector/antiacidooze
+/obj/item/dnainjector/anti/acidooze
 	name = "\improper DNA injector (Pepto-Bismol)"
 	remove_mutations = list(ACIDOOZE)
 
@@ -476,7 +476,7 @@
 	name = "\improper DNA injector (Medieval)"
 	add_mutations = list(MEDIEVAL)
 
-/obj/item/dnainjector/antimedieval
+/obj/item/dnainjector/anti/medieval
 	name = "\improper DNA injector (Anti-Medieval)"
 	remove_mutations = list(MEDIEVAL)
 

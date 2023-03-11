@@ -19,7 +19,6 @@
 	worn_icon_state = "ioncarbine"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
-	pin = null
 	ammo_x_offset = 2
 	flight_x_offset = 18
 	flight_y_offset = 11
@@ -32,7 +31,6 @@
 	desc = "A gun that discharges high amounts of controlled radiation to slowly break a target into component elements."
 	icon_state = "decloner"
 	ammo_type = list(/obj/item/ammo_casing/energy/declone)
-	pin = null
 	ammo_x_offset = 1
 
 /obj/item/gun/energy/decloner/update_icon()
@@ -116,7 +114,6 @@
 	materials = list(/datum/material/iron=4000)
 	suppressed = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
-	pin = null
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/radbow
 	name = "gamma bow"
@@ -340,7 +337,6 @@
 	cell_type = "/obj/item/stock_parts/cell/high"
 	automatic = 1
 	fire_rate = 4
-	pin = null
 
 /obj/item/gun/energy/temperature/pin
 	pin = /obj/item/firing_pin
