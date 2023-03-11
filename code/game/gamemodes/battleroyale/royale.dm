@@ -306,6 +306,23 @@
     armour_penetration = 0
     slot_flags = ITEM_SLOT_BACK
 
+/obj/item/mop/advanced/sharp
+    name = "Sharpened Adv. Mop"
+    desc = "The most advanced tool in a custodian's arsenal, now with a pointy tip!
+	force = 15
+	throwforce = 18
+
+/datum/crafting_recipe/sharpmop_advanced
+	name = "Sharpened Advanced Mop"
+	result = /obj/item/mop/advanced/sharp
+	time = 30
+	reqs = list(/obj/item/mop/advanced = 1,
+				/obj/item/shard = 1)
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	tools = list(TOOL_WIRECUTTER)
+	dangerous_craft = TRUE
+
 /obj/item/shield/energy/royale
     max_integrity = 25
     block_power = 75  //blocking easily destroys the shield instead of player stamina
