@@ -20,6 +20,8 @@
 /datum/config_entry/flag/auto_deadmin_security
 	protection = CONFIG_ENTRY_LOCKED
 
+/datum/config_entry/flag/royale_debug_check
+	config_entry_value = 0
 
 /datum/config_entry/string/servername	// server name (the name of the game window)
 
