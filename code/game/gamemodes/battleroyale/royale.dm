@@ -73,6 +73,13 @@
     desc = "A box containing your selected loadout equipment"
     illustration = "writing_syndie"
 
+/obj/item/storage/box/loadout/building/PopulateContents()
+    new /obj/item/stack/sheet/iron/twenty(src)
+    new /obj/item/stack/sheet/sandbags/ten(src)
+    new /obj/item/stack/sheet/wood/fifty(src)
+    new /obj/item/screwdriver(src)
+    new /obj/item/wrench(src)
+
 /obj/item/storage/box/loadout/explosives/PopulateContents()
     new /obj/item/grenade/plastic/x4(src)
     new /obj/item/grenade/plastic/x4(src)

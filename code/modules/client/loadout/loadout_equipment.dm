@@ -202,6 +202,11 @@
     path = /obj/item/clothing/suit/armor/reactive/stealth/royale
 
 // JUST FOR FUN
+/datum/gear/equipment/building
+    display_name = "extra building kit"
+    path = /obj/item/storage/box/loadout/building
+    description = "contains an extra load of the building supplies you already start with as well as a wrench, screwdriver and some iron"
+
 /datum/gear/equipment/syndicards
     display_name = "syndicate playing cards"
     path = /obj/item/toy/cards/deck/syndicate
