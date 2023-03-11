@@ -160,6 +160,10 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/grenade/clusterbuster/emp,
 		/obj/item/grenade/clusterbuster/syndieminibomb,
 		/obj/item/grenade/clusterbuster/spawner_spesscarp,
+//Xenobio crossbreed boxes
+		/obj/item/storage/box/royale/random_slimes,
+		/obj/item/storage/box/royale/random_slimes,
+		/obj/item/storage/box/royale/random_slimes,
 //Various consumables
 		/obj/item/book/granter/action/origami,
 		/obj/item/storage/box/syndie_kit/imp_microbomb,
@@ -271,7 +275,6 @@ GLOBAL_LIST_INIT(battle_royale_insane_loot, list(
 		/obj/item/storage/belt/grenade/full,
 		/obj/item/gun/ballistic/shotgun/bulldog,
 		/obj/item/gun/ballistic/automatic/proto, // NT Saber SMG
-//		/obj/item/gun/ballistic/automatic/c20r,   //Included above as part of a bundle. Kept out of this pool to keep from diluting ammo pools
 		/obj/item/gun/ballistic/sniper_rifle/syndicate,
 		/obj/item/gun/ballistic/automatic/l6_saw,
 		/obj/item/gun/ballistic/automatic/m90, //As-is, with no additional ammo available after unloading to keep from diluting ammo pools

@@ -206,6 +206,11 @@
     description = "Five tiny red crystals without much use. At least unless you can get your hands on an uplink somehow"
     path = /obj/item/stack/sheet/telecrystal/five
 
+/datum/gear/equipment/stable_slime
+    display_name = "random stabilized slime extract"
+    path = /obj/item/random_slimecore
+    description = "A random stabilized slime which will provide a passive beneficial effect while it is in your pocket"
+
 /datum/gear/equipment/glue
     display_name = "bottle of super glue"
     path = /obj/item/syndie_glue/royale
@@ -563,6 +568,42 @@
             new /obj/item/storage/box/royale/dna_syringes(src)
             new /obj/item/storage/box/royale/dna_syringes(src)
 
+/obj/item/storage/box/royale/random_slimes
+    name = "box of slimes"
+    desc = "You're not really sure what any of these do"
+    icon_state = "alienbox"
+    illustration = "writing_syndie"
+
+/obj/item/storage/box/royale/random_slimes/PopulateContents()
+    var/slimecore
+    for(var/i in 1 to 7)
+        switch(i)
+            if(1)
+                slimecore = pick(subtypesof(/obj/item/slimecross/burning))
+            if(2)
+                slimecore = pick(subtypesof(/obj/item/slimecross/regenerative))
+            if(3)
+                slimecore = pick(subtypesof(/obj/item/slimecross/stabilized))
+            if(4)
+                slimecore = pick(subtypesof(/obj/item/slimecross/chilling))
+            if(5)
+                slimecore = pick(subtypesof(/obj/item/slimecross/warping))
+            if(6)
+                slimecore = pick(subtypesof(/obj/item/slimecross/gentle))
+            if(7)
+                slimecore = pick(subtypesof(/obj/item/slimecross/crystalline))
+        new slimecore(src)
+    new /obj/item/reagent_containers/syringe/bluespace/plasma(src)
+
+/obj/item/random_slimecore/Initialize(mapload)
+    ..()
+    var/obj/item/slimecross/stabilized/randomcore = pick(subtypesof(/obj/item/slimecross/stabilized) - /obj/item/slimecross/stabilized/rainbow - /obj/item/slimecross/stabilized/grey)
+    new randomcore(loc)
+    return INITIALIZE_HINT_QDEL
+
+/obj/item/reagent_containers/syringe/bluespace/plasma
+    list_reagents = list(/datum/reagent/toxin/plasma = 60)
+    
 
 /obj/item/reagent_containers/syringe/royale/random/Initialize(mapload)
     ..()
@@ -757,7 +798,7 @@
     icon_state = "golhood_yellow"
 
 /obj/item/clothing/suit/hooded/cloak/goliath/royale/invisible
-    alpha = 120
+    alpha = 180
     name = "invisibility cloak"
     desc = "A tattered cloak made of goliath leather. This one makes light and lasers pass right through you but offers no physical protection."
     icon_state = "goliath_cloak_grey"
@@ -914,3 +955,4 @@
     var/obj/structure/closet/crate/necropolis/lavacrate = pick(subtypesof(/obj/structure/closet/crate/necropolis) - /obj/structure/closet/crate/necropolis/tendril/puzzle - /obj/structure/closet/crate/necropolis/tendril)
     new lavacrate(loc)
     return INITIALIZE_HINT_QDEL
+
