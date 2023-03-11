@@ -224,11 +224,16 @@ GLOBAL_LIST_INIT(battle_royale_good_loot, list(
 		/obj/item/gun/energy/vortex,
 		/obj/item/gun/energy/xray,
 		//Megafauna/mining loot
-
+		/obj/structure/closet/crate/necropolis,
+		/obj/structure/closet/crate/necropolis,
+		/obj/structure/closet/crate/necropolis/random,
+		/obj/structure/closet/crate/necropolis/random,
 		//Various other items
 		/obj/item/storage/secure/briefcase/medgun_kit, //Random syringe gun and matching ammo. 50% syringe guns, 33% dna gun, 17% dart gun + bottles
 		/obj/item/storage/secure/briefcase/medgun_kit,
 		/obj/item/pen/sleepy,
+		/obj/item/storage/box/syndie_kit/bundle_A,
+		/obj/item/storage/box/syndie_kit/bundle_B,
 		/obj/item/storage/box/syndie_kit/bundle_A,
 		/obj/item/storage/box/syndie_kit/bundle_B,
 		/obj/item/storage/backpack/duffelbag/syndie/c4,

@@ -20,12 +20,10 @@
 
 /obj/structure/closet/crate/necropolis/proc/try_spawn_loot(datum/source, obj/item/item, mob/user, params)
 	SIGNAL_HANDLER
-
-	if(!istype(item, /obj/item/skeleton_key) || spawned_loot)
+	if(spawned_loot)
 		return FALSE
 	spawned_loot = TRUE
-	qdel(item)
-	to_chat(user, "<span class='notice'>You disable the magic lock with the [item].</span>")
+	to_chat(user, "<span class='notice'>You break the magic lock off of the latch.</span>")
 	return TRUE
 
 
@@ -42,38 +40,37 @@
 /obj/structure/closet/crate/necropolis/tendril/try_spawn_loot(datum/source, obj/item/item, mob/user, params) ///proc that handles key checking and generating loot - MAY REPLACE WITH pickweight(loot)
 	var/static/list/necropolis_goodies = list(	//weights to be defined later on, for now they're all the same
 		/obj/item/clothing/glasses/godeye									= 5,
-		/obj/item/pickaxe/diamond											= 5,
-		/obj/item/rod_of_asclepius											= 5,
 		/obj/item/organ/heart/cursed/wizard						 			= 5,
-		/obj/item/ship_in_a_bottle											= 5,
-		/obj/item/jacobs_ladder												= 5,
 		/obj/item/warp_cube/red												= 5,
-		/obj/item/wisp_lantern												= 5,
 		/obj/item/immortality_talisman										= 5,
 		/obj/item/gun/magic/hook											= 5,
-		/obj/item/book_of_babel 											= 5,
 		/obj/item/clothing/neck/necklace/memento_mori						= 5,
 		/obj/item/reagent_containers/glass/waterbottle/relic				= 5,
-		/obj/item/reagent_containers/glass/bottle/necropolis_seed			= 5,
-		/obj/item/borg/upgrade/modkit/lifesteal								= 5,
 		/obj/item/shared_storage/red										= 5,
-		/obj/item/staff/storm												= 5
+		/obj/item/book/granter/spell/fireball								= 5, //fireball requires robes, which take extra work to acquire but are also available via player loadouts. 
+		/obj/item/book/granter/spell/sacredflame							= 5,
+		/obj/item/book/granter/spell/smoke									= 5,
+		/obj/item/book/granter/spell/blind									= 5,
+		/obj/item/book/granter/spell/mindswap								= 5,
+		/obj/item/book/granter/spell/forcewall								= 5,
+		/obj/item/book/granter/spell/barnyard								= 5,
+		/obj/item/book/granter/spell/summonitem								= 5,
 	)
 
 	if(..())
 		var/necropolis_loot = pickweight(necropolis_goodies.Copy())
 		new necropolis_loot(src)
-	return TRUE
 
 /obj/structure/closet/crate/necropolis/can_open(mob/living/user, force = FALSE)
 	if(!spawned_loot)
+		to_chat(user, "<span class='notice'>There is a magic lock holding it shut!\nThe lock appears to be badly damaged, a solid hit with just about anything should break it off.</span>")
 		return FALSE
 	return ..()
 
 /obj/structure/closet/crate/necropolis/examine(mob/user)
 	. = ..()
 	if(!spawned_loot)
-		. += "<span class='notice'>You need a skeleton key to open it.</span>"
+		. += "<span class='notice'>The magic lock appears to be badly damaged, a solid hit with just about anything should break it off.</span>"
 
 //Rod of Asclepius
 /obj/item/rod_of_asclepius
@@ -83,7 +80,7 @@
 	icon_state = "asclepius_dormant"
 	block_upgrade_walk = 1
 	block_level = 1
-	block_power = 40 //blocks very well to encourage using it. Just because you're a pacifist doesn't mean you can't defend yourself
+	block_power = 75 //blocks very well to encourage using it. Just because you're a pacifist doesn't mean you can't defend yourself
 	block_flags = null //not active, so it's null
 	var/activated = FALSE
 	var/usedHand
@@ -910,7 +907,7 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	var/random = rand(1,3)
+	var/random = rand(1,2)
 
 	switch(random)
 		if(1)
@@ -919,12 +916,11 @@
 			H.eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)
 		if(2)
-			to_chat(user, "<span class='danger'>Your flesh begins to melt! Miraculously, you seem fine otherwise.</span>")
-			H.set_species(/datum/species/skeleton)
-		if(3)
-			to_chat(user, "<span class='danger'>You feel like you could walk straight through lava now.</span>")
-			H.weather_immunities |= "lava"
-
+			to_chat(user, "<span class='danger'>Power courses through you! You can now shift your form at will.</span>")
+			if(user.mind)
+				var/obj/effect/proc_holder/spell/targeted/shapeshift/dragon/D = new
+				user.mind.AddSpell(D)
+	
 	playsound(user.loc,'sound/items/drink.ogg', rand(10,50), 1)
 	qdel(src)
 
@@ -1024,6 +1020,8 @@
 	if(..())
 		new /obj/item/clothing/suit/space/hostile_environment(src)
 		new /obj/item/clothing/head/helmet/space/hostile_environment(src)
+		new /obj/item/mayhem(src)
+		new /obj/item/blood_contract(src)
 		new /obj/item/crusher_trophy/demon_claws(src)
 
 /obj/item/mayhem

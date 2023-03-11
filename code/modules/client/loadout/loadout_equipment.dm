@@ -908,3 +908,9 @@
 /obj/item/toy/syndicateballoon/glued/Initialize(mapload)
     . = ..()
     ADD_TRAIT(src, TRAIT_NODROP, ROYALE)  //So badass you'll fight with one hand
+
+/obj/structure/closet/crate/necropolis/random/Initialize(mapload)
+    ..()
+    var/obj/structure/closet/crate/necropolis/lavacrate = pick(subtypesof(/obj/structure/closet/crate/necropolis) - /obj/structure/closet/crate/necropolis/tendril/puzzle - /obj/structure/closet/crate/necropolis/tendril)
+    new lavacrate(loc)
+    return INITIALIZE_HINT_QDEL
