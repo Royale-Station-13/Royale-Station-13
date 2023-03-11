@@ -19,7 +19,7 @@
 	var/grace = RAD_GEIGER_GRACE_PERIOD
 	var/datum/looping_sound/geiger/soundloop
 
-	var/scanning = FALSE
+	var/scanning = TRUE
 	var/radiation_count = 0
 	var/current_tick_amount = 0
 	var/last_tick_amount = 0

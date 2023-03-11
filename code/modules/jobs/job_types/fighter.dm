@@ -3,7 +3,7 @@
     jobtype = /datum/job/default_royale
 
     id = /obj/item/card/id/silver/royale
-    belt = /obj/item/storage/belt/utility/partial
+    belt = null
     ears = null
     uniform = /obj/item/clothing/under/color/random
     shoes = null
@@ -63,17 +63,15 @@
 	            ACCESS_VAULT, ACCESS_MINING_STATION, ACCESS_XENOBIOLOGY, ACCESS_CE, ACCESS_HOP, ACCESS_HOS, ACCESS_RC_ANNOUNCE,
 	            ACCESS_KEYCARD_AUTH, ACCESS_TCOMSAT, ACCESS_GATEWAY, ACCESS_MINERAL_STOREROOM, ACCESS_MINISAT, ACCESS_NETWORK, ACCESS_CLONING, ACCESS_RD_SERVER)
 
-/obj/item/storage/belt/utility/partial/PopulateContents()
-    new /obj/item/crowbar(src)
-    new /obj/item/geiger_counter(src)
-    new /obj/item/flashlight(src)
-
 /obj/item/storage/box/supplies
     desc = "A box containing the same basic supplies all fighters get"
 
 /obj/item/storage/box/supplies/PopulateContents()
     new /obj/item/reagent_containers/pill/patch/styptic(src)
     new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
+    new /obj/item/crowbar(src)
+    new /obj/item/geiger_counter(src)
+    new /obj/item/flashlight(src)
 
 /obj/item/implant/royale
     name = "tracking implant"
