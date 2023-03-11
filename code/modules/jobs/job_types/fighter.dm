@@ -78,6 +78,7 @@
     desc = "For ensuring combatants stay in the fight, whether they want to or not"
     icon_state = "gps-m"
     var/gpstag = "Combatant"
+    activated = FALSE
 
 /obj/item/implant/royale/Initialize(mapload)
     AddComponent(/datum/component/gps/item, gpstag)
