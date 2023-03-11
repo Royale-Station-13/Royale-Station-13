@@ -12,6 +12,7 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/reagent_containers/spray/combo,
 		/obj/item/gun/energy/e_gun/mini/heads,
 		/obj/item/gun/energy/e_gun/mini,
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/royale,
 		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/plasmacutter/adv/royale,
 		/obj/item/kitchen/knife/poison/royale,

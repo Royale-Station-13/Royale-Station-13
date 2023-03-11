@@ -135,7 +135,7 @@
 /obj/machinery/portable_atmospherics/canister/toxins
 	name = "plasma canister"
 	desc = "Plasma gas. The reason YOU are here. Highly toxic."
-	gas_type = GAS_PLASMA
+	gas_type = null
 	greyscale_config = /datum/greyscale_config/canister/hazard
 	greyscale_colors = "#f64300#000000"
 

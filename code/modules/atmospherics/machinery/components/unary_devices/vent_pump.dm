@@ -382,6 +382,7 @@
 	id_tag = ATMOS_GAS_MONITOR_OUTPUT_INCINERATOR
 	frequency = FREQ_ATMOS_CONTROL
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxins_mixing_output
+	internal_pressure_bound = 0 //no easy mass plasma
 	name = "toxins mixing output inlet"
 	id_tag = ATMOS_GAS_MONITOR_OUTPUT_TOXINS_LAB
 	frequency = FREQ_ATMOS_CONTROL

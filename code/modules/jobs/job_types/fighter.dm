@@ -67,17 +67,20 @@
     desc = "A box containing the same basic supplies all fighters get"
 
 /obj/item/storage/box/supplies/PopulateContents()
-    new /obj/item/reagent_containers/pill/patch/styptic(src)
-    new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
+    new /obj/item/stack/sheet/sandbags/five(src)
+    new /obj/item/stack/sheet/wood/twenty(src)
     new /obj/item/crowbar(src)
     new /obj/item/geiger_counter(src)
     new /obj/item/flashlight(src)
+    new /obj/item/reagent_containers/pill/patch/styptic(src)
+    new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
 
 /obj/item/implant/royale
     name = "tracking implant"
     desc = "For ensuring combatants stay in the fight, whether they want to or not"
     icon_state = "gps-m"
     var/gpstag = "Combatant"
+    activated = FALSE
 
 /obj/item/implant/royale/Initialize(mapload)
     AddComponent(/datum/component/gps/item, gpstag)

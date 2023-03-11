@@ -1,7 +1,6 @@
 /datum/species/golem
 	// Animated beings of stone. They have increased defenses, and do not need to breathe. They're also slow as fuuuck.
 	name = "\improper Golem"
-	id = SPECIES_GOLEM_IRON
 	species_traits = list(NOBLOOD,MUTCOLORS,NO_UNDERWEAR,NOTRANSSTING)
 	inherent_traits = list(TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_NOFIRE,TRAIT_NOGUNS,TRAIT_RADIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER, TRAIT_NONECRODISEASE)
 	inherent_biotypes = list(MOB_INORGANIC, MOB_HUMANOID)
@@ -67,6 +66,10 @@
 	var/mob/living/carbon/human/H = C
 	H.set_species(golem_type)
 	to_chat(H, "[initial(golem_type.info_text)]")
+
+/datum/species/golem/iron
+	id = SPECIES_GOLEM_IRON
+	name = "Iron Golem"
 
 /datum/species/golem/adamantine
 	name = "Adamantine Golem"
