@@ -27,7 +27,6 @@
 //LIGHTERS & CIGARETTES
 
 /datum/gear/misc/lighter
-	subtype_path = /datum/gear/misc/lighter
 	display_name = "Zippo lighter"
 	path = /obj/item/lighter
 
@@ -36,7 +35,6 @@
 	path = /obj/item/lighter/greyscale
 
 /datum/gear/misc/cigarettes
-	subtype_path = /datum/gear/misc/cigarettes
 	display_name = "cigarettes, Space Cigarettes"
 	path = /obj/item/storage/fancy/cigarettes
 
