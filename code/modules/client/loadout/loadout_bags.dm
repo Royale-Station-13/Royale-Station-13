@@ -1,6 +1,7 @@
 /datum/gear/backpack
     subtype_path = /datum/gear/backpack
     slot = ITEM_SLOT_BACK
+    sort_category = "Backpacks"
     cost = 0
 
 //BACKPACKS
