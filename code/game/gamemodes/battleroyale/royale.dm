@@ -766,6 +766,7 @@
     pill_variance = 0
 
 /obj/item/storage/pill_bottle/dicefate/Initialize(mapload)
+    . = ..()
     if(prob(25))
         if(prob(25))
             new /obj/item/dice/d20/fate/stealth/d4(src)
