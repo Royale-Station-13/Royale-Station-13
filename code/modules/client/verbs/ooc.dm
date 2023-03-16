@@ -27,7 +27,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
 			return
 	else
-		if(SSticker.current_state == GAME_STATE_PLAYING && holder.ooc_confirmation_enabled)
+		if(SSticker.current_state == GAME_STATE_PLAYING && holder.ooc_confirmation_enabled && (!GLOB.ooc_allowed))
 			var/choice = alert("The round is still ongoing, are you sure you wish to send an OOC message?", "Confirm midround OOC?", "No", "Yes", "Always yes for this round")
 			switch(choice)
 				if("No")
