@@ -344,7 +344,18 @@ SUBSYSTEM_DEF(ticker)
 	SSdbcore.SetRoundStart()
 
 	to_chat(world, "<h2><B>Welcome to [station_name()], Happy killing!</B></h2>")
-	SEND_SOUND(world, sound(SSstation.announcer.get_rand_welcome_sound()))
+	if(prob(15))
+		var/song = rand(1, 3)
+		switch(song)
+			if(1)
+				SEND_SOUND(world, sound('sound/misc/highlander_delayed.ogg'))
+			if(2)
+				SEND_SOUND(world, sound('sound/soundtrack/future_perception.ogg'))
+			if(3)
+				SEND_SOUND(world, sound('sound/soundtrack/mind_crawler.ogg'))
+
+	else
+		SEND_SOUND(world, sound('sound/misc/airraid.ogg'))
 
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
