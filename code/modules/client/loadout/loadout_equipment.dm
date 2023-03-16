@@ -196,11 +196,11 @@
 /datum/gear/equipment/armor/cloak/invisible
     display_name = "invisibility cloak"
     path = /obj/item/clothing/suit/hooded/cloak/goliath/royale/invisible
-
+/*
 /datum/gear/equipment/armor/stealth
     display_name = "reactive stealth armor"
     path = /obj/item/clothing/suit/armor/reactive/stealth/royale
-
+*/
 // JUST FOR FUN
 /datum/gear/equipment/building
     display_name = "extra building kit"
