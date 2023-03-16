@@ -360,6 +360,7 @@
 	icon_state = "vent_map_siphon_on-3"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output
+	internal_pressure_bound = 0 //no easy mass plasma flood
 	name = "plasma tank output inlet"
 	id_tag = ATMOS_GAS_MONITOR_OUTPUT_TOX
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output
@@ -382,7 +383,6 @@
 	id_tag = ATMOS_GAS_MONITOR_OUTPUT_INCINERATOR
 	frequency = FREQ_ATMOS_CONTROL
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxins_mixing_output
-	internal_pressure_bound = 0 //no easy mass plasma
 	name = "toxins mixing output inlet"
 	id_tag = ATMOS_GAS_MONITOR_OUTPUT_TOXINS_LAB
 	frequency = FREQ_ATMOS_CONTROL

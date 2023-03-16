@@ -25,7 +25,7 @@
     var/list/active_players = list()
 
     for(var/mob/player in player_list) //checking for all mobs instead of just humans
-        if((!player.client) || (is_centcom_level(player.z)))
+        if((!player.client) || (is_centcom_level(player.z) || (isrevenant(player))))
             continue
         var/turf/T = get_turf(player)
         if(T.x > 128 + GLOB.battle_royale.radius || T.x < 128 - GLOB.battle_royale.radius || T.y > 128 + GLOB.battle_royale.radius || T.y < 128 - GLOB.battle_royale.radius)
