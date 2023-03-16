@@ -769,38 +769,47 @@
 	cost = 750
 	display_name = "starfleet command (TOS)"
 	path = /obj/item/clothing/under/trek/command
+	description = "Uniform worn by starfleet command in \"The original series\""
 
 /datum/gear/uniform/fancy/trek/next
 	display_name = "starfleet command (TNG)"
 	path = /obj/item/clothing/under/trek/command
+	description = "Uniform worn by starfleet command in \"The Next Generation\""
 
 /datum/gear/uniform/fancy/trek/ent
 	display_name = "starfleet command (ENT)"
 	path = /obj/item/clothing/under/trek/command
+	description = "Uniform worn by starfleet command in \"Enterprise\""
 
 /datum/gear/uniform/fancy/trek/engsec
 	display_name = "starfleet eng/sec (TOS)"
 	path = /obj/item/clothing/under/trek/command
+	description = "Uniform worn by starfleet security and engineers in \"The original series\""
 
 /datum/gear/uniform/fancy/trek/engsec/next
 	display_name = "starfleet eng/sec (TNG)"
 	path = /obj/item/clothing/under/trek/command
+	description = "Uniform worn by starfleet security and engineers in \"The Next Generation\""
 
 /datum/gear/uniform/fancy/trek/engsec/ent
 	display_name = "starfleet eng/sec (ENT)"
 	path = /obj/item/clothing/under/trek/command
+	description = "Uniform worn by starfleet security and engineers in \"Enterprise\""
 
 /datum/gear/uniform/fancy/trek/medsci
 	display_name = "starfleet med/sci (TOS)"
 	path = /obj/item/clothing/under/trek/command
+	description = "Uniform worn by starfleet medical and science staff in \"The original series\""
 
 /datum/gear/uniform/fancy/trek/medsci/next
 	display_name = "starfleet med/sci (TNG)"
 	path = /obj/item/clothing/under/trek/command
+	description = "Uniform worn by starfleet medical and science staff in \"The Next Generation\""
 
 /datum/gear/uniform/fancy/trek/medsci/ent
 	display_name = "starfleet med/sci uniform (ENT)"
 	path = /obj/item/clothing/under/trek/command
+	description = "Uniform worn by starfleet medical and science staff in \"Enterprise\""
 
 //Costumes
 
