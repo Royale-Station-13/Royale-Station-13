@@ -13,6 +13,7 @@
         <span class='notice'>Random events will keep things spicy from time to time, stay on your toes!</span>\n\
 	    <span class='danger'>Mild banter is fine, but don't be toxic to others unless you want to be smited</span>"
     var/mob/winner
+    var/debug_winner_announce
 
 /datum/game_mode/battle_royale/post_setup()
     ..()
@@ -38,7 +39,7 @@
         active_players += player
         CHECK_TICK
     //Adjust this to >= for debugging so the game mode doesn't end immediately. 
-    if(length(active_players) > CONFIG_GET(flag/royale_debug_check)) //There are two or more living players, round continues
+    if(length(active_players) > 1) //There are two or more living players, round continues
         return ..()
     if(length(active_players) == 0) //There are zero living players, round ends in draw
         winner = "draw"
@@ -48,7 +49,13 @@
 
 /datum/game_mode/battle_royale/check_finished()
     if(winner)
-        GLOB.battle_royale.end_royale() //Comment this out for debugging
+        if(CONFIG_GET(flag/royale_debug_check) && winner != "draw")
+            if(!debug_winner_announce)
+                to_chat(world, "<span class='ratvar'><font size=12>[winner.real_name] claims victory!</font></span>")
+                to_chat(world, "<span class='userdanger'>Debug mode active - game will continue until winner suicides.</span>")
+                debug_winner_announce = TRUE
+            return FALSE
+        GLOB.battle_royale.end_royale()
         return TRUE
 
 /datum/game_mode/battle_royale/special_report()

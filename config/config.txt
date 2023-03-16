@@ -42,8 +42,8 @@ $include policies.txt
 #HUB
 
 ## Debugging for battle_royale - it's pretty hard to test things when rounds just end instantly.
-## Comment to enable debugging mode which prevents the round from ending until everyone is dead (so you can test alone)
-#ROYALE_DEBUG_CHECK = 1
+## Uncomment to enable debugging mode which prevents the round from ending until everyone is dead (so you can test alone)
+#ROYALE_DEBUG_CHECK 1
 
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
 LOBBY_COUNTDOWN 300
