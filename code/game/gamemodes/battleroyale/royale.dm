@@ -2,7 +2,7 @@
     name = "Battle Royale"
     config_tag = "battle_royale"
     report_type = "battle_royale"
-    required_players = 1
+    required_players = 2
 
     announce_span = "notice"
     announce_text = "<b>This goal of this game is to be the only survivor!</b>\n\
@@ -14,6 +14,15 @@
 	    <span class='danger'>Mild banter is fine, but don't be toxic to others unless you want to be smited</span>"
     var/mob/winner
     var/debug_winner_announce
+
+/datum/game_mode/battle_royale/can_start()
+    if(CONFIG_GET(flag/royale_debug_check))
+        for(var/mob/dead/new_player/player in GLOB.player_list)
+            if(player.client && (player.ready == PLAYER_READY_TO_PLAY) && player.check_preferences())
+                return TRUE
+        to_chat(world, "<span class='userdanger'>Debug mode active - at least one player must be ready.</span>")
+        return FALSE
+    ..()
 
 /datum/game_mode/battle_royale/post_setup()
     ..()
