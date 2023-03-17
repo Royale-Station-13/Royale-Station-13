@@ -23,6 +23,9 @@
 /datum/config_entry/flag/royale_debug_check
 	config_entry_value = 0
 
+/datum/config_entry/flag/royale_music_event
+	config_entry_value = 15
+
 /datum/config_entry/string/servername	// server name (the name of the game window)
 
 /datum/config_entry/string/serversqlname	// short form server name used for the DB

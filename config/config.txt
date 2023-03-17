@@ -45,6 +45,9 @@ $include policies.txt
 ## Uncomment to enable debugging mode which prevents the round from ending until everyone is dead (so you can test alone)
 ROYALE_DEBUG_CHECK 1
 
+## The %chance for a special soundtrack to play at roundstart instead of an air raid siren
+#ROYALE_MUSIC_EVENT 100
+
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
 LOBBY_COUNTDOWN 300
 
