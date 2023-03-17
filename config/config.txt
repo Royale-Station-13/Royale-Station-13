@@ -46,7 +46,7 @@ $include policies.txt
 ROYALE_DEBUG_CHECK 1
 
 ## The %chance for a special soundtrack to play at roundstart instead of an air raid siren
-#ROYALE_MUSIC_EVENT 100
+#ROYALE_MUSIC_EVENT 15
 
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
 LOBBY_COUNTDOWN 300

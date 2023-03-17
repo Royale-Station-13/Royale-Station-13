@@ -344,7 +344,7 @@ SUBSYSTEM_DEF(ticker)
 	SSdbcore.SetRoundStart()
 
 	to_chat(world, "<h2><B>Welcome to [station_name()], Happy killing!</B></h2>")
-	if(prob(CONFIG_GET(flag/royale_music_event)))
+	if(prob(CONFIG_GET(number/royale_music_event)))
 		var/song = rand(1, 3)
 		switch(song)
 			if(1)
