@@ -698,7 +698,7 @@
     if(iscarbon(user))
         var/mob/living/carbon/C = user
         var/obj/cloak = C.get_item_by_slot(ITEM_SLOT_OCLOTHING)
-        C.alpha = 50
+        C.alpha = 100
         cloak.alpha = 255
 
 /obj/item/clothing/head/hooded/cloakhood/goliath/royale/invisible/dropped(mob/user)
