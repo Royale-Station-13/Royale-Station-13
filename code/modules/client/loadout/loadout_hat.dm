@@ -38,8 +38,12 @@
 	path = /obj/item/clothing/head/flatcap
 
 /datum/gear/hat/fedora
-	display_name = "fedora"
+	display_name = "black fedora"
 	path = /obj/item/clothing/head/fedora
+
+/datum/gear/hat/fedora/detective
+	display_name = "brown fedora"
+	path = /obj/item/clothing/head/fedora/det_hat
 
 /datum/gear/hat/sombrero
 	display_name = "sombrero"

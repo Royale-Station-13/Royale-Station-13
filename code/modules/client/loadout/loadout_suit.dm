@@ -183,6 +183,10 @@
 	display_name = "white dress"
 	path = /obj/item/clothing/suit/whitedress
 
+/datum/gear/suit/jones
+	display_name = "treasure hunter's coat"
+	path = /obj/item/clothing/suit/curator
+
 //ROBES
 
 /datum/gear/suit/robe
