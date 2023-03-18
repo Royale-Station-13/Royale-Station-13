@@ -578,6 +578,8 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 		good_drops += pick(GLOB.battle_royale_good_loot)
 	if(!silent)
 		send_item(good_drops, announce = "Incoming extended supply materials.", force_time = 30 SECONDS)
+	else
+		send_item(good_drops, force_time = 30 SECONDS)
 
 /datum/battle_royale_controller/proc/admin_good_drop(amount=1)
 	priority_announce("Incoming extended supply materials: \n[amount] crates in various locations\n ETA: 30 Seconds.", "High Command Supply Control", SSstation.announcer.get_rand_alert_sound())
@@ -591,6 +593,8 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 		item = pick(GLOB.battle_royale_insane_loot) //Reroll once if either "jackpot" item rolls. Makes both of them exceedingly rare
 	if(!silent)
 		send_item(item, announce = "We found a weird looking package in the back of our warehouse. We have no idea what is in it, but it is marked as incredibily dangerous and could be a superweapon.", force_time = 60 SECONDS)
+	else
+		send_item(item, force_time = 60 SECONDS)
 
 /datum/battle_royale_controller/proc/admin_endgame_drop(amount=1)
 	priority_announce("Incoming (REDACTED) grade supplies\n[amount] crates in various locations\n ETA: 60 Seconds.", "High Command Supply Control", SSstation.announcer.get_rand_alert_sound())
