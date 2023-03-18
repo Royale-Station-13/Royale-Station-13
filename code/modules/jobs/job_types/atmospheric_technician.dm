@@ -4,8 +4,6 @@
 	department_head = list(JOB_NAME_CHIEFENGINEER)
 	supervisors = "the chief engineer"
 	faction = "Station"
-	total_positions = 3
-	spawn_positions = 2
 	selection_color = "#fff5cc"
 	exp_requirements = 120
 	exp_type = EXP_TYPE_CREW

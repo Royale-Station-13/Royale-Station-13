@@ -3,8 +3,6 @@
 	flag = ROBOTICIST
 	department_head = list(JOB_NAME_RESEARCHDIRECTOR)
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
 	supervisors = "the research director"
 	selection_color = "#ffeeff"
 	exp_requirements = 120

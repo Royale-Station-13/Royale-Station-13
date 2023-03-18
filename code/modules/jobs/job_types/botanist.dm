@@ -4,8 +4,6 @@
 	department_head = list(JOB_NAME_HEADOFPERSONNEL)
 	supervisors = "the head of personnel"
 	faction = "Station"
-	total_positions = 3
-	spawn_positions = 2
 	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/default_royale
