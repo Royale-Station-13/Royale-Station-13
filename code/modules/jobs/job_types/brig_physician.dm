@@ -4,8 +4,6 @@
 	department_head = list(JOB_NAME_CHIEFMEDICALOFFICER)
 	supervisors = "chief medical officer"
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 	exp_requirements = 120
