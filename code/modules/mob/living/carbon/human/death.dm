@@ -89,7 +89,6 @@
 			I.pixel_x = rand(-10, 10)
 			I.pixel_y = rand(-10, 10)
 		//Death
-		gib()
 		return
 
 /mob/living/carbon/human/proc/makeSkeleton()
