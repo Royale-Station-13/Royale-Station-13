@@ -85,11 +85,11 @@
 			dropItemToGround(I, TRUE)
 			if(QDELING(I))
 				continue //skip it
-			I.throw_at(pick(turfs_to_throw), 3, 1, spin = FALSE)
+			I.throw_at(pick(turfs_to_throw), 3, 1)
 			I.pixel_x = rand(-10, 10)
 			I.pixel_y = rand(-10, 10)
 		//Death
-		dust(TRUE)
+		gib()
 		return
 
 /mob/living/carbon/human/proc/makeSkeleton()
