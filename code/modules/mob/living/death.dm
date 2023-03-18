@@ -59,6 +59,8 @@
 		if(mind.name && mind.active && !istype(T.loc, /area/ctf))
 			var/rendered = "<span class='deadsay'><b>[mind.name]</b> has died at <b>[get_area_name(T)]</b>.</span>"
 			deadchat_broadcast(rendered, follow_target = src, turf_target = T, message_type=DEADCHAT_DEATHRATTLE)
+			SEND_SOUND(world, sound('sound/misc/player_eliminated.ogg'))
+			to_chat(world, "<span class='danger'><b>[mind.name]</b> has been eliminated</b>.</span>")
 		mind.store_memory("Time of death: [tod]", 0)
 	remove_from_alive_mob_list()
 	if(playable)
