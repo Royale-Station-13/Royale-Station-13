@@ -4,7 +4,7 @@
 
     id = /obj/item/card/id/silver/royale
     belt = null
-    ears = null
+    ears = /obj/item/radio/headset
     uniform = /obj/item/clothing/under/color/random
     shoes = null
     glasses = null
