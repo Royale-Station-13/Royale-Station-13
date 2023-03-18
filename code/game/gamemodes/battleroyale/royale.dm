@@ -2,7 +2,7 @@
     name = "Battle Royale"
     config_tag = "battle_royale"
     report_type = "battle_royale"
-    required_players = 2
+    required_players = 1
 
     announce_span = "notice"
     announce_text = "<b>This goal of this game is to be the only survivor!</b>\n\
@@ -13,16 +13,7 @@
         <span class='notice'>Random events will keep things spicy from time to time, stay on your toes!</span>\n\
 	    <span class='danger'>Mild banter is fine, but don't be toxic to others unless you want to be smited</span>"
     var/mob/winner
-    var/debug_winner_announce
-
-/datum/game_mode/battle_royale/can_start()
-    if(CONFIG_GET(flag/royale_debug_check))
-        for(var/mob/dead/new_player/player in GLOB.player_list)
-            if(player.client && (player.ready == PLAYER_READY_TO_PLAY) && player.check_preferences())
-                return TRUE
-        to_chat(world, "<span class='userdanger'>Debug mode active - at least one player must be ready.</span>")
-        return FALSE
-    ..()
+    var/debug_announce
 
 /datum/game_mode/battle_royale/post_setup()
     ..()
@@ -58,14 +49,18 @@
 
 /datum/game_mode/battle_royale/check_finished()
     if(winner)
-        if(CONFIG_GET(flag/royale_debug_check) && winner != "draw")
-            if(!debug_winner_announce)
-                to_chat(world, "<span class='ratvar'><font size=12>[winner.real_name] claims victory!</font></span>")
-                to_chat(world, "<span class='userdanger'>Debug mode active - game will continue until winner suicides.</span>")
-                debug_winner_announce = TRUE
-            return FALSE
-        GLOB.battle_royale.end_royale()
-        return TRUE
+        if(winner == "draw")
+            return TRUE //Everyone is dead, we end regardless of debug mode or not
+        if(debug_announce)
+            return FALSE //We have announced debug mode and someone is still alive. Keep going
+        if(world.time - SSticker.round_start_time <= 25 SECONDS)
+            to_chat(world, "<span class='userdanger'>Debug mode active</span>")
+            to_chat(world, "<span class='danger'><b>Only one remaining player detected within roundstart threshold\n\
+            Game will continue until zero players remain instead of announcing victory.</b></span>")
+            debug_announce = TRUE
+            return FALSE //It is extremely unlikely more than one player readied up
+        else
+            return TRUE
 
 /datum/game_mode/battle_royale/special_report()
     if(winner == "draw")
