@@ -79,7 +79,7 @@
 	if(IS_HIVEHOST(src))
 		var/datum/antagonist/hivemind/hive = mind.has_antag_datum(/datum/antagonist/hivemind)
 		hive.destroy_hive()
-	if(HAS_TRAIT(src, TRAIT_DROPS_ITEMS_ON_DEATH)) //if you want to add anything else, do it before this if statement
+	if(istype(SSticker.mode, /datum/game_mode/battle_royale)) //if you want to add anything else, do it before this if statement
 		var/list/turfs_to_throw = view(2, src)
 		for(var/obj/item/I in contents)
 			dropItemToGround(I, TRUE)
