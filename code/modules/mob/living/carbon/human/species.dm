@@ -1901,7 +1901,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					H.throw_alert("temp", /atom/movable/screen/alert/hot, 2)
 				else
 					H.throw_alert("temp", /atom/movable/screen/alert/hot, 3)
-		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
+		burn_damage = burn_damage * heatmod * H.physiology.heat_mod * ROYALE_HEAT_RESIST
 		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
 			H.emote("scream")
 		H.apply_damage(burn_damage, BURN)
@@ -1933,7 +1933,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	switch(adjusted_pressure)
 		if(HAZARD_HIGH_PRESSURE to INFINITY)
 			if(!HAS_TRAIT(H, TRAIT_RESISTHIGHPRESSURE))
-				H.adjustBruteLoss(min(((adjusted_pressure / HAZARD_HIGH_PRESSURE) -1 ) * PRESSURE_DAMAGE_COEFFICIENT, MAX_HIGH_PRESSURE_DAMAGE) * H.physiology.pressure_mod)
+				H.adjustBruteLoss(min(((adjusted_pressure / HAZARD_HIGH_PRESSURE) -1 ) * PRESSURE_DAMAGE_COEFFICIENT, MAX_HIGH_PRESSURE_DAMAGE) * H.physiology.pressure_mod * ROYALE_PRESSURE_RESIST)
 				H.throw_alert("pressure", /atom/movable/screen/alert/highpressure, 2)
 			else
 				H.clear_alert("pressure")

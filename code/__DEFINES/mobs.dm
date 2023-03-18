@@ -17,6 +17,9 @@
 #define MOVE_INTENT_WALK "walk"
 #define MOVE_INTENT_RUN  "run"
 
+#define ROYALE_HEAT_RESIST 0.2
+#define ROYALE_PRESSURE_RESIST 0.2
+
 //Blood levels
 #define BLOOD_VOLUME_MAXIMUM		2000
 #define BLOOD_VOLUME_SLIME_SPLIT	1120
