@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 /obj/docking_port/mobile/supply
 	name = "supply shuttle"
 	id = "supply"
-	callTime = 600
+	callTime = 60
 
 	dir = WEST
 	port_direction = EAST
