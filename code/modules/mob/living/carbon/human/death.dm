@@ -82,6 +82,14 @@
 	if(istype(SSticker.mode, /datum/game_mode/battle_royale)) //if you want to add anything else, do it before this if statement
 		var/list/turfs_to_throw = view(2, src)
 		for(var/obj/item/I in contents)
+			if(istype(I, /obj/item/storage/backpack))
+				for(var/obj/item/bagitems in I.contents)
+					dropItemToGround(bagitems, TRUE)
+					if(QDELING(bagitems))
+						continue //skip it
+					bagitems.throw_at(pick(turfs_to_throw), 3, 1)
+					bagitems.pixel_x = rand(-10, 10)
+					bagitems.pixel_y = rand(-10, 10)
 			dropItemToGround(I, TRUE)
 			if(QDELING(I))
 				continue //skip it
