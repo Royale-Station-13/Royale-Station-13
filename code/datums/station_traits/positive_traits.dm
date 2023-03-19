@@ -45,7 +45,7 @@
 /datum/station_trait/premium_internals_box
 	name = "Premium internals boxes"
 	trait_type = STATION_TRAIT_POSITIVE
-	weight = 10
+	weight = 0
 	show_in_report = TRUE
 	report_message = "The internals boxes for your crew have been filled with bonus equipment."
 	trait_to_give = STATION_TRAIT_PREMIUM_INTERNALS
@@ -104,7 +104,7 @@
 /datum/station_trait/filled_maint
 	name = "Filled up maintenance"
 	trait_type = STATION_TRAIT_POSITIVE
-	weight = 5
+	weight = 15
 	show_in_report = TRUE
 	report_message = "Our workers accidentally forgot more of their personal belongings in the maintenance areas."
 	blacklist = list(/datum/station_trait/empty_maint)
@@ -113,7 +113,7 @@
 /datum/station_trait/quick_shuttle
 	name = "Quick Shuttle"
 	trait_type = STATION_TRAIT_POSITIVE
-	weight = 5
+	weight = 0
 	show_in_report = TRUE
 	report_message = "Due to proximity to our supply station, the cargo shuttle will have a quicker flight time to your cargo department."
 	blacklist = list(/datum/station_trait/slow_shuttle)
