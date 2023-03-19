@@ -639,6 +639,9 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 /obj/effect/death_wall/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	//lol u died
+	if(istype(AM, /obj/structure/closet))
+		var/obj/structure/closet/locker = AM
+		locker.deconstruct()
 	if(isliving(AM))
 		var/mob/living/M = AM
 		INVOKE_ASYNC(M, /mob/living/carbon.proc/gib)
@@ -646,6 +649,8 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 
 /obj/effect/death_wall/Moved(atom/OldLoc, Dir)
 	. = ..()
+	for(var/obj/structure/closet/locker in get_turf(src))
+		locker.deconstruct()
 	for(var/mob/living/M in get_turf(src))
 		M.gib()
 		to_chat(M, "<span class='warning'>You left the zone!</span>")
