@@ -701,6 +701,7 @@ SUBSYSTEM_DEF(job)
 		if(!spawn_turf) //This should never happen, but it's here just in case. 
 			return FALSE
 
+	to_chat(living_mob, "<span class='userdanger'>Pod landing may be lethal.</span>")
 	var/obj/structure/closet/supplypod/centcompod/toLaunch = new()
 	living_mob.forceMove(toLaunch)
 	new /obj/effect/pod_landingzone(spawn_turf, toLaunch)
