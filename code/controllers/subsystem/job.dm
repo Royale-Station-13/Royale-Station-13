@@ -675,46 +675,8 @@ SUBSYSTEM_DEF(job)
 	..()
 
 /datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE)
-	var/atom/destination
-	if(M.mind && M.mind.assigned_role && length(GLOB.jobspawn_overrides[M.mind.assigned_role])) //We're doing something special today.
-		destination = pick(GLOB.jobspawn_overrides[M.mind.assigned_role])
-		destination.JoinPlayerHere(M, FALSE)
-		return
-
-	if(latejoin_trackers.len)
-		destination = pick(latejoin_trackers)
-		destination.JoinPlayerHere(M, buckle)
-		return
-
-	//bad mojo
-	var/area/shuttle/arrival/A = GLOB.areas_by_type[/area/shuttle/arrival]
-	if(A)
-		//first check if we can find a chair
-		var/obj/structure/chair/C = locate() in A
-		if(C)
-			C.JoinPlayerHere(M, buckle)
-			return
-
-		//last hurrah
-		var/list/avail = list()
-		for(var/turf/T in A)
-			if(!is_blocked_turf(T, TRUE))
-				avail += T
-		if(avail.len)
-			destination = pick(avail)
-			destination.JoinPlayerHere(M, FALSE)
-			return
-
-	//pick an open spot on arrivals and dump em
-	var/list/arrivals_turfs = shuffle(get_area_turfs(/area/shuttle/arrival))
-	if(arrivals_turfs.len)
-		for(var/turf/T in arrivals_turfs)
-			if(!is_blocked_turf(T, TRUE))
-				T.JoinPlayerHere(M, FALSE)
-				return
-		//last chance, pick ANY spot on arrivals and dump em
-		destination = arrivals_turfs[1]
-		destination.JoinPlayerHere(M, FALSE)
+	if(DropLandAtRandomHallwayPoint(M))
+		return TRUE
 	else
 		var/msg = "Unable to send mob [M] to late join!"
 		message_admins(msg)
@@ -735,12 +697,15 @@ SUBSYSTEM_DEF(job)
 	var/turf/spawn_turf = get_safe_random_station_turfs(typesof(/area/hallway))
 
 	if(!spawn_turf)
-		SendToLateJoin(living_mob)
-		return
+		spawn_turf = get_random_station_turf()
+		if(!spawn_turf) //This should never happen, but it's here just in case. 
+			return FALSE
 
+	to_chat(living_mob, "<span class='userdanger'>Pod landing may be lethal.</span>")
 	var/obj/structure/closet/supplypod/centcompod/toLaunch = new()
 	living_mob.forceMove(toLaunch)
 	new /obj/effect/pod_landingzone(spawn_turf, toLaunch)
+	return TRUE
 
 ///////////////////////////////////
 //Keeps track of all living heads//
