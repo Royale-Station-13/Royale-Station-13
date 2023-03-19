@@ -1,7 +1,7 @@
 /datum/station_trait/announcement_intern
 	name = "Announcement Intern"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 3
+	weight = 0
 	show_in_report = TRUE
 	report_message = "Please be nice to him."
 	blacklist = list(/datum/station_trait/announcement_medbot,
@@ -32,7 +32,7 @@
 /datum/station_trait/late_arrivals
 	name = "Late Arrivals"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 2
+	weight = 0
 	show_in_report = TRUE
 	report_message = "Sorry for that, we didn't expect to fly into that vomiting goose while bringing you to your new station."
 	trait_to_give = STATION_TRAIT_LATE_ARRIVALS
@@ -43,7 +43,7 @@
 /datum/station_trait/random_spawns
 	name = "Drive-by landing"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 2
+	weight = 15
 	show_in_report = TRUE
 	report_message = "Sorry for that, we missed your station by a few miles, so we just launched you towards your station in pods. Hope you don't mind!"
 	trait_to_give = STATION_TRAIT_RANDOM_ARRIVALS
@@ -54,7 +54,7 @@
 /datum/station_trait/hangover
 	name = "Hangover"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 2
+	weight = 5
 	show_in_report = TRUE
 	report_message = "Ohh.... Man.... That mandatory office party from last shift... God that was awesome... I woke up in some random toilet 3 sectors away..."
 	trait_to_give = STATION_TRAIT_HANGOVER
@@ -124,7 +124,7 @@
 /datum/station_trait/overflow_job_bureacracy
 	name = "Overflow bureacracy mistake"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 5
+	weight = 0
 	show_in_report = TRUE
 	var/list/jobs_to_use = list(JOB_NAME_CLOWN, JOB_NAME_BARTENDER, JOB_NAME_COOK, JOB_NAME_BOTANIST, JOB_NAME_CARGOTECHNICIAN, JOB_NAME_MIME, JOB_NAME_JANITOR)
 	var/chosen_job
@@ -152,12 +152,12 @@
 
 /datum/station_trait/slow_shuttle/on_round_start()
 	. = ..()
-	SSshuttle.supply.callTime *= 1.5
+	SSshuttle.supply.callTime *= 5
 
 /datum/station_trait/bot_languages
 	name = "Bot Language Matrix Malfunction"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 3
+	weight = 0
 	show_in_report = TRUE
 	report_message = "Your station's friendly bots have had their language matrix fried due to an event, resulting in some strange and unfamiliar speech patterns."
 
@@ -178,7 +178,7 @@
 /datum/station_trait/united_budget
 	name = "United Department Budget Management"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 2
+	weight = 5
 	show_in_report = TRUE
 	report_message = "Your station has been selected for one of our financial experiments! All station budgets have been united into one, and all budget cards will be linked to one account!"
 	trait_to_give = STATION_TRAIT_UNITED_BUDGET
