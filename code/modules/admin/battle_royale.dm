@@ -460,7 +460,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 //	toggle_ooc(FALSE)
 //	to_chat(world, "<span class='ratvar'><font size=24>Battle Royale will begin soon...</span></span>")
 	//Stop new player joining
-	GLOB.enter_allowed = FALSE
+//	GLOB.enter_allowed = FALSE
 
 	//Don't let anyone join as posibrains/golems etc
 //	DISABLE_BITFIELD(GLOB.ghost_role_flags, (GHOSTROLE_SPAWNER | GHOSTROLE_SILICONS))
