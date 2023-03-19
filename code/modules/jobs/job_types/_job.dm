@@ -97,7 +97,7 @@
 //Only override this proc, unless altering loadout code. Loadouts act on H but get info from M
 //H is usually a human unless an /equip override transformed it
 //do actions on H but send messages to M as the key may not have been transferred_yet
-/datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
+/datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE, client/parent)
 	//do actions on H but send messages to M as the key may not have been transferred_yet
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_JOB_AFTER_SPAWN, src, H, M, latejoin)
 	if(mind_traits)
@@ -108,8 +108,8 @@
 		return
 	var/mob/living/carbon/human/human = H
 	var/list/gear_leftovers = list()
-	if(M.client && LAZYLEN(M.client.prefs.active_character.equipped_gear))
-		for(var/gear in M.client.prefs.active_character.equipped_gear)
+	if(parent && LAZYLEN(parent.prefs.active_character.equipped_gear))
+		for(var/gear in parent.prefs.active_character.equipped_gear)
 			var/datum/gear/G = GLOB.gear_datums[gear]
 			if(G)
 				var/permitted = FALSE
@@ -134,7 +134,7 @@
 				if(G.slot)
 					if(G.slot == ITEM_SLOT_BACK)
 						var/obj/item/storage/backpack/oldbag = H.get_item_by_slot(ITEM_SLOT_BACK)
-						var/metadata = M.client.prefs.active_character.equipped_gear[G.id]
+						var/metadata = parent.prefs.active_character.equipped_gear[G.id]
 						var/obj/item/storage/backpack/newbag = G.spawn_item(null, metadata)
 						//This was much cleaner than trying to safely transfer contents in the correct orientation
 						oldbag.name = newbag.name
@@ -162,12 +162,12 @@
 					gear_leftovers += G
 
 			else
-				M.client.prefs.active_character.equipped_gear -= gear
+				parent.prefs.active_character.equipped_gear -= gear
 
 	if(gear_leftovers.len)
 		for(var/datum/gear/G in gear_leftovers)
 			var/obj/item/storage/B = (locate() in H)
-			var/metadata = M.client.prefs.active_character.equipped_gear[G.id]
+			var/metadata = parent.prefs.active_character.equipped_gear[G.id]
 
 			//Try putting it in their bag first. All roles spawn with a bag, so this should always succeed unless that has changed. 
 			if(B)

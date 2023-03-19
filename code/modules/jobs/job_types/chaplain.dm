@@ -24,7 +24,7 @@
 		SPECIES_PLASMAMAN = /datum/outfit/plasmaman/chaplain
 	)
 
-/datum/job/chaplain/after_spawn(mob/living/H, mob/M)
+/datum/job/chaplain/after_spawn(mob/living/H, mob/M, client/parent)
 	. = ..()
 
 	var/obj/item/storage/book/bible/booze/B = new
@@ -42,12 +42,12 @@
 	H.mind?.holy_role = HOLY_ROLE_HIGHPRIEST
 
 	var/new_religion = DEFAULT_RELIGION
-	if(M.client && M.client.prefs.active_character.custom_names["religion"])
-		new_religion = M.client.prefs.active_character.custom_names["religion"]
+	if(parent && parent.prefs.active_character.custom_names["religion"])
+		new_religion = parent.prefs.active_character.custom_names["religion"]
 
 	var/new_deity = DEFAULT_DEITY
-	if(M.client && M.client.prefs.active_character.custom_names["deity"])
-		new_deity = M.client.prefs.active_character.custom_names["deity"]
+	if(parent && parent.prefs.active_character.custom_names["deity"])
+		new_deity = parent.prefs.active_character.custom_names["deity"]
 
 	B.deity_name = new_deity
 
