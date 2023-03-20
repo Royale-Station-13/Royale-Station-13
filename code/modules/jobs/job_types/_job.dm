@@ -74,6 +74,7 @@
 	var/exclusive_mail_goodies = FALSE
 
 	var/gimmick = FALSE //least hacky way i could think of for this
+	var/hidefromlist = FALSE
 
 	///Bitfield of departments this job belongs with
 	var/departments = NONE

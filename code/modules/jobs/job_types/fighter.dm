@@ -25,6 +25,7 @@
     . = ..()
 
 /datum/job/default_royale
+    hidefromlist = TRUE
     title = JOB_FIGHTER
     flag = ASSISTANT
     supervisors = "nobody"

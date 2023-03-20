@@ -1,4 +1,5 @@
 /datum/job/captain
+	hidefromlist = TRUE
 	title = JOB_NAME_CAPTAIN
 	flag = CAPTAIN
 	auto_deadmin_role_flags = PREFTOGGLE_DEADMIN_POSITION_HEAD|PREFTOGGLE_DEADMIN_POSITION_SECURITY

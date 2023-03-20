@@ -1,4 +1,5 @@
 /datum/job/deputy
+	hidefromlist = TRUE
 	title = JOB_NAME_DEPUTY
 	flag = DEPUTY
 	department_head = list(JOB_NAME_HEADOFSECURITY)
