@@ -49,6 +49,7 @@
 		var/client/C = pick_n_take(candidates)
 
 		var/mob/living/simple_animal/hostile/poison/giant_spider/broodmother/spooder = new(vent.loc)
+		drop_pod_royale_mob(spooder)
 		spooder.key = C.key
 		var/datum/antagonist/spider/spider_antag = spooder.mind.has_antag_datum(/datum/antagonist/spider)
 		spider_antag.set_spider_team(spider_team)

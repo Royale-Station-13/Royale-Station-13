@@ -60,6 +60,7 @@ Contents:
 
 	//spawn the ninja and assign the candidate
 	var/mob/living/carbon/human/Ninja = create_space_ninja(spawn_loc)
+	drop_pod_royale_mob(Ninja)
 	Mind.transfer_to(Ninja)
 	var/datum/antagonist/ninja/ninjadatum = new
 	Mind.add_antag_datum(ninjadatum)

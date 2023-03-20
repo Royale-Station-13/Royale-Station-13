@@ -440,11 +440,12 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 			blue_alert = TRUE
 	else if(!red_alert)
 		if(radius < 65)
-			GLOB.enter_allowed = FALSE
+			GLOB.enter_allowed = FALSE //no more late joins
 			set_security_level(SEC_LEVEL_RED)
 			red_alert = TRUE
 	else if(!delta_alert)
 		if(radius < 35)
+			CONFIG_SET(flag/allow_random_events, FALSE) //no more random events
 			set_security_level(SEC_LEVEL_DELTA)
 			delta_alert = TRUE
 

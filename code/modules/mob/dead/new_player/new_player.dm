@@ -178,7 +178,7 @@
 			return
 
 		if(!GLOB.enter_allowed)
-			to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+			to_chat(usr, "<span class='notice'>The game is nearly over, observe and wait for the next round!</span>")
 			return
 
 		if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums) && !IS_PATRON(ckey(key)))
@@ -292,7 +292,7 @@
 		return FALSE
 
 	if(SSticker.late_join_disabled)
-		alert(src, "An administrator has disabled late join spawning.")
+		alert(src, "The current round is almost over, Observe and wait for the next round!")
 		return FALSE
 
 	var/arrivals_docked = TRUE
