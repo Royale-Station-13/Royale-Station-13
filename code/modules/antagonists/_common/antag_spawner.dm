@@ -122,7 +122,7 @@
 	to_chat(user, "<span class='notice'>You activate [src] and wait for confirmation.</span>")
 	var/list/nuke_candidates = pollGhostCandidates("Do you want to play as a syndicate [borg_to_spawn ? "[lowertext(borg_to_spawn)] cyborg":"operative"]?", ROLE_OPERATIVE, null, ROLE_OPERATIVE, 150, POLL_IGNORE_SYNDICATE)
 	if(LAZYLEN(nuke_candidates))
-		if(QDELETED(src) || !check_usability(user))
+		if(QDELETED(src))
 			return
 		used = TRUE
 		var/mob/dead/observer/G = pick(nuke_candidates)
@@ -141,10 +141,8 @@
 	new_op.send_to_spawnpoint = FALSE
 	new_op.nukeop_outfit = /datum/outfit/syndicate/no_crystals
 
-	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop,TRUE)
-	if(creator_op)
-		M.mind.add_antag_datum(new_op,creator_op.nuke_team)
-		M.mind.special_role = "Nuclear Operative"
+	M.mind.add_antag_datum(new_op)
+	M.mind.special_role = "Nuclear Operative"
 
 //////CLOWN OP
 /obj/item/antag_spawner/nuke_ops/clown
@@ -160,10 +158,8 @@
 	new_op.send_to_spawnpoint = FALSE
 	new_op.nukeop_outfit = /datum/outfit/syndicate/clownop/no_crystals
 
-	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop/clownop,TRUE)
-	if(creator_op)
-		M.mind.add_antag_datum(new_op, creator_op.nuke_team)
-		M.mind.special_role = "Clown Operative"
+	M.mind.add_antag_datum(new_op)
+	M.mind.special_role = "Clown Operative"
 
 
 //////SYNDICATE BORG
@@ -288,13 +284,13 @@
 
 
 /obj/item/antag_spawner/gangster/attack_self(mob/user)
-	if(!(check_usability(user)))
-		return
+//	if(!(check_usability(user)))
+//		return
 
 	to_chat(user, "<span class='notice'>You activate [src] and wait for confirmation.</span>")
 	var/list/candidates = pollGhostCandidates("Do you want to play as a gangster reinforcements?", ROLE_GANG, null, ROLE_GANG, 150)
 	if(LAZYLEN(candidates))
-		if(QDELETED(src) || !check_usability(user))
+		if(QDELETED(src))
 			return
 		used = TRUE
 		var/mob/dead/observer/G = pick(candidates)
