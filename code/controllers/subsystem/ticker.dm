@@ -327,7 +327,7 @@ SUBSYSTEM_DEF(ticker)
 	GLOB.start_landmarks_list = shuffle(GLOB.start_landmarks_list) //Shuffle the order of spawn points so they dont always predictably spawn bottom-up and right-to-left
 	create_characters() //Create player characters
 	collect_minds()
-	equip_characters()
+//	equip_characters()
 
 	GLOB.data_core.manifest()
 
@@ -431,7 +431,7 @@ SUBSYSTEM_DEF(ticker)
 			SSticker.minds += P.new_character.mind
 		CHECK_TICK
 
-
+/*
 /datum/controller/subsystem/ticker/proc/equip_characters()
 	var/captainless = TRUE
 	var/highest_rank = length(SSjob.chain_of_command) + 1
@@ -470,7 +470,7 @@ SUBSYSTEM_DEF(ticker)
 			SSjob.promote_to_captain(pick(spare_id_candidates), captainless)		//This is just in case 2 heads of the same priority spawn
 		CHECK_TICK
 
-
+*/
 /datum/controller/subsystem/ticker/proc/transfer_characters()
 	var/list/livings = list()
 	for(var/mob/dead/new_player/player in GLOB.mob_list)
