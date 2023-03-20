@@ -771,6 +771,20 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 			. = orange(distance,center)
 	return
 
+/proc/drop_pod_royale_mob(mob/living/living_mob)
+	var/turf/spawn_turf = get_safe_random_station_turfs(typesof(/area/hallway))
+
+	if(!spawn_turf)
+		spawn_turf = get_random_station_turf()
+		if(!spawn_turf) //This should never happen, but it's here just in case. 
+			return FALSE
+
+	to_chat(living_mob, "<span class='userdanger'>Pod landing may be lethal.</span>")
+	var/obj/structure/closet/supplypod/centcompod/toLaunch = new()
+	living_mob.forceMove(toLaunch)
+	new /obj/effect/pod_landingzone(spawn_turf, toLaunch)
+	return TRUE
+
 #undef FACING_SAME_DIR
 #undef FACING_EACHOTHER
 #undef FACING_INIT_FACING_TARGET_TARGET_FACING_PERPENDICULAR

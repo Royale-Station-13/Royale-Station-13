@@ -34,6 +34,7 @@
 		return MAP_ERROR
 
 	var/mob/living/carbon/human/S = new ((pick(spawn_locs)))
+	drop_pod_royale_mob(S)
 	player_mind.transfer_to(S)
 	player_mind.assigned_role = ROLE_NIGHTMARE
 	player_mind.special_role = ROLE_NIGHTMARE

@@ -297,6 +297,7 @@
 	if(!GLOB.xeno_spawn)
 		return MAP_ERROR
 	var/mob/living/simple_animal/hostile/morph/S = new /mob/living/simple_animal/hostile/morph(pick(GLOB.xeno_spawn))
+	drop_pod_royale_mob(S)
 	player_mind.transfer_to(S)
 	player_mind.assigned_role = ROLE_MORPH
 	player_mind.special_role = ROLE_MORPH

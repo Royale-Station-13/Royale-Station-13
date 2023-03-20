@@ -72,6 +72,7 @@
 		var/client/C = pick_n_take(candidates)
 
 		var/mob/living/carbon/alien/larva/new_xeno = new(vent.loc)
+		drop_pod_royale_mob(new_xeno)
 		new_xeno.key = C.key
 
 		spawncount--
