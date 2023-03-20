@@ -34,9 +34,9 @@
 	gloves = /obj/item/clothing/gloves/combat
 	back = /obj/item/storage/backpack/clown
 	ears = /obj/item/radio/headset/syndicate/alt
-	l_pocket = /obj/item/pinpointer/nuke/syndicate
+	l_pocket = /obj/item/modular_computer/tablet/nukeops
 	r_pocket = /obj/item/bikehorn
-	id = /obj/item/card/id/silver/royale
+	id = /obj/item/card/emag
 	backpack_contents = list(/obj/item/storage/box/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival,
 		/obj/item/reagent_containers/spray/waterflower/lube)
