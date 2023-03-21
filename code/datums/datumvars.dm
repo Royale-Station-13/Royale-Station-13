@@ -2,6 +2,8 @@
 	return TRUE
 
 /datum/proc/can_vv_get(var_name)
+	if(var_name == "computer_id" || var_name == "address")
+		return FALSE
 	return TRUE
 
 /datum/proc/vv_edit_var(var_name, var_value) //called whenever a var is edited

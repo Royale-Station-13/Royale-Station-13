@@ -1762,8 +1762,6 @@
 
 	else if(href_list["newbankey"])
 		var/player_key = href_list["newbankey"]
-		var/player_ip = href_list["newbanip"]
-		var/player_cid = href_list["newbancid"]
 		ban_panel(player_key)
 
 	else if(href_list["intervaltype"]) //check for ban panel, intervaltype is used as it's the only value which will always be present
@@ -1775,23 +1773,17 @@
 	else if(href_list["searchunbankey"] || href_list["searchunbanadminkey"] || href_list["searchunbanip"] || href_list["searchunbancid"])
 		var/player_key = href_list["searchunbankey"]
 		var/admin_key = href_list["searchunbanadminkey"]
-		var/player_ip = href_list["searchunbanip"]
-		var/player_cid = href_list["searchunbancid"]
 		unban_panel(player_key, admin_key)
 
 	else if(href_list["unbanpagecount"])
 		var/page = href_list["unbanpagecount"]
 		var/player_key = href_list["unbankey"]
 		var/admin_key = href_list["unbanadminkey"]
-		var/player_ip = href_list["unbanip"]
-		var/player_cid = href_list["unbancid"]
 		unban_panel(player_key, admin_key, null, null, page)
 
 	else if(href_list["editbanid"])
 		var/edit_id = href_list["editbanid"]
 		var/player_key = href_list["editbankey"]
-		var/player_ip = href_list["editbanip"]
-		var/player_cid = href_list["editbancid"]
 		var/role = href_list["editbanrole"]
 		var/duration = href_list["editbanduration"]
 		var/applies_to_admins = text2num(href_list["editbanadmins"])
