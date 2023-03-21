@@ -27,7 +27,7 @@
 			var/obj/item/gun/ballistic/automatic/pistol/I = P
 			combine_count += 1
 			combine_count += I.combine_count
-			automatic = 1
+			full_auto = TRUE
 			fire_rate = initial(fire_rate) * combine_count
 			fire_sound_volume = 100
 			if(magazine)
