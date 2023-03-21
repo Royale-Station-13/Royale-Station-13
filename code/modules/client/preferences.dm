@@ -96,15 +96,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	UI_style = GLOB.available_ui_styles[1]
 	if(istype(C))
 		if(!IS_GUEST_KEY(C.key))
-			unlock_content = C.IsByondMember()
-			if(unlock_content)
-				set_max_character_slots(8)
+			set_max_character_slots(9)
 		else if(!length(key_bindings)) // Guests need default keybinds
 			key_bindings = deepCopyList(GLOB.keybinding_list_by_key)
 	var/loaded_preferences_successfully = load_from_database()
 	if(loaded_preferences_successfully)
-		if("6030fe461e610e2be3a2c3e75c06067e" in purchased_gear) //MD5 hash of, "extra character slot"
-			set_max_character_slots(max_usable_slots + 1)
 		if(load_characters()) // inside this proc is a disgusting SQL query
 			var/datum/character_save/target_save = character_saves[default_slot]
 			if(target_save && !target_save.slot_locked)
