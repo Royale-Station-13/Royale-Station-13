@@ -26,6 +26,7 @@
 	light_power = 1
 	light_range = 5
 	light_on = FALSE
+	ventcrawler = VENTCRAWLER_ALWAYS
 
 	/// Used as currency to purchase different abilities
 	var/ram = 100

@@ -25,7 +25,7 @@
     var/list/active_players = list()
 
     for(var/mob/living/player in player_list) //checking for all living mobs instead of just humans
-        if((!player.client) || (is_centcom_level(player.z) || isrevenant(player) || istype(player, /mob/living/carbon/human/species/shadow/nightmare) || player.ventcrawler))
+        if((!player.client) || (is_centcom_level(player.z) || (is_reserved_level(player.z)) || isrevenant(player) || istype(player, /mob/living/carbon/human/species/shadow/nightmare) || player.ventcrawler))
             continue
         var/turf/T = get_turf(player)
         if(T.x > 128 + GLOB.battle_royale.radius || T.x < 128 - GLOB.battle_royale.radius || T.y > 128 + GLOB.battle_royale.radius || T.y < 128 - GLOB.battle_royale.radius)
