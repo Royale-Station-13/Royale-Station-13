@@ -8,8 +8,8 @@
 
 	weather_message = "<span class='userdanger'><i>You feel waves of heat wash over you! Find shelter!</i></span>"
 	weather_overlay = "ash_storm"
-	weather_duration_lower = 600
-	weather_duration_upper = 1500
+	weather_duration_lower = 300
+	weather_duration_upper = 450
 	weather_color = "green"
 	weather_sound = 'sound/misc/bloblarm.ogg'
 
