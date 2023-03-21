@@ -23,9 +23,9 @@
 		SPECIES_PLASMAMAN = /datum/outfit/plasmaman/mime
 	)
 
-/datum/job/mime/after_spawn(mob/living/carbon/human/H, mob/M)
+/datum/job/mime/after_spawn(mob/living/carbon/human/H, mob/M, client/parent)
 	. = ..()
-	H.apply_pref_name("mime", M.client)
+	H.apply_pref_name("mime", parent)
 
 /datum/outfit/job/mime
 	name = JOB_NAME_MIME
