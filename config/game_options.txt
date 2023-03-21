@@ -16,7 +16,7 @@ REVIVAL_BRAIN_LIFE -1
 
 ## OOC DURING ROUND ###
 ## Comment this out if you want OOC to be automatically disabled during the round, it will be enabled during the lobby and after the round end results.
-#OOC_DURING_ROUND
+OOC_DURING_ROUND
 
 ## LOOC
 ## Comment this out to disable LOOC
@@ -41,7 +41,7 @@ EMOJIS
 
 ## These modify the run/walk speed of all mobs before the mob-specific modifiers are applied.
 RUN_DELAY 2
-WALK_DELAY 3.5
+WALK_DELAY 3
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
 ## Entries completely override all subtypes. Later entries have precedence over earlier entries.
@@ -232,7 +232,7 @@ MIN_POP ASSIMILATION 0
 MAX_POP ASSIMILATION -1
 
 ## The amount of time it takes for the emergency shuttle to be called, from round start.
-SHUTTLE_REFUEL_DELAY 12000
+SHUTTLE_REFUEL_DELAY 1200000
 
 ## Variables calculate how number of antagonists will scale to population.
 ## Used as (Antagonists = Population / Coeff)
@@ -496,7 +496,7 @@ ROUNDSTART_RACES gold_golem
 ROUNDSTART_RACES iron_golem
 #ROUNDSTART_RACES jelly
 ROUNDSTART_RACES plasma_golem
-#ROUNDSTART_RACES shadow
+ROUNDSTART_RACES shadow
 #ROUNDSTART_RACES silver_golem
 #ROUNDSTART_RACES uranium_golem
 ROUNDSTART_RACES glass_golem
@@ -508,7 +508,6 @@ ROUNDSTART_RACES pod
 ROUNDSTART_RACES skeleton
 #ROUNDSTART_RACES slime
 #ROUNDSTART_RACES zombie
-ROUNDSTART_RACES shadow
 
 ## Roundstart no-reset races
 ##-------------------------------------------------------------------------------------------
@@ -570,7 +569,7 @@ REACTIONARY_EXPLOSIONS
 #BOMBCAP 24
 ## LagHell (7, 14, 28)
 #BOMBCAP 28
-#BOMBCAP 12
+BOMBCAP 12
 
 ## Lavaland "Budget"
 ## Lavaland ruin spawning has an imaginary budget to spend on ruins, where

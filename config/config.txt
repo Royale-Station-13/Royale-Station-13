@@ -36,16 +36,16 @@ $include policies.txt
 @SERVERSQLNAME ss13royale
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-#STATIONNAME Space Station 13
+STATIONNAME Royale Station 13
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 #HUB
 
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
-LOBBY_COUNTDOWN 300
+LOBBY_COUNTDOWN 120
 
 ## Round End Time: This is the amount of time after the round ends that players have to murder death kill each other.
-ROUND_END_COUNTDOWN 60
+ROUND_END_COUNTDOWN 75
 
 ## Uncomment this if you want to use the Discord webhook handler
 #USING_DISCORD
@@ -230,7 +230,7 @@ HOSTEDBY Some guy
 GUEST_BAN
 
 ## Comment this out to disable checking for the cid randomizer dll. (disabled if database isn't enabled or connected)
-CHECK_RANDOMIZER
+#CHECK_RANDOMIZER
 
 ## IPINTEL:
 ## This allows you to detect likely proxies by checking ips against getipintel.net
@@ -321,7 +321,7 @@ INVOKE_YOUTUBEDL C:\youtubedl\youtube-dl.exe
 
 ## Uncomment to show a popup 'reply to' window to every non-admin that receives an adminPM.
 ## The intention is to make adminPMs more visible. (although I fnd popups annoying so this defaults to off)
-POPUP_ADMIN_PM
+# POPUP_ADMIN_PM
 
 ## Uncomment to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
 ALLOW_HOLIDAYS
@@ -420,7 +420,7 @@ NOTIFY_NEW_PLAYER_ACCOUNT_AGE 1
 AUTOCONVERT_NOTES
 
 ## Comment this out to stop admin messages sent anytime an admin disconnects from a round in play, you can edit the messages in admin.dm
-ANNOUNCE_ADMIN_LOGOUT
+#ANNOUNCE_ADMIN_LOGOUT
 
 ## Uncomment to have an admin message sent anytime an admin connects to a round in play, you can edit the messages in admin.dm
 #ANNOUNCE_ADMIN_LOGIN
@@ -435,7 +435,7 @@ MAPROTATION
 PREFERENCE_MAP_VOTING 0
 
 ## Starts a map vote at the end of rounds
-AUTOMAPVOTE
+#AUTOMAPVOTE
 
 ## Sets a minimum round length (in minutes) before a map vote will be called to discourage players from forcing early round ends just to change map
 ## Set to 0 to disable.
@@ -445,7 +445,7 @@ AUTOMAPVOTE_THRESHOLD 0
 ## This is the chance of map rotation factored to the round length.
 ## A value of 1 would mean the map rotation chance is the round length in minutes (hour long round == 60% rotation chance)
 ## A value of 0.5 would mean the map rotation chance is half of the round length in minutes (hour long round == 30% rotation chance)
-#MAPROTATIONCHANCEDELTA 0.5
+MAPROTATIONCHANCEDELTA 1000
 
 ## AUTOADMIN
 ## The default admin rank
@@ -474,7 +474,7 @@ CLIENT_ERROR_BUILD 1583
 ## Set to 0 or comment out to disable.
 SECOND_TOPIC_LIMIT 10
 
-MINUTE_TOPIC_LIMIT 180
+MINUTE_TOPIC_LIMIT 300
 
 ## CLICK RATE LIMITING
 ## Same as above, but applies to clicking on objects in the game window.
@@ -526,7 +526,7 @@ DISABLE_HIGH_POP_MC_MODE_AMOUNT 70
 #RESUME_AFTER_INITIALIZATIONS
 
 ## Uncomment to set the number of /world/Reboot()s before the DreamDaemon restarts itself. 0 means restart every round. Requires tgstation server tools.
-ROUNDS_UNTIL_HARD_RESTART 5
+ROUNDS_UNTIL_HARD_RESTART 0
 
 ##Default screen resolution, in tiles.
 ##	By default, this is 15x15, which gets simplified to 7 by BYOND, as it is a 1:1 screen ratio.
@@ -536,7 +536,7 @@ DEFAULT_VIEW 17x15
 
 ## Name your perpetual currency here
 ## This is used within the metashop and earned by playing the game.
-METACURRENCY_NAME Bloodcoin
+METACURRENCY_NAME Bloodycoin
 
 ## Grant metacurrency
 ## Comment this out if you don't want players to earn metacurrency
