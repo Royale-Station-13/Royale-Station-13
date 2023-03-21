@@ -18,38 +18,38 @@ endmap
 
 map corgstation
 	minplayers 0
-	maxplayers 0
+	maxplayers 200
 	votable
 endmap
 
 map boxstation
 	minplayers 0
-	maxplayers 0
+	maxplayers 200
 	default
 	votable
 endmap
 
 map metastation
 	minplayers 0
-	maxplayers 0
+	maxplayers 200
 	votable
 endmap
 
 map pubbystation
 	minplayers 0
-	maxplayers 0
+	maxplayers 200
 	votable
 endmap
 
 map deltastation
 	minplayers 30
-	maxplayers 0
+	maxplayers 200
 	votable
 endmap
 
 map kilostation
 	minplayers 30
-	maxplayers 0
+	maxplayers 200
 	votable
 endmap
 
@@ -59,7 +59,7 @@ endmap
 
 map flandstation
 	minplayers 0
-	maxplayers 0
+	maxplayers 200
 	votable
 endmap
 
