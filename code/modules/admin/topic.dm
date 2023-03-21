@@ -1764,7 +1764,7 @@
 		var/player_key = href_list["newbankey"]
 		var/player_ip = href_list["newbanip"]
 		var/player_cid = href_list["newbancid"]
-		ban_panel(player_key, player_ip, player_cid)
+		ban_panel(player_key)
 
 	else if(href_list["intervaltype"]) //check for ban panel, intervaltype is used as it's the only value which will always be present
 		if(href_list["roleban_delimiter"])
@@ -1777,7 +1777,7 @@
 		var/admin_key = href_list["searchunbanadminkey"]
 		var/player_ip = href_list["searchunbanip"]
 		var/player_cid = href_list["searchunbancid"]
-		unban_panel(player_key, admin_key, player_ip, player_cid)
+		unban_panel(player_key, admin_key)
 
 	else if(href_list["unbanpagecount"])
 		var/page = href_list["unbanpagecount"]
@@ -1785,7 +1785,7 @@
 		var/admin_key = href_list["unbanadminkey"]
 		var/player_ip = href_list["unbanip"]
 		var/player_cid = href_list["unbancid"]
-		unban_panel(player_key, admin_key, player_ip, player_cid, page)
+		unban_panel(player_key, admin_key, null, null, page)
 
 	else if(href_list["editbanid"])
 		var/edit_id = href_list["editbanid"]
@@ -1798,7 +1798,7 @@
 		var/reason = rustg_url_decode(href_list["editbanreason"])
 		var/page = href_list["editbanpage"]
 		var/admin_key = href_list["editbanadminkey"]
-		ban_panel(player_key, player_ip, player_cid, role, duration, applies_to_admins, reason, edit_id, page, admin_key)
+		ban_panel(player_key, null, null, role, duration, applies_to_admins, reason, edit_id, page, admin_key)
 
 	else if(href_list["unbanid"])
 		var/ban_id = href_list["unbanid"]

@@ -681,8 +681,6 @@
 	<input type='hidden' name='src' value='[REF(src)]'>
 	Key:<input type='text' name='searchunbankey' size='18' value='[player_key]'>
 	Admin Key:<input type='text' name='searchunbanadminkey' size='18' value='[admin_key]'>
-	IP:<input type='text' name='searchunbanip' size='12' value='[player_ip]'>
-	CID:<input type='text' name='searchunbancid' size='10' value='[player_cid]'>
 	<input type='submit' value='Search'>
 	</form>
 	</div>
@@ -846,7 +844,7 @@
 		if(i.address == player_ip || i.computer_id == player_cid)
 			build_ban_cache(i)
 			to_chat(i, "<span class='boldannounce'>[usr.client.key] has removed a ban from [role] for your IP or CID.")
-	unban_panel(player_key, admin_key, player_ip, player_cid, page)
+	unban_panel(player_key, admin_key, null, null, page)
 
 /datum/admins/proc/edit_ban(ban_id, player_key, ip_check, player_ip, cid_check, player_cid, use_last_connection, applies_to_admins, duration, interval, reason, global_ban, mirror_edit, old_key, old_ip, old_cid, old_applies, old_globalban, admin_key, page, list/changes)
 	if(!check_rights(R_BAN))
