@@ -41,7 +41,7 @@
     path = /obj/item/kitchen/knife/poison/royale
 
 /datum/gear/equipment/knife/spy
-    display_name = "conniver's knife"
+    display_name = "conniver's switchblade"
     description = "deals extra, armor-piercing damage if you attack from behind"
     path = /obj/item/switchblade/plastitanium/spy
 

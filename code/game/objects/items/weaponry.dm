@@ -419,7 +419,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	extended_icon_state = "switchblade_ext_msf"
 
 /obj/item/switchblade/plastitanium/spy
-	name = "conniver's knife"
+	name = "conniver's switchblade"
 	desc = "Gentlemen, this game is as good as mine!"
 	var/backstab_dir
 
