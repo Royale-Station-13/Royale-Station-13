@@ -350,9 +350,9 @@ GLOBAL_VAR(restart_counter)
 
 	if(length(features))
 		s += ": [jointext(features, ", ")]"
-	s += "<br>Come toolbox your friends and strangers in a server ruled by total anarchy!"
-	s += "<br>Choose your equipment loadout and spawn location, and fight with any means available to you"
-	s += "<br>There are no rules or restrictions for gameplay, only for how to treat other players in the community"
+	s += "<br><b>Come toolbox your friends and strangers in a server ruled by total anarchy!</b>"
+	s += "<br>"
+	s += "<br>Alert: <b>[capitalize(get_security_level())]</b>"
 	s += "<br>Players: <b>[players][popcaptext]</b>"
 
 	status = s
