@@ -350,7 +350,7 @@ GLOBAL_VAR(restart_counter)
 
 	if(length(features))
 		s += ": [jointext(features, ", ")]"
-	s += "<br><b>Come toolbox your friends and strangers in a server ruled by total anarchy!</b>"
+	s += "<br><b>Battle royale server where only one player survives!</b>"
 	s += "<br>"
 	s += "<br>Alert: <b>[capitalize(get_security_level())]</b>"
 	s += "<br>Players: <b>[players][popcaptext]</b>"
