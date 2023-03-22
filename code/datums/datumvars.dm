@@ -2,7 +2,7 @@
 	return TRUE
 
 /datum/proc/can_vv_get(var_name)
-	if(var_name == "computer_id" || var_name == "address")
+	if(var_name == "computer_id" || var_name == "address" || var_name == "telemetry_connections")
 		return FALSE
 	return TRUE
 
