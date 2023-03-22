@@ -333,9 +333,8 @@ GLOBAL_VAR(restart_counter)
 
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<b>[station_name()]</b>";
 	var/discordurl = CONFIG_GET(string/discordurl)
-	s += " (<a href='[discordurl]'>Discord</a>)"
+	s += " (<a href='[discordurl]'><b>Join our discord here!</b></a>)"
 
 	var/players = GLOB.clients.len
 
@@ -351,8 +350,8 @@ GLOBAL_VAR(restart_counter)
 
 	if(length(features))
 		s += ": [jointext(features, ", ")]"
-
-	s += "<br>Time: <b>[gameTimestamp("hh:mm")]</b>"
+	s += "<br><b>Come toolbox your friends and strangers in a server ruled by total anarchy!</b>"
+	s += "<br>"
 	s += "<br>Alert: <b>[capitalize(get_security_level())]</b>"
 	s += "<br>Players: <b>[players][popcaptext]</b>"
 
