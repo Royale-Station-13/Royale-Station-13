@@ -146,7 +146,7 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 //Grenades
 		/obj/item/grenade/empgrenade,
 		/obj/item/grenade/stingbang,
-		/obj/item/grenade/plastic/x4,
+		/obj/item/grenade/plastic/c4/x4,
 		/obj/item/grenade/frag/mega,
 		/obj/item/grenade/gluon,
 		/obj/item/grenade/syndieminibomb,
