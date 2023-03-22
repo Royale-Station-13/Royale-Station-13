@@ -507,7 +507,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	titanfall()
 */
 	//spawn one basic loot drop per player after 30 second. Everyone already has a starting loadout of their choice, so no need for super spam
-	addtimer(CALLBACK(src, .proc/generate_basic_loot, GLOB.player_list.len), 300) 
+	addtimer(CALLBACK(src, PROC_REF(generate_basic_loot), GLOB.player_list.len), 300)
 
 	death_wall = list()
 	var/z_level = SSmapping.station_start
