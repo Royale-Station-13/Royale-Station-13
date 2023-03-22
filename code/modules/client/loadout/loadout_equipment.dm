@@ -40,6 +40,11 @@
     description = "Comes pre-loaded with 40u of paralytic spider venom"
     path = /obj/item/kitchen/knife/poison/royale
 
+/datum/gear/equipment/knife/spy
+    display_name = "conniver's switchblade"
+    description = "deals extra, armor-piercing damage if you attack from behind"
+    path = /obj/item/switchblade/plastitanium/spy
+
 /datum/gear/equipment/toolbox
     display_name = "strange toolbox"
     description = "This toolbox looks a bit strange. There is a note inside"

@@ -418,6 +418,22 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	extended_throwforce = 17
 	extended_icon_state = "switchblade_ext_msf"
 
+/obj/item/switchblade/plastitanium/spy
+	name = "conniver's switchblade"
+	desc = "Gentlemen, this game is as good as mine!"
+	var/backstab_dir
+
+/obj/item/switchblade/plastitanium/spy/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(extended && iscarbon(target) && iscarbon(user))
+		var/mob/living/carbon/C_target = target
+		var/mob/living/carbon/C_user = user
+		if(C_user.zone_selected == BODY_ZONE_CHEST)
+			backstab_dir = get_dir(C_user, C_target)
+			if((C_user.dir & backstab_dir) && (C_target.dir & backstab_dir))
+				C_target.apply_damage(20, BRUTE, def_zone = BODY_ZONE_CHEST) //ignores armor
+				playsound(src, 'sound/weapons/parry.ogg', 75, 1)
+
 /obj/item/phone
 	name = "red phone"
 	desc = "Should anything ever go wrong..."
