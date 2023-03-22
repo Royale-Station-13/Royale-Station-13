@@ -318,7 +318,7 @@ class PlayerDetailsSection extends Component {
             "white-space": "nowrap",
             "text-overflow": "ellipsis",
             "overflow": "hidden",
-            "color": "#ffbf00",
+            "color": "#fe0500",
             "width": "calc(100% - 25px)",
             "display": "inline-block",
           }}>
@@ -357,7 +357,7 @@ class PlayerDetailsSection extends Component {
           <Box inline color="#d8d8d8">
             {metacurrency_balance}
           </Box><br />
-          <hr style={{ "border": "1px solid #ffbf00", "height": 0, "opacity": 0.8 }} />
+          <hr style={{ "border": "1px solid #fe0500", "height": 0, "opacity": 0.8 }} />
           <Box textAlign="center" bold>
             Names
           </Box>
@@ -397,7 +397,7 @@ class PlayerCKEYDetailsSection extends PureComponent {
           </Box>
         )}
         buttons={
-          <Button style={{ "font-weight": "normal", "font-size": "12px" }} mt={0} mb={0} color="yellow"
+          <Button style={{ "font-weight": "normal", "font-size": "12px" }} mt={0} mb={0} color="red"
             content="CentCom" tooltip="Search CentCom Galactic Ban DB"
             onClick={() => act("open_centcom_bans_database", { who: ckey })} />
         }
@@ -520,7 +520,7 @@ class PlayerDetailsActionButton extends PureComponent {
     } = this.props;
     return (
       <Flex.Item mt={0.35} ml={0.5}>
-        <Button fluid color="yellow" content={name} tooltip={action} onClick={() => act(action, { who: ckey })} />
+        <Button fluid color="red" content={name} tooltip={action} onClick={() => act(action, { who: ckey })} />
       </Flex.Item>
     );
   }

@@ -2,11 +2,13 @@
 name: Bug report
 about: Create a report to help reproduce and fix the issue
 ---
+
 <!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable -->
+
 ## Round ID & Round Date:
 
 <!--- **INCLUDE THE ROUND ID AND THE ROUND DATE**
-If you discovered this issue from playing beestation hosted servers:-->
+If you discovered this issue from playing RoyaleStation hosted servers:-->
 
 ## Testmerges:
 
