@@ -267,11 +267,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			if(C.key && (C.key != key) )
 				var/matches
 				if( (C.address == address) )
-					matches += "IP ([address])"
+					matches += "IP address"
 				if( (C.computer_id == computer_id) )
 					if(matches)
 						matches += " and "
-					matches += "ID ([computer_id])"
+					matches += "Computer ID"
 					alert_mob_dupe_login = TRUE
 				if(matches)
 					if(C)
