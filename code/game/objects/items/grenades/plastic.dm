@@ -7,7 +7,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/bombs_righthand.dmi'
 	item_flags = NOBLUDGEON
 	flags_1 = NONE
-	det_time = 10
+	det_time = 20
 	display_timer = 0
 	w_class = WEIGHT_CLASS_SMALL
 	var/atom/target = null
@@ -103,9 +103,9 @@
 	if(nadeassembly)
 		nadeassembly.attack_self(user)
 		return
-	var/newtime = input(usr, "Please set the timer.", "Timer", 10) as num
+	var/newtime = input(usr, "Please set the timer.", "Timer", 20) as num
 	if(user.get_active_held_item() == src)
-		newtime = CLAMP(newtime, 10, 60000)
+		newtime = CLAMP(newtime, 20, 60000)
 		det_time = newtime
 		to_chat(user, "Timer set for [det_time] seconds.")
 
@@ -248,13 +248,11 @@
 // C4 is intended to be used for infiltration, and destroying tech. X4 is intended to be used for heavy breaching and tight spaces.
 // Intended to replace C4 for nukeops, and to be a randomdrop in surplus/random traitor purchases.
 
-/obj/item/grenade/plastic/x4
+/obj/item/grenade/plastic/c4/x4
 	name = "X4"
 	desc = "A shaped high-explosive breaching charge. Designed to ensure user safety and wall nonsafety."
 	icon_state = "plasticx40"
 	item_state = "plasticx4"
-	gender = PLURAL
 	directional = TRUE
-	boom_sizes = list(0, 2, 5)
-	can_attach_mob = TRUE
+	boom_sizes = list(0, 1, 4)
 	full_damage_on_mobs = TRUE

@@ -94,10 +94,10 @@
     new /obj/item/wrench(src)
 
 /obj/item/storage/box/loadout/explosives/PopulateContents()
-    new /obj/item/grenade/plastic/x4(src)
-    new /obj/item/grenade/plastic/x4(src)
-    new /obj/item/grenade/plastic/x4(src)
-    new /obj/item/grenade/plastic/x4(src)
+    new /obj/item/grenade/plastic/c4/x4(src)
+    new /obj/item/grenade/plastic/c4/x4(src)
+    new /obj/item/grenade/plastic/c4/x4(src)
+    new /obj/item/grenade/plastic/c4/x4(src)
 
 /obj/item/storage/toolbox/ammo/royale
     name = "ammo box"
