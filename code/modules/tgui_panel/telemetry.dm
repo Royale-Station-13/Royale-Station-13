@@ -45,10 +45,9 @@
 /datum/tgui_panel/proc/handle_telemetry_timeout()
 	if(client && !QDELETED(client) && !telemetry_analyzed_at && telemetry_status <= TGUI_TELEMETRY_STAT_AWAITING && !broken)
 		telemetry_status = TGUI_TELEMETRY_STAT_MISSING
-		var/msg = "[key_name(client)] has timed out on the telemetry request. It's possible they are using a hacked client. Kicking them from the server."
+		var/msg = "[key_name(client)] has timed out on the telemetry request. It's possible they are using a hacked client. It is also possible the server is experiencing latency."
 		message_admins(msg)
 		log_admin_private(msg)
-		qdel(client)
 
 /**
  * private
