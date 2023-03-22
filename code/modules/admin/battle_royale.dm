@@ -642,12 +642,10 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 /obj/effect/death_wall/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	//lol u died
-	if(istype(AM, /obj/structure/closet))
-		var/obj/structure/closet/locker = AM
-		locker.deconstruct()
-	if(istype(AM, /obj/mecha))
-		var/obj/mecha/mech = AM
-		mech.Destroy()
+	for(var/mob/living/L in AM.contents)
+		qdel(AM)
+		explosion(src, 0, 1, 0)
+		to_chat(L, "<span class='warning'>You are not safe inside of that!</span>")
 	if(isliving(AM))
 		var/mob/living/M = AM
 		INVOKE_ASYNC(M, /mob/living/carbon.proc/gib)
@@ -655,10 +653,11 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 
 /obj/effect/death_wall/Moved(atom/OldLoc, Dir)
 	. = ..()
-	for(var/obj/mecha/mech in get_turf(src))
-		mech.Destroy()
-	for(var/obj/structure/closet/locker in get_turf(src))
-		locker.deconstruct()
+	for(var/atom/movable/AM in get_turf(src))
+		for(var/mob/living/L in AM.contents)
+			qdel(AM)
+			explosion(src, 0, 1, 0)
+			to_chat(L, "<span class='warning'>You are not safe inside of that!</span>")
 	for(var/mob/living/M in get_turf(src))
 		M.gib()
 		to_chat(M, "<span class='warning'>You left the zone!</span>")
@@ -667,6 +666,10 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	center_turf = center
 
 /obj/effect/death_wall/proc/decrease_size()
+	var/obj/effect/death_wall/DW = new(drop_location())
+	DW.icon_state = "deadzone"
+	DW.name = "dead zone"
+	DW.update_icon()
 	var/minx = CLAMP(center_turf.x - current_radius, 1, 255)
 	var/maxx = CLAMP(center_turf.x + current_radius, 1, 255)
 	var/miny = CLAMP(center_turf.y - current_radius, 1, 255)
