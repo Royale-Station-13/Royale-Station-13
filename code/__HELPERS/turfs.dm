@@ -323,8 +323,8 @@ Turf and target are separate in case you want to teleport some distance from a t
 		var/area/turf_area = get_area(checked_turf)
 		if(!checked_turf.density && (turf_area.area_flags & VALID_TERRITORY) && !isgroundlessturf(checked_turf))
 			var/clear = TRUE
-			if(istype(SSticker.mode, /datum/game_mode/battle_royale) && GLOB?.battle_royale?.radius && (checked_turf.x + 2 > 128 + GLOB.battle_royale.radius || checked_turf.x - 2 < 128 - GLOB.battle_royale.radius || checked_turf.y + 2 > 128 + GLOB.battle_royale.radius || checked_turf.y - 2 < 128 - GLOB.battle_royale.radius))
-				clear = FALSE
+			if(checked_turf.x > 163 || checked_turf.x < 93 || checked_turf.y > 163 || checked_turf.y < 93)
+				clear = FALSE //outside of the guaranteed safe zone
 			for(var/obj/checked_object in checked_turf)
 				if(checked_object.density)
 					clear = FALSE
