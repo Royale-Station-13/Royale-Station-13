@@ -122,9 +122,14 @@
 // UTILITY AND CONSUMABLES
 
 /datum/gear/equipment/explosives
-    display_name = "box of explosives"
+    display_name = "box of X4"
     path = /obj/item/storage/box/loadout/explosives
-    description = "Contains multiple X4 to use in creative ways"
+    description = "Contains multiple X4 to use in creative ways. Exact quantity varies with number of combatants."
+
+/datum/gear/equipment/grenades
+    display_name = "box of grenades"
+    path = /obj/item/storage/box/loadout/grenades
+    description = "Contains an assortment of grenades. Exact quantity varies with number of combatants."
 
 /datum/gear/equipment/bluespace
     display_name = "bluespace crystals"

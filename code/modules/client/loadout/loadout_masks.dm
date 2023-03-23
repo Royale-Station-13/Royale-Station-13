@@ -31,10 +31,6 @@
     display_name = "syndicate mask"
     path = /obj/item/clothing/mask/gas/syndicate
 
-/datum/gear/mask/gas/hunter
-    display_name = "bounty hunter mask"
-    path = /obj/item/clothing/mask/gas/hunter
-
 /datum/gear/mask/balaclava
     display_name = "tight balaclava"
     path = /obj/item/clothing/mask/balaclava

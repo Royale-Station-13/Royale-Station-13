@@ -7,8 +7,7 @@
 	var/weak = 2
 	var/medium = 0.8
 	var/heavy = 0.4
-	var/delay = 7
-	var/popup = FALSE // is the DOUWANNABLOWUP window open?
+	var/delay = 2 SECONDS
 	var/active = FALSE
 
 /obj/item/implant/explosive/on_mob_death(mob/living/L, gibbed)
@@ -30,12 +29,6 @@
 	. = ..()
 	if(!cause || !imp_in || active)
 		return FALSE
-	if(cause == "action_button" && !popup)
-		popup = TRUE
-		var/response = alert(imp_in, "Are you sure you want to activate your [name]? This will cause you to explode!", "[name] Confirmation", "Yes", "No")
-		popup = FALSE
-		if(response != "Yes")
-			return FALSE
 	heavy = round(heavy)
 	medium = round(medium)
 	weak = round(weak)
@@ -44,12 +37,6 @@
 	var/turf/boomturf = get_turf(imp_in)
 	message_admins("[ADMIN_LOOKUPFLW(imp_in)] has activated their [name] at [ADMIN_VERBOSEJMP(boomturf)], with cause of [cause].")
 //If the delay is short, just blow up already jeez
-	if(delay <= 7)
-		explosion(src,heavy,medium,weak,weak, flame_range = weak)
-		if(imp_in)
-			imp_in.gib(1)
-		qdel(src)
-		return TRUE
 	timed_explosion()
 
 /obj/item/implant/explosive/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)

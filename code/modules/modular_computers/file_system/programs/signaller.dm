@@ -28,13 +28,11 @@
 	SSradio.remove_object(computer, signal_frequency)
 
 /datum/computer_file/program/signaller/ui_data(mob/user)
-	var/list/data = get_header_data()
+	var/list/data = list()
 	var/obj/item/computer_hardware/radio_card/sensor = computer?.get_modular_computer_part(MC_SIGNALLER)
 	if(sensor?.check_functionality())
 		data["frequency"] = signal_frequency
 		data["code"] = signal_code
-		data["minFrequency"] = MIN_FREE_FREQ
-		data["maxFrequency"] = MAX_FREE_FREQ
 	data["connection"] = !!radio_connection
 	return data
 
@@ -47,7 +45,7 @@
 		return
 	switch(action)
 		if("signal")
-			INVOKE_ASYNC(src, .proc/signal)
+			INVOKE_ASYNC(src, PROC_REF(signal))
 			. = TRUE
 		if("freq")
 			var/new_signal_frequency = sanitize_frequency(unformat_frequency(params["freq"]), TRUE)
