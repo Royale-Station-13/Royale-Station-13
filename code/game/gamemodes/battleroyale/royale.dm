@@ -95,9 +95,10 @@
 
 /obj/item/storage/box/loadout/explosives/PopulateContents()
     var/scaling = length(GLOB.player_list)
-    var/count = 1
+    var/count = 2
     new /obj/item/grenade/plastic/c4/x4(src)
-    while(scaling >= 8 && count < 5)
+    new /obj/item/grenade/plastic/c4/x4(src)
+    while(scaling >= 12 && count < 5)
         new /obj/item/grenade/plastic/c4/x4(src)
         scaling -= 8
         count++
@@ -117,16 +118,15 @@
     var/obj/item/grenade/randnade = pick(/obj/item/grenade/empgrenade,
 		/obj/item/grenade/stingbang,
 		/obj/item/grenade/plastic/c4,
-		/obj/item/grenade/frag/mega,
-		/obj/item/grenade/gluon,
 		/obj/item/grenade/syndieminibomb,
-		/obj/item/grenade/discogrenade,
-		/obj/item/hot_potato/syndicate,
+        /obj/item/grenade/chem_grenade/holy,
+        /obj/item/grenade/smokebomb,
+		/obj/item/grenade/gluon,
+		/obj/item/grenade/flashbang,
+        /obj/item/grenade/frag,
 		/obj/item/grenade/chem_grenade/ez_clean, //acid foam
-		/obj/item/grenade/chem_grenade/holy,
-		/obj/item/grenade/chem_grenade/teargas/moustache,
-		/obj/item/grenade/clusterbuster,
-		/obj/item/grenade/clusterbuster/syndieminibomb)
+        /obj/item/grenade/chem_grenade/metalfoam,
+        )
     new randnade(loc)
     return INITIALIZE_HINT_QDEL
 
@@ -627,7 +627,6 @@
 /obj/item/reagent_containers/syringe/bluespace/randtox/Initialize(mapload)
 	list_reagents = list(pick(subtypesof(/datum/reagent/toxin)) = volume)
 	. = ..()
-
 
 /obj/item/dnainjector/random/Initialize(mapload)
     ..()
