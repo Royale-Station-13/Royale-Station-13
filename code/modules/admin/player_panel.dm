@@ -118,8 +118,8 @@
 				data_entry["antag_tokens"] = player.client.get_antag_token_count()
 				data_entry["register_date"] = player.client.account_join_date
 				data_entry["first_seen"] = player.client.player_join_date
-				data_entry["ip"] = player.client.address
-				data_entry["cid"] = player.client.computer_id
+				data_entry["ip"] = "null"
+				data_entry["cid"] = "null"
 				data_entry["related_accounts_ip"] = player.client.related_accounts_ip
 				data_entry["related_accounts_cid"] = player.client.related_accounts_cid
 				if(player.client.byond_version)
@@ -250,7 +250,7 @@
 				return
 			user.client.cmd_admin_direct_narrate(target_mob)
 		if("open_ban")
-			holder.ban_panel(target_ckey, target_client?.address, target_client?.computer_id)
+			holder.ban_panel(target_ckey)
 		if("kick")
 			if(!check_rights(R_ADMIN))
 				return

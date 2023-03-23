@@ -13,8 +13,8 @@ GLOBAL_LIST_EMPTY(ckey_redirects)
 	if (!key || (!real_bans_only && (!address || !computer_id)))
 		if(real_bans_only)
 			return FALSE
-		log_access("Failed Login (invalid data): [key] [address]-[computer_id]")
-		return list("reason"="invalid login data", "desc"="Error: Could not check ban status, Please try again. Error message: Your computer provided invalid or blank information to the server on connection (byond username, IP, and Computer ID.) Provided information for reference: Username:'[key]' IP:'[address]' Computer ID:'[computer_id]'. (If you continue to get this error, please restart byond or contact byond support.)")
+		log_access("Failed Login (invalid data): [key]")
+		return list("reason"="invalid login data", "desc"="Error: Could not check ban status, Please try again. Error message: Your computer provided invalid or blank information to the server on connection (byond username, IP, and Computer ID.) Provided information for reference: Username:'[key]'. (If you continue to get this error, please restart byond or contact byond support.)")
 
 	if (type == "world")
 		return ..() //shunt world topic banchecks to purely to byond's internal ban system
@@ -89,11 +89,11 @@ GLOBAL_LIST_EMPTY(ckey_redirects)
 						if (message)
 							message_admins(msg)
 					else
-						var/msg = "Admin [key] has been allowed to bypass a matching non-admin ban on [i["key"]] [i["ip"]]-[i["computerid"]]."
+						var/msg = "Admin [key] has been allowed to bypass a matching non-admin ban."
 						log_admin(msg)
 						if (message)
 							message_admins(msg)
-							addclientmessage(ckey,"<span class='adminnotice'>Admin [key] has been allowed to bypass a matching non-admin ban on [i["key"]] [i["ip"]]-[i["computerid"]].</span>")
+							addclientmessage(ckey,"<span class='adminnotice'>Admin [key] has been allowed to bypass a matching non-admin ban.</span>")
 						continue
 				var/expires = "This is a permanent ban."
 				var/global_ban = "This is a global ban from all of our servers."
@@ -106,7 +106,7 @@ GLOBAL_LIST_EMPTY(ckey_redirects)
 				This ban (BanID #[i["id"]]) was applied by [i["admin_key"]] on [i["bantime"]] during round ID [i["round_id"]].
 				[global_ban]
 				[expires]"}
-				log_access("Failed Login: [key] [computer_id] [address] - Banned (#[i["id"]]) [text2num(i["global_ban"]) ? "globally" : "locally"]")
+				log_access("Failed Login: [key] - Banned (#[i["id"]]) [text2num(i["global_ban"]) ? "globally" : "locally"]")
 				return list("reason"="Banned","desc"="[desc]")
 
 	var/list/ban = ..()	//default pager ban stuff
@@ -223,7 +223,7 @@ GLOBAL_LIST_EMPTY(ckey_redirects)
 
 		var/desc = "\nReason:(StickyBan) You, or another user of this computer or connection ([bannedckey]) is banned from playing here. The ban reason is:\n[ban["message"]]\nThis ban was applied by [ban["admin"]]\nThis is a BanEvasion Detection System ban, if you think this ban is a mistake, please wait EXACTLY 6 seconds, then try again before filing an appeal.\n"
 		. = list("reason" = "Stickyban", "desc" = desc)
-		log_access("Failed Login: [key] [computer_id] [address] - StickyBanned [ban["message"]] Target Username: [bannedckey] Placed by [ban["admin"]]")
+		log_access("Failed Login: [key] - StickyBanned [ban["message"]] Target Username: [bannedckey] Placed by [ban["admin"]]")
 
 	return .
 
