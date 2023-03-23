@@ -130,6 +130,33 @@
     new randnade(loc)
     return INITIALIZE_HINT_QDEL
 
+/obj/item/red_button
+	name = "big red button"
+	desc = "How could you not push the button?"
+	icon = 'icons/obj/assemblies.dmi'
+	icon_state = "bigred"
+	item_state = "electronic"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	var/used
+
+/obj/item/red_button/attack_self(mob/user)
+    if(!used)
+        if(length(GLOB.grenades))
+            playsound(src, 'sound/machines/triple_beep.ogg', 20, TRUE)
+            trigger(user)
+            used = TRUE
+    else
+        to_chat(user, "<span class='warning'>It doesn't seem to do anything anymore...</span>")
+    playsound(src, 'sound/machines/click.ogg', 20, 1)
+
+/obj/item/red_button/proc/trigger(mob/user)
+    for(var/obj/item/grenade/G in GLOB.grenades)
+        playsound(G, 'sound/weapons/armbomb.ogg', 100, 1)
+        G.audible_message("[G] begins beeping ominously")
+        addtimer(CALLBACK(G, /obj/item/grenade/proc/prime), rand(5 SECONDS, 20 SECONDS))
+
 /obj/item/storage/toolbox/ammo/royale
     name = "ammo box"
     desc = "Contains a random assortment of ammunition"
