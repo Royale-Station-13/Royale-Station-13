@@ -513,10 +513,10 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	var/z_level = SSmapping.station_start
 	var/turf/center = SSmapping.get_station_center()
 	var/list/edge_turfs = list()
-	edge_turfs += block(locate(12, 12, z_level), locate(244, 12, z_level))			//BOTTOM
-	edge_turfs += block(locate(12, 244, z_level), locate(244, 244, z_level))		//TOP
-	edge_turfs |= block(locate(12, 12, z_level), locate(12, 244, z_level))			//LEFT
-	edge_turfs |= block(locate(244, 12, z_level), locate(244, 244, z_level)) 	//RIGHT
+	edge_turfs += block(locate(1, 1, z_level), locate(255, 1, z_level))			//BOTTOM
+	edge_turfs += block(locate(1, 255, z_level), locate(255, 255, z_level))		//TOP
+	edge_turfs |= block(locate(1, 1, z_level), locate(1, 255, z_level))			//LEFT
+	edge_turfs |= block(locate(255, 1, z_level), locate(255, 255, z_level)) 	//RIGHT
 	for(var/turf/T in edge_turfs)
 		var/obj/effect/death_wall/DW = new(T)
 		DW.set_center(center)
@@ -627,7 +627,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 //==================================
 
 /obj/effect/death_wall
-	var/current_radius = 118
+	var/current_radius = 127
 	var/turf/center_turf
 	icon = 'icons/effects/fields.dmi'
 	icon_state = "projectile_dampen_generic"
