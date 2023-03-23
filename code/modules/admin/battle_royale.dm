@@ -507,7 +507,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	titanfall()
 */
 	//spawn one basic loot drop per player after 30 second. Everyone already has a starting loadout of their choice, so no need for super spam
-	addtimer(CALLBACK(src, .proc/generate_basic_loot, GLOB.player_list.len), 300) 
+	addtimer(CALLBACK(src, PROC_REF(generate_basic_loot), GLOB.player_list.len), 300)
 
 	death_wall = list()
 	var/z_level = SSmapping.station_start
@@ -556,7 +556,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	to_chat(world, "<span class='boldannounce'>[players.len] people remain...</span>")
 
 	//Start processing our world events
-	addtimer(CALLBACK(src, .proc/end_grace), 300)
+	addtimer(CALLBACK(src, PROC_REF(end_grace)), 300)
 	generate_basic_loot(150)
 
 /datum/battle_royale_controller/proc/end_grace()
@@ -635,7 +635,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 /obj/effect/death_wall/Initialize(mapload)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -647,7 +647,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 		locker.deconstruct()
 	if(isliving(AM))
 		var/mob/living/M = AM
-		INVOKE_ASYNC(M, /mob/living/carbon.proc/gib)
+		INVOKE_ASYNC(M, TYPE_PROC_REF(/mob/living/carbon, gib))
 		to_chat(M, "<span class='warning'>You left the zone!</span>")
 
 /obj/effect/death_wall/Moved(atom/OldLoc, Dir)
