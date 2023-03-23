@@ -378,7 +378,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	var/radius = 118
 	var/process_num = 0
 	var/list/death_wall
-	var/field_delay = 15
+	var/field_delay = 5
 	var/debug_mode = FALSE
 	var/blue_alert = FALSE
 	var/red_alert = FALSE
@@ -423,7 +423,10 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	// 1,920 seconds (about 32 minutes per game)
 	if(process_num % 15 == 0)
 		var/player_list = get_sentient_mobs()
-		field_delay = (clamp(length(player_list), 5, 20) * 1 + (red_alert + delta_alert + delta_alert + delta_alert)) //half wallspeed at red, 20% wallspeed at delta. Scales with players
+		if(!blue_alert)
+			field_delay = (clamp(length(player_list), 4, 16))
+		else
+			field_delay = (clamp(length(player_list), 5, 20) * 1 + (red_alert + delta_alert + delta_alert)) //half wallspeed at red, 20% wallspeed at delta. Scales with players
 		generate_basic_loot(1)
 		if(SSticker.mode)
 			SSticker.mode.check_win()
