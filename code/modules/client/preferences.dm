@@ -646,12 +646,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Monitor Lock:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(toggles2 & PREFTOGGLE_2_LOCKED_TGUI) ? "Primary" : "All"]</a><br>"
 			dat += "<b>Window Style:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(toggles2 & PREFTOGGLE_2_FANCY_TGUI) ? "Fancy (Borderless)" : "System Window"]</a><br>"
 			dat += "<br>"
+			dat += "<h3>TGUI Input</h3>"
 			dat += "<b>Input Engine:</b> <a href='?_src_=prefs;preference=tgui_input'>[(toggles2 & PREFTOGGLE_2_TGUI_INPUT) ? "TGUI" : "Classic"]</a><br>"
 			dat += "<b>Button Size:</b> <a href='?_src_=prefs;preference=tgui_big_buttons'>[(toggles2 & PREFTOGGLE_2_BIG_BUTTONS) ? "Large" : "Small"]</a><br>"
 			dat += "<b>Button Location:</b> <a href='?_src_=prefs;preference=tgui_switched_buttons'>[(toggles2 & PREFTOGGLE_2_SWITCHED_BUTTONS) ? "OK - Cancel" : "Cancel - OK"]</a><br>"
 			dat += "<br>"
+			dat += "<h3>TGUI Say</h3>"
 			dat += "<b>Say Engine:</b> <a href='?_src_=prefs;preference=tgui_say'>[(toggles2 & PREFTOGGLE_2_TGUI_SAY) ? "TGUI" : "Classic"]</a><br>"
-			dat += "<b>TGUI Say Theme:</b> <a href='?_src_=prefs;preference=tgui_say_light'>[(toggles2 & PREFTOGGLE_2_SAY_LIGHT_THEME) ? "Light" : "Dark"]</a><br>"
+			dat += "<b>Say Theme:</b> <a href='?_src_=prefs;preference=tgui_say_light'>[(toggles2 & PREFTOGGLE_2_SAY_LIGHT_THEME) ? "Light" : "Dark"]</a><br>"
+			dat += "<b>Radio Prefixes:</b> <a href='?_src_=prefs;preference=tgui_say_radio_prefix'>[(toggles2 & PREFTOGGLE_2_SAY_SHOW_PREFIX) ? "Show" : "Hidden"]</a><br>"
 
 			dat += "<h2>Graphics Settings</h2>"
 			dat += "<b>FPS:</b> <a href='?_src_=prefs;preference=clientfps;task=input'>[clientfps]</a><br>"
@@ -804,12 +807,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<tr style='vertical-align:top;'>"
 
 					//First column of info - the item's name
-					dat += "<td width=15%>[G.display_name]</td>" 
-					
+					dat += "<td width=15%>[G.display_name]</td>"
+
 					//Second column for the equip button, since we already own this item
 					dat += "<td width = 10% style='vertical-align:top'>"
-					dat += "<a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.id]'>Equip</a></td>" 
-/*					
+					dat += "<a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.id]'>Equip</a></td>"
+/*
 					//Third column gets a bit messy, it's for listing restricted jobs
 					dat += "<td width = 12%>"
 					if(G.allowed_roles)
@@ -831,8 +834,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					endingdat += "<tr style='vertical-align:top;'>"
 
 					//First column
-					endingdat += "<td width=15%>[G.display_name]</td>" 
-					
+					endingdat += "<td width=15%>[G.display_name]</td>"
+
 					//Second column for the purchase or donator button since we have not purchased items in this loop
 					endingdat += "<td width = 10% style='vertical-align:top'>"
 					endingdat += "<a style='white-space:normal;' href='?_src_=prefs;preference=gear;purchase_gear=[G.id]'>[donator ? "Donator" : "Purchase: [G.cost]"]</a></td>"
@@ -1382,7 +1385,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					to_chat(user, "<span class='warning'>Can't equip [TG.display_name]. You can only choose two items from the equipment tab.</span>")
 					return
 				if((TG.id in purchased_gear))
-					active_character.equipped_gear += TG.id						
+					active_character.equipped_gear += TG.id
 				else
 					log_href_exploit(user)
 			active_character.save(user.client)
@@ -1972,6 +1975,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("tgui_say_light")
 					toggles2 ^= PREFTOGGLE_2_SAY_LIGHT_THEME
 					if(parent && parent.tgui_say) // change the theme
+						parent.tgui_say.load()
+
+				if("tgui_say_radio_prefix")
+					toggles2 ^= PREFTOGGLE_2_SAY_SHOW_PREFIX
+					if(parent && parent.tgui_say) // update the UI
 						parent.tgui_say.load()
 
 				if("parallaxup")
