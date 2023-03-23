@@ -162,6 +162,8 @@ GLOBAL_LIST_INIT(battle_royale_basic_loot, list(
 		/obj/item/grenade/clusterbuster/emp,
 		/obj/item/grenade/clusterbuster/syndieminibomb,
 		/obj/item/grenade/clusterbuster/spawner_spesscarp,
+		/obj/item/red_button,
+		/obj/item/red_button,
 //Xenobio crossbreed boxes
 		/obj/item/storage/box/royale/random_slimes,
 		/obj/item/storage/box/royale/random_slimes,

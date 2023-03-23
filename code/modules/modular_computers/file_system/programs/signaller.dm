@@ -33,8 +33,6 @@
 	if(sensor?.check_functionality())
 		data["frequency"] = signal_frequency
 		data["code"] = signal_code
-		data["minFrequency"] = MIN_FREE_FREQ
-		data["maxFrequency"] = MAX_FREE_FREQ
 	data["connection"] = !!radio_connection
 	return data
 

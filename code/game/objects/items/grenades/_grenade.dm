@@ -41,6 +41,14 @@
 	var/shrapnel_radius
 	var/shrapnel_initialized
 
+/obj/item/grenade/Initialize(mapload)
+	. = ..()
+	GLOB.grenades += src
+
+/obj/item/grenade/Destroy()
+	GLOB.grenades.Remove(src)
+	return ..()
+
 /obj/item/grenade/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] primes [src], then eats it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(src, 'sound/items/eatfood.ogg', 50, 1)

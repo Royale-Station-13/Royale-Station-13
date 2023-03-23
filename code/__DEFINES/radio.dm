@@ -92,9 +92,9 @@
 #define FREQ_SIGNALER 1457  //! the default for new signalers
 #define FREQ_COMMON 1459  //! Common comms frequency, dark green
 
-#define MAX_FREQ 1489 // ------------------------------------------------------
+#define MAX_FREQ 1457 // ------------------------------------------------------
 
-#define MAX_FREE_FREQ 1599 // -------------------------------------------------
+#define MAX_FREE_FREQ 1457 // -------------------------------------------------
 
 // Transmission types.
 #define TRANSMISSION_WIRE 0  //! some sort of wired connection, not used
@@ -111,7 +111,7 @@
 #define RADIO_MAGNETS "magnets"
 #define RADIO_XENOA "xenoa_radio"
 
-#define DEFAULT_SIGNALER_CODE 30
+#define DEFAULT_SIGNALER_CODE 15
 
 //Requests Console
 #define REQ_NO_NEW_MESSAGE 				0
