@@ -81,8 +81,6 @@
 	var/list/data = list()
 	data["frequency"] = frequency
 	data["code"] = code
-	data["minFrequency"] = MIN_FREE_FREQ
-	data["maxFrequency"] = MAX_FREE_FREQ
 	data["connection"] = !!radio_connection
 	return data
 
@@ -92,11 +90,7 @@
 
 	switch(action)
 		if("signal")
-			INVOKE_ASYNC(src, .proc/signal)
-			. = TRUE
-		if("freq")
-			var/new_frequency = sanitize_frequency(unformat_frequency(params["freq"]), TRUE)
-			set_frequency(new_frequency)
+			INVOKE_ASYNC(src, PROC_REF(signal))
 			. = TRUE
 		if("code")
 			code = text2num(params["code"])

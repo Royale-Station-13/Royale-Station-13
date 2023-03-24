@@ -115,7 +115,7 @@
 	return (OXYLOSS)
 
 /obj/item/storage/backpack/santabag/proc/regenerate_presents()
-	addtimer(CALLBACK(src, .proc/regenerate_presents), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(regenerate_presents)), 30 SECONDS)
 
 	var/mob/M = get(loc, /mob)
 	if(!istype(M))
@@ -624,7 +624,7 @@
 
 /obj/item/storage/backpack/duffelbag/syndie/x4/PopulateContents()
 	for(var/i in 1 to 3)
-		new /obj/item/grenade/plastic/x4(src)
+		new /obj/item/grenade/plastic/c4/x4(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/firestarter
 	desc = "A large duffel bag containing a New Russian pyro backpack sprayer, Elite hardsuit, a Stechkin APS pistol, minibomb, ammo, and other equipment."

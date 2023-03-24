@@ -76,11 +76,11 @@ GLOBAL_VAR(restart_counter)
 	CONFIG_SET(number/round_end_countdown, 0)
 	var/datum/callback/cb
 #ifdef UNIT_TESTS
-	cb = CALLBACK(GLOBAL_PROC, /proc/RunUnitTests)
+	cb = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(RunUnitTests))
 #else
 	cb = VARSET_CALLBACK(SSticker, force_ending, TRUE)
 #endif
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, /proc/_addtimer, cb, 10 SECONDS))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_addtimer), cb, 10 SECONDS))
 
 /world/proc/SetupLogs()
 	var/override_dir = params[OVERRIDE_LOG_DIRECTORY_PARAMETER]
@@ -314,7 +314,7 @@ GLOBAL_VAR(restart_counter)
 	AUXTOOLS_SHUTDOWN(AUXMOS)
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
-		call(debug_server, "auxtools_shutdown")()
+		LIBCALL(debug_server, "auxtools_shutdown")()
 	..()
 
 /world/proc/update_status()
@@ -333,9 +333,8 @@ GLOBAL_VAR(restart_counter)
 
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<b>[station_name()]</b>";
 	var/discordurl = CONFIG_GET(string/discordurl)
-	s += " (<a href='[discordurl]'>Discord</a>)"
+	s += " (<a href='[discordurl]'><b>Join our discord here!</b></a>)"
 
 	var/players = GLOB.clients.len
 
@@ -351,8 +350,8 @@ GLOBAL_VAR(restart_counter)
 
 	if(length(features))
 		s += ": [jointext(features, ", ")]"
-
-	s += "<br>Time: <b>[gameTimestamp("hh:mm")]</b>"
+	s += "<br><b>Battle royale server where only one player survives!</b>"
+	s += "<br>"
 	s += "<br>Alert: <b>[capitalize(get_security_level())]</b>"
 	s += "<br>Players: <b>[players][popcaptext]</b>"
 

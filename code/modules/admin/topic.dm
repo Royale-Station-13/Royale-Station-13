@@ -1762,9 +1762,7 @@
 
 	else if(href_list["newbankey"])
 		var/player_key = href_list["newbankey"]
-		var/player_ip = href_list["newbanip"]
-		var/player_cid = href_list["newbancid"]
-		ban_panel(player_key, player_ip, player_cid)
+		ban_panel(player_key)
 
 	else if(href_list["intervaltype"]) //check for ban panel, intervaltype is used as it's the only value which will always be present
 		if(href_list["roleban_delimiter"])
@@ -1775,30 +1773,24 @@
 	else if(href_list["searchunbankey"] || href_list["searchunbanadminkey"] || href_list["searchunbanip"] || href_list["searchunbancid"])
 		var/player_key = href_list["searchunbankey"]
 		var/admin_key = href_list["searchunbanadminkey"]
-		var/player_ip = href_list["searchunbanip"]
-		var/player_cid = href_list["searchunbancid"]
-		unban_panel(player_key, admin_key, player_ip, player_cid)
+		unban_panel(player_key, admin_key)
 
 	else if(href_list["unbanpagecount"])
 		var/page = href_list["unbanpagecount"]
 		var/player_key = href_list["unbankey"]
 		var/admin_key = href_list["unbanadminkey"]
-		var/player_ip = href_list["unbanip"]
-		var/player_cid = href_list["unbancid"]
-		unban_panel(player_key, admin_key, player_ip, player_cid, page)
+		unban_panel(player_key, admin_key, null, null, page)
 
 	else if(href_list["editbanid"])
 		var/edit_id = href_list["editbanid"]
 		var/player_key = href_list["editbankey"]
-		var/player_ip = href_list["editbanip"]
-		var/player_cid = href_list["editbancid"]
 		var/role = href_list["editbanrole"]
 		var/duration = href_list["editbanduration"]
 		var/applies_to_admins = text2num(href_list["editbanadmins"])
 		var/reason = rustg_url_decode(href_list["editbanreason"])
 		var/page = href_list["editbanpage"]
 		var/admin_key = href_list["editbanadminkey"]
-		ban_panel(player_key, player_ip, player_cid, role, duration, applies_to_admins, reason, edit_id, page, admin_key)
+		ban_panel(player_key, null, null, role, duration, applies_to_admins, reason, edit_id, page, admin_key)
 
 	else if(href_list["unbanid"])
 		var/ban_id = href_list["unbanid"]
@@ -1906,6 +1898,16 @@
 		if(!check_rights(R_ADMIN))
 			return
 		GLOB.interviews.ui_interact(usr)
+
+	else if(href_list["backstory_select"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/list/L = locate(href_list["backstory_select"])
+		var/choice = input(usr, "Select backstory to use", "Select backstory") as null|anything in L
+		if(choice != null)
+			GLOB.fugitive_backstory_selection = list(choice)
+			message_admins("[key_name_admin(usr)] selected backstory: [choice]")
+			log_admin("[key_name(usr)] selected backstory: [choice]")
 
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))

@@ -28,6 +28,8 @@
         if((!player.client) || (is_centcom_level(player.z) || (is_reserved_level(player.z)) || isrevenant(player) || istype(player, /mob/living/carbon/human/species/shadow/nightmare) || istype(player, /mob/living/simple_animal/bot/secbot) || player.ventcrawler))
             continue
         var/turf/T = get_turf(player)
+        if(istype(T, /area/centcom/supplypod/supplypod_temp_holding))
+            continue
 /*
         if(T.x > 128 + GLOB.battle_royale.radius || T.x < 128 - GLOB.battle_royale.radius || T.y > 128 + GLOB.battle_royale.radius || T.y < 128 - GLOB.battle_royale.radius)
             to_chat(player, "<span class='warning'>You have left the zone!</span>")
@@ -94,10 +96,68 @@
     new /obj/item/wrench(src)
 
 /obj/item/storage/box/loadout/explosives/PopulateContents()
-    new /obj/item/grenade/plastic/x4(src)
-    new /obj/item/grenade/plastic/x4(src)
-    new /obj/item/grenade/plastic/x4(src)
-    new /obj/item/grenade/plastic/x4(src)
+    var/scaling = length(GLOB.player_list)
+    var/count = 2
+    new /obj/item/grenade/plastic/c4/x4(src)
+    new /obj/item/grenade/plastic/c4/x4(src)
+    while(scaling >= 12 && count < 5)
+        new /obj/item/grenade/plastic/c4/x4(src)
+        scaling -= 8
+        count++
+
+/obj/item/storage/box/loadout/grenades/PopulateContents()
+    var/scaling = length(GLOB.player_list)
+    var/count = 2
+    new /obj/item/grenade/random(src)
+    new /obj/item/grenade/random(src)
+    while(scaling >= 4 && count < 8)
+        new /obj/item/grenade/random(src)
+        scaling -= 4
+        count++
+
+/obj/item/grenade/random/Initialize(mapload)
+    ..()
+    var/obj/item/grenade/randnade = pick(/obj/item/grenade/empgrenade,
+		/obj/item/grenade/stingbang,
+		/obj/item/grenade/plastic/c4,
+		/obj/item/grenade/syndieminibomb,
+        /obj/item/grenade/chem_grenade/holy,
+        /obj/item/grenade/smokebomb,
+		/obj/item/grenade/gluon,
+		/obj/item/grenade/flashbang,
+        /obj/item/grenade/frag,
+		/obj/item/grenade/chem_grenade/ez_clean, //acid foam
+        /obj/item/grenade/chem_grenade/metalfoam,
+        )
+    new randnade(loc)
+    return INITIALIZE_HINT_QDEL
+
+/obj/item/red_button
+	name = "big red button"
+	desc = "How could you not push the button?"
+	icon = 'icons/obj/assemblies.dmi'
+	icon_state = "bigred"
+	item_state = "electronic"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	var/used
+
+/obj/item/red_button/attack_self(mob/user)
+    if(!used)
+        if(length(GLOB.grenades))
+            playsound(src, 'sound/machines/triple_beep.ogg', 20, TRUE)
+            trigger(user)
+            used = TRUE
+    else
+        to_chat(user, "<span class='warning'>It doesn't seem to do anything anymore...</span>")
+    playsound(src, 'sound/machines/click.ogg', 20, 1)
+
+/obj/item/red_button/proc/trigger(mob/user)
+    for(var/obj/item/grenade/G in GLOB.grenades)
+        playsound(G, 'sound/weapons/armbomb.ogg', 100, 1)
+        G.audible_message("[G] begins beeping ominously")
+        addtimer(CALLBACK(G, /obj/item/grenade/proc/prime), rand(5 SECONDS, 20 SECONDS))
 
 /obj/item/storage/toolbox/ammo/royale
     name = "ammo box"
