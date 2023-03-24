@@ -26,7 +26,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		/obj/item/hilbertshotel,
 		/obj/item/swapper,
 		/obj/item/mail,
-		/obj/docking_port
+		/obj/docking_port,
+		/obj/effect/death_wall //so the shuttle can't take death walls with it
 	)))
 
 /obj/docking_port/mobile/supply
