@@ -609,6 +609,13 @@ GLOBAL_LIST_INIT(shuttle_turf_blacklist, typecacheof(list(
 
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
 /obj/docking_port/mobile/proc/canMove()
+	for(var/place in shuttle_areas)
+		var/area/shuttle/shuttle_area = place
+		for(var/trf in shuttle_area)
+			var/turf/T = trf
+			for(var/a in T.GetAllContents())
+				if(istype(a, /obj/effect/death_wall) && !istype(a, /obj/docking_port))
+					return FALSE
 	if(untowable)
 		return TRUE
 	for(var/obj/docking_port/mobile/M in get_all_towed_shuttles())
