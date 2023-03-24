@@ -634,11 +634,16 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	var/turf/center_turf
 	icon = 'icons/effects/fields.dmi'
 	icon_state = "projectile_dampen_generic"
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE
 
 /obj/effect/death_wall/singularity_act()
 	return
 
 /obj/effect/death_wall/singularity_pull()
+	return
+
+/obj/effect/death_wall/tesla_act()
 	return
 
 /obj/effect/death_wall/Initialize(mapload)
