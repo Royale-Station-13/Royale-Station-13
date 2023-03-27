@@ -202,7 +202,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		init_subtypes(/datum/controller/subsystem, subsystems)
 
 	to_chat(world, "<span class='boldannounce'>Initializing subsystems...</span>")
-	send2chat("\<@&1089489378264490095\>\nNew round starting on [SSmapping.config.map_name]!", CONFIG_GET(string/chat_announce_new_game))
+	send2chat("\<@&1089489378264490095\>\nNew round loading up now!", CONFIG_GET(string/chat_announce_new_game))
 
 	// Sort subsystems by init_order, so they initialize in the correct order.
 	sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_init))
