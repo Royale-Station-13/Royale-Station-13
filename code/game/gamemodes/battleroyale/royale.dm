@@ -67,11 +67,11 @@
 /datum/game_mode/battle_royale/special_report()
     if(winner == "draw")
         to_chat(world, "<span class='ratvar'><font size=12>Everybody died!</font></span>")
-        sendooc2tgs("**Everybody died!**\n--------------------------------------")
+        sendooc2tgs("**_Everybody died!_**")
         return "<div class='panel redborder'><span class='redtext big'>Nobody claims victory!</span></div>"
     if(winner?.real_name)
         to_chat(world, "<span class='ratvar'><font size=12>[winner.real_name] claims victory!</font></span>")
-        sendooc2tgs("**[winner.real_name] has claimed victory!**\n--------------------------------------")
+        sendooc2tgs("**_[winner.real_name] has claimed victory!_**")
         return "<div class='panel redborder'><span class='greentext big'>[winner.real_name] claims victory!</span></div>"
     else
         to_chat(world, "<span class='ratvar'><font size=12>Something is bugged!</font></span>")
