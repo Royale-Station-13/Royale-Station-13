@@ -727,11 +727,11 @@
 		qdel(query_check_everything_ranks)
 
 
-/datum/controller/subsystem/ticker/proc/sendtodiscord(var/survivors, var/escapees, var/integrity, var/mob/winner)
+/datum/controller/subsystem/ticker/proc/sendtodiscord(var/survivors, var/escapees, var/integrity)
     var/discordmsg = ""
     discordmsg += "--------------ROUND END--------------\n"
 //    discordmsg += "Server: [CONFIG_GET(string/servername)]\n"
-    discordmsg += "**_[winner ? "[winner.real_name] has claimed victory" : "Everybody died"]!_**\n"
+    discordmsg += "**_[mode.winner ? "[mode.winner.real_name] has claimed victory" : "Everybody died"]!_**\n"
     discordmsg += "Round Number: [GLOB.round_id]\n"
     discordmsg += "Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]\n"
     discordmsg += "Players: [GLOB.player_list.len]\n"
