@@ -25,17 +25,19 @@
     var/list/active_players = list()
 
     for(var/mob/living/player in player_list) //checking for all living mobs instead of just humans
-        if((!player.client) || (is_centcom_level(player.z) || (is_reserved_level(player.z)) || isrevenant(player) || istype(player, /mob/living/carbon/human/species/shadow/nightmare) || player.ventcrawler))
+        if((!player.client) || (is_centcom_level(player.z) || isrevenant(player) || istype(player, /mob/living/carbon/human/species/shadow/nightmare) || istype(player, /mob/living/simple_animal/bot/secbot) || player.ventcrawler))
+            continue
+        if(istype(player.loc, /obj/structure/closet/supplypod/centcompod))
             continue
         var/turf/T = get_turf(player)
-        if(istype(T, /area/centcom/supplypod/supplypod_temp_holding))
-            continue
+/*
         if(T.x > 128 + GLOB.battle_royale.radius || T.x < 128 - GLOB.battle_royale.radius || T.y > 128 + GLOB.battle_royale.radius || T.y < 128 - GLOB.battle_royale.radius)
             to_chat(player, "<span class='warning'>You have left the zone!</span>")
             player.gib()
             continue
-        if(!SSmapping.level_trait(T.z, ZTRAIT_STATION) && !SSmapping.level_trait(T.z, ZTRAIT_RESERVED))
-            to_chat(player, "<span class='warning'>You have somehow left the station!</span>")
+*/
+        if(!SSmapping.level_trait(T.z, ZTRAIT_STATION))
+            to_chat(player, "<span class='warning'>You have left the station!</span>")
             player.gib()
             continue
         active_players += player

@@ -38,7 +38,7 @@ All ShuttleMove procs go here
 				M.gib()
 
 		else //non-living mobs shouldn't be affected by shuttles, which is why this is an else
-			if(istype(thing, /obj/anomaly))
+			if(istype(thing, /obj/anomaly) || istype(thing, /obj/effect/death_wall))
 				continue
 			if(!thing.anchored)
 				step(thing, shuttle_dir)

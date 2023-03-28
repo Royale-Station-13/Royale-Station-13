@@ -380,7 +380,7 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	var/radius = 118
 	var/process_num = 0
 	var/list/death_wall
-	var/field_delay = 15
+	var/field_delay = 5
 	var/debug_mode = FALSE
 	var/blue_alert = FALSE
 	var/red_alert = FALSE
@@ -425,7 +425,10 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	// 1,920 seconds (about 32 minutes per game)
 	if(process_num % 15 == 0)
 		var/player_list = get_sentient_mobs()
-		field_delay = (clamp(length(player_list), 5, 20) * 1 + (red_alert + delta_alert + delta_alert + delta_alert)) //half wallspeed at red, 20% wallspeed at delta. Scales with players
+		if(!blue_alert)
+			field_delay = (clamp(length(player_list), 4, 16))
+		else
+			field_delay = (clamp(length(player_list), 5, 20) * 1 + (red_alert + delta_alert + delta_alert)) //half wallspeed at red, 20% wallspeed at delta. Scales with players
 		generate_basic_loot(1)
 		if(SSticker.mode)
 			SSticker.mode.check_win()
@@ -444,11 +447,11 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	else if(!red_alert)
 		if(radius < 65)
 			GLOB.enter_allowed = FALSE //no more late joins
+			CONFIG_SET(flag/allow_random_events, FALSE) //no more random events
 			set_security_level(SEC_LEVEL_RED)
 			red_alert = TRUE
 	else if(!delta_alert)
 		if(radius < 35)
-			CONFIG_SET(flag/allow_random_events, FALSE) //no more random events
 			set_security_level(SEC_LEVEL_DELTA)
 			delta_alert = TRUE
 
@@ -515,10 +518,10 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	var/z_level = SSmapping.station_start
 	var/turf/center = SSmapping.get_station_center()
 	var/list/edge_turfs = list()
-	edge_turfs += block(locate(12, 12, z_level), locate(244, 12, z_level))			//BOTTOM
-	edge_turfs += block(locate(12, 244, z_level), locate(244, 244, z_level))		//TOP
-	edge_turfs |= block(locate(12, 12, z_level), locate(12, 244, z_level))			//LEFT
-	edge_turfs |= block(locate(244, 12, z_level), locate(244, 244, z_level)) 	//RIGHT
+	edge_turfs += block(locate(1, 1, z_level), locate(255, 1, z_level))			//BOTTOM
+	edge_turfs += block(locate(1, 255, z_level), locate(255, 255, z_level))		//TOP
+	edge_turfs |= block(locate(1, 1, z_level), locate(1, 255, z_level))			//LEFT
+	edge_turfs |= block(locate(255, 1, z_level), locate(255, 255, z_level)) 	//RIGHT
 	for(var/turf/T in edge_turfs)
 		var/obj/effect/death_wall/DW = new(T)
 		DW.set_center(center)
@@ -629,10 +632,21 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 //==================================
 
 /obj/effect/death_wall
-	var/current_radius = 118
+	var/current_radius = 127
 	var/turf/center_turf
 	icon = 'icons/effects/fields.dmi'
 	icon_state = "projectile_dampen_generic"
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE
+
+/obj/effect/death_wall/singularity_act()
+	return
+
+/obj/effect/death_wall/singularity_pull()
+	return
+
+/obj/effect/death_wall/tesla_act()
+	return
 
 /obj/effect/death_wall/Initialize(mapload)
 	. = ..()
@@ -644,9 +658,10 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 /obj/effect/death_wall/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	//lol u died
-	if(istype(AM, /obj/structure/closet))
-		var/obj/structure/closet/locker = AM
-		locker.deconstruct()
+	for(var/mob/living/L in AM.contents)
+		qdel(AM)
+		explosion(src, 0, 1, 0)
+		to_chat(L, "<span class='warning'>You are not safe inside of that!</span>")
 	if(isliving(AM))
 		var/mob/living/M = AM
 		INVOKE_ASYNC(M, TYPE_PROC_REF(/mob/living/carbon, gib))
@@ -654,8 +669,11 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 
 /obj/effect/death_wall/Moved(atom/OldLoc, Dir)
 	. = ..()
-	for(var/obj/structure/closet/locker in get_turf(src))
-		locker.deconstruct()
+	for(var/atom/movable/AM in get_turf(src))
+		for(var/mob/living/L in AM.contents)
+			qdel(AM)
+			explosion(src, 0, 1, 0)
+			to_chat(L, "<span class='warning'>You are not safe inside of that!</span>")
 	for(var/mob/living/M in get_turf(src))
 		M.gib()
 		to_chat(M, "<span class='warning'>You left the zone!</span>")
@@ -664,6 +682,10 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	center_turf = center
 
 /obj/effect/death_wall/proc/decrease_size()
+	var/obj/effect/death_wall/DW = new(drop_location())
+	DW.icon_state = "deadzone"
+	DW.name = "dead zone"
+	DW.update_icon()
 	var/minx = CLAMP(center_turf.x - current_radius, 1, 255)
 	var/maxx = CLAMP(center_turf.x + current_radius, 1, 255)
 	var/miny = CLAMP(center_turf.y - current_radius, 1, 255)
