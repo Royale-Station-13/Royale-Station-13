@@ -51,6 +51,7 @@
 /datum/game_mode/battle_royale/check_finished()
     if(winner)
         if(winner == "draw")
+            winner = null //go back to being null for outside purposes - there is no winner to announce.
             return TRUE //Everyone is dead, we end regardless of debug mode or not
         if(debug_announce)
             return FALSE //We have announced debug mode and someone is still alive. Keep going
@@ -64,7 +65,7 @@
             return TRUE
 
 /datum/game_mode/battle_royale/special_report()
-    if(winner == "draw")
+    if(!winner)
         to_chat(world, "<span class='ratvar'><font size=12>Everybody died!</font></span>")
         return "<div class='panel redborder'><span class='redtext big'>Nobody claims victory!</span></div>"
     if(winner?.real_name)
