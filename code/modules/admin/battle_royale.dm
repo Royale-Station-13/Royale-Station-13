@@ -515,17 +515,18 @@ GLOBAL_DATUM(battle_royale, /datum/battle_royale_controller)
 	addtimer(CALLBACK(src, PROC_REF(generate_basic_loot), GLOB.player_list.len), 300)
 
 	death_wall = list()
-	var/z_level = SSmapping.station_start
-	var/turf/center = SSmapping.get_station_center()
-	var/list/edge_turfs = list()
-	edge_turfs += block(locate(1, 1, z_level), locate(255, 1, z_level))			//BOTTOM
-	edge_turfs += block(locate(1, 255, z_level), locate(255, 255, z_level))		//TOP
-	edge_turfs |= block(locate(1, 1, z_level), locate(1, 255, z_level))			//LEFT
-	edge_turfs |= block(locate(255, 1, z_level), locate(255, 255, z_level)) 	//RIGHT
-	for(var/turf/T in edge_turfs)
-		var/obj/effect/death_wall/DW = new(T)
-		DW.set_center(center)
-		death_wall += DW
+	for(var/z_level in SSmapping.levels_by_trait(ZTRAIT_STATION))
+		var/turf/center = SSmapping.get_station_center(level = z_level)
+		var/list/edge_turfs = list()
+		edge_turfs += block(locate(1, 1, z_level), locate(255, 1, z_level))			//BOTTOM
+		edge_turfs += block(locate(1, 255, z_level), locate(255, 255, z_level))		//TOP
+		edge_turfs |= block(locate(1, 1, z_level), locate(1, 255, z_level))			//LEFT
+		edge_turfs |= block(locate(255, 1, z_level), locate(255, 255, z_level)) 	//RIGHT
+		for(var/turf/T in edge_turfs)
+			var/obj/effect/death_wall/DW = new(T)
+			DW.set_center(center)
+			death_wall += DW
+			CHECK_TICK
 		CHECK_TICK
 	START_PROCESSING(SSprocessing, src)
 

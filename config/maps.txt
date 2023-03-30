@@ -54,7 +54,9 @@ map kilostation
 endmap
 
 map glowstation
-	disabled
+	minplayers 30
+	maxplayers 200
+	votable
 endmap
 
 map flandstation
