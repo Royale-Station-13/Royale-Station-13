@@ -170,6 +170,10 @@
     path = /obj/item/reagent_containers/hypospray/medipen/survival
     description = "A medipen for surviving in the harshest of environments, heals and protects from environmental hazards."
 
+/datum/gear/equipment/syringes
+    display_name = "box of syringes"
+    path = /obj/item/storage/box/royale/unlabeled_syringes
+
 //ARMOR (mostly cloaks, really)
 
 /datum/gear/equipment/armor
