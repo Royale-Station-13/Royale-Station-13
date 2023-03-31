@@ -25,7 +25,7 @@
     var/list/active_players = list()
 
     for(var/mob/living/player in player_list) //checking for all living mobs instead of just humans
-        if((!player.client) || (is_centcom_level(player.z) || isrevenant(player) || istype(player, /mob/living/carbon/human/species/shadow/nightmare) || istype(player, /mob/living/simple_animal/bot/secbot) || istype(player, /mob/living/simple_animal/hostile/guardian) || player.ventcrawler))
+        if((!player.client) || (is_centcom_level(player.z) || isrevenant(player) || (player?.mind.has_antag_datum(/datum/antagonist/nightmare)) || istype(player, /mob/living/simple_animal/bot/secbot) || istype(player, /mob/living/simple_animal/hostile/guardian) || player.ventcrawler))
             continue
         if(istype(player.loc, /obj/structure/closet/supplypod/centcompod))
             continue
