@@ -1,7 +1,7 @@
 /datum/gear/equipment
     subtype_path = /datum/gear/equipment
     sort_category = "Combat Equipment (pick two)"
-    //Players can have any two items listed under this category, unless they are assigned to an equipment slot. 
+    //Players can have any two items listed under this category, unless they are assigned to an equipment slot.
 
 //RANGED WEAPONS
 
@@ -56,11 +56,11 @@
 
 /datum/gear/equipment/holosword/green
     display_name = "green holo sword"
-    path = /obj/item/holo/esword/red
+    path = /obj/item/holo/esword/green
 
 /datum/gear/equipment/holosword/purple
     display_name = "purple holo sword"
-    path = /obj/item/holo/esword/green
+    path = /obj/item/holo/esword/purple
 
 /datum/gear/equipment/holosword/red
     display_name = "red holo sword"
