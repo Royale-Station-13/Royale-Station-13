@@ -7,7 +7,7 @@ about: Create a report to help reproduce and fix unexpected behaviour.
 <!-- **INCLUDE THE ROUND ID AND THE ROUND DATE**-->
 <!-- If you discovered this issue from playing RoyaleStation hosted servers:-->
 
-**Round Date:** DD/MM/YYYY
+**Round Date:** YYYY/MM/DD
 
 **Round ID:** [Round ID]
 
