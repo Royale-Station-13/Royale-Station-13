@@ -807,7 +807,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<tr style='vertical-align:top;'>"
 
 					//First column of info - the item's name
-					dat += "<td width=15%>[G.display_name]</td>"
+					dat += "<td width=15%>[active_character.jumpsuit_style == PREF_SKIRT && !isnull(G.skirt_display_name) ? G.skirt_display_name : G.display_name]</td>"
 
 					//Second column for the equip button, since we already own this item
 					dat += "<td width = 10% style='vertical-align:top'>"
@@ -823,7 +823,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 */
 					//And the fourth and final column is just for the item's description
-					dat += "<td><font size=2><i>[G.description]</i></font></td>"
+					dat += "<td><font size=2><i>[active_character.jumpsuit_style == PREF_SKIRT && !isnull(G.skirt_display_name) ? G.skirt_description : G.description]</i></font></td>"
 
 					//Finally, we close out the row
 					dat += "</tr>"
@@ -834,7 +834,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					endingdat += "<tr style='vertical-align:top;'>"
 
 					//First column
-					endingdat += "<td width=15%>[G.display_name]</td>"
+					endingdat += "<td width=15%>[active_character.jumpsuit_style == PREF_SKIRT && !isnull(G.skirt_display_name) ? G.skirt_display_name : G.display_name]</td>"
 
 					//Second column for the purchase or donator button since we have not purchased items in this loop
 					endingdat += "<td width = 10% style='vertical-align:top'>"
@@ -842,7 +842,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /*					//Third column
 					endingdat += "<td width = 12%>"
-					if(G.allowed_roles)
 						endingdat += "<font size=2>"
 						for(var/role in G.allowed_roles)
 							endingdat += role + ", "
@@ -850,7 +849,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					endingdat += "</td>"
 */
 					//fourth column
-					endingdat += "<td><font size=2><i>[G.description]</i></font></td>"
+					endingdat += "<td><font size=2><i>[active_character.jumpsuit_style == PREF_SKIRT && !isnull(G.skirt_display_name) ? G.skirt_description : G.description]</i></font></td>"
 
 					//end of row
 					endingdat += "</tr>"
@@ -858,17 +857,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			//time to combine our purchased and non-purchased rows and end the table
 			dat += endingdat
 			dat += "</table>"
-
-		if(3) //OOC Preferences
-			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-			dat += "<h2>OOC Settings</h2>"
-			dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(toggles2 & PREFTOGGLE_2_WINDOW_FLASHING) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<br>"
-			dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & PREFTOGGLE_SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & PREFTOGGLE_SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Play Game Soundtrack:</b> <a href='?_src_=prefs;preference=soundtrack'>[(toggles2 & PREFTOGGLE_2_SOUNDTRACK) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<br>"
 
 
 			if(user.client)
