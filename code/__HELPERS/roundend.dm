@@ -740,4 +740,4 @@
     discordmsg += "Integrity: [integrity]\n"
 //    discordmsg += "Gamemode: [SSticker.mode.name]\n"
     discordmsg += "--------------------------------------\n"
-    sendooc2tgs(discordmsg)
+    sendooc2ext(discordmsg)
