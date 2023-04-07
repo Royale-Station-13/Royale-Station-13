@@ -343,7 +343,7 @@ SUBSYSTEM_DEF(ticker)
 	SSdbcore.SetRoundStart()
 
 	to_chat(world, "<h2><B>Welcome to [station_name()], Happy killing!</B></h2>")
-	send2chat("<@&1089489378264490095> <byond://play.royalestation13.com:1337>\nNew round starting on [SSmapping.config.map_name] with [length(GLOB.player_list)] players online!", CONFIG_GET(string/chat_announce_new_game))
+	sendooc2ext("<@&1089489378264490095> <byond://play.royalestation13.com:1337>\nNew round starting on [SSmapping.config.map_name] with [length(GLOB.player_list)] players online!", allowed_roles = list("1089489378264490095"))
 	if(prob(15))
 		var/song = rand(1, 3)
 		switch(song)
