@@ -270,7 +270,7 @@ SUBSYSTEM_DEF(ticker)
 			if(!runnable_modes.len)
 				to_chat(world, "<B>Unable to choose playable game mode.</B> Reverting to pre-game lobby.")
 				return FALSE
-			mode = pickweight(runnable_modes)
+			mode = pick_weight(runnable_modes)
 			if(!mode)	//too few roundtypes all run too recently
 				mode = pick(runnable_modes)
 
@@ -314,7 +314,7 @@ SUBSYSTEM_DEF(ticker)
 		var/list/modes = new
 		for (var/datum/game_mode/M in runnable_modes)
 			modes += M.name
-		modes = sortList(modes)
+		modes = sort_list(modes)
 		to_chat(world, "<b>The gamemode is: secret!\nPossibilities:</B> [english_list(modes)]")
 	else
 		mode.announce()
@@ -343,7 +343,7 @@ SUBSYSTEM_DEF(ticker)
 	SSdbcore.SetRoundStart()
 
 	to_chat(world, "<h2><B>Welcome to [station_name()], Happy killing!</B></h2>")
-	send2chat("<@&1089489378264490095> <byond://play.royalestation13.com:1337>\nNew round starting on [SSmapping.config.map_name] with [length(GLOB.player_list)] players online!", CONFIG_GET(string/chat_announce_new_game))
+	sendooc2ext("<@&1089489378264490095> <byond://play.royalestation13.com:1337>\nNew round starting on [SSmapping.config.map_name] with [length(GLOB.player_list)] players online!", allowed_roles = list("1089489378264490095"))
 	if(prob(15))
 		var/song = rand(1, 3)
 		switch(song)
@@ -459,7 +459,7 @@ SUBSYSTEM_DEF(ticker)
 			if(player.mind.assigned_role != player.mind.special_role)
 				SSjob.EquipRank(N, player.mind.assigned_role, FALSE)
 			if(CONFIG_GET(flag/roundstart_traits) && ishuman(N.new_character))
-				SSquirks.AssignQuirks(N.new_character, N.client, TRUE)
+				SSquirks.AssignQuirks(player.mind, N.client, TRUE)
 		CHECK_TICK
 	if(length(spare_id_candidates))			//No captain, time to choose acting captain
 		if(!enforce_coc)
@@ -510,7 +510,7 @@ SUBSYSTEM_DEF(ticker)
 		return
 	var/hpc = CONFIG_GET(number/hard_popcap)
 	if(!hpc)
-		listclearnulls(queued_players)
+		list_clear_nulls(queued_players)
 		for (var/mob/dead/new_player/NP in queued_players)
 			to_chat(NP, "<span class='userdanger'>The alive players limit has been released!<br><a href='?src=[REF(NP)];late_join=override'>[html_encode(">>Join Game<<")]</a></span>")
 			SEND_SOUND(NP, sound('sound/misc/notice1.ogg'))
@@ -524,7 +524,7 @@ SUBSYSTEM_DEF(ticker)
 
 	switch(queue_delay)
 		if(5) //every 5 ticks check if there is a slot available
-			listclearnulls(queued_players)
+			list_clear_nulls(queued_players)
 			if(living_player_count() < hpc)
 				if(next_in_line && next_in_line.client)
 					to_chat(next_in_line, "<span class='userdanger'>A slot has opened! You have approximately 20 seconds to join. <a href='?src=[REF(next_in_line)];late_join=override'>\>\>Join Game\<\<</a></span>")
@@ -674,10 +674,6 @@ SUBSYSTEM_DEF(ticker)
 		GLOB.master_mode = "extended"
 	log_game("Master mode is '[GLOB.master_mode]'")
 	log_config("Master mode is '[GLOB.master_mode]'")
-
-/// Returns if either the master mode or the forced secret ruleset matches the mode name.
-/datum/controller/subsystem/ticker/proc/is_mode(mode_name)
-	return GLOB.master_mode == mode_name || GLOB.secret_force_mode == mode_name
 
 /datum/controller/subsystem/ticker/proc/SetRoundEndSound(the_sound)
 	set waitfor = FALSE

@@ -24,7 +24,7 @@
 	. = ..()
 //	if(allow_rename)
 //		rename_wizard()
-//	owner.current.remove_all_quirks()
+//	owner.remove_all_quirks()
 
 /datum/antagonist/wizard/proc/register()
 	SSticker.mode.wizards |= owner
@@ -139,7 +139,7 @@
 	S.forceMove(H.loc)
 	ts.forceMove(H.loc)
 	S.owner = H
-	
+
 	if(H.equip_to_appropriate_slot(S))
 		to_chat(H, "Successfully placed [S] in inventory")
 	else

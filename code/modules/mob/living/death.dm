@@ -62,7 +62,7 @@
 			SEND_SOUND(world, sound('sound/misc/player_eliminated.ogg'))
 			to_chat(world, "<span class='danger'><b>[mind.name]</b> has been eliminated</b>.</span>")
 			var/deathgasp = last_words ? " *In their dying breath they said:* **_\"[last_words]\"_**" : ""
-			sendooc2tgs("(DEATH) **[mind.name]** has been eliminated.[deathgasp]")
+			sendooc2ext("(DEATH) **[mind.name]** has been eliminated.[deathgasp]")
 		mind.store_memory("Time of death: [tod]", 0)
 	remove_from_alive_mob_list()
 	if(playable)

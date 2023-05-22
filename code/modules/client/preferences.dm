@@ -98,7 +98,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(!IS_GUEST_KEY(C.key))
 			set_max_character_slots(9)
 		else if(!length(key_bindings)) // Guests need default keybinds
-			key_bindings = deepCopyList(GLOB.keybinding_list_by_key)
+			key_bindings = deep_copy_list(GLOB.keybinding_list_by_key)
 	var/loaded_preferences_successfully = load_from_database()
 	if(loaded_preferences_successfully)
 		if(load_characters()) // inside this proc is a disgusting SQL query
@@ -807,7 +807,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<tr style='vertical-align:top;'>"
 
 					//First column of info - the item's name
-					dat += "<td width=15%>[G.display_name]</td>"
+					dat += "<td width=15%>[active_character.jumpsuit_style == PREF_SKIRT && !isnull(G.skirt_display_name) ? G.skirt_display_name : G.display_name]</td>"
 
 					//Second column for the equip button, since we already own this item
 					dat += "<td width = 10% style='vertical-align:top'>"
@@ -823,7 +823,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 */
 					//And the fourth and final column is just for the item's description
-					dat += "<td><font size=2><i>[G.description]</i></font></td>"
+					dat += "<td><font size=2><i>[active_character.jumpsuit_style == PREF_SKIRT && !isnull(G.skirt_display_name) ? G.skirt_description : G.description]</i></font></td>"
 
 					//Finally, we close out the row
 					dat += "</tr>"
@@ -834,7 +834,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					endingdat += "<tr style='vertical-align:top;'>"
 
 					//First column
-					endingdat += "<td width=15%>[G.display_name]</td>"
+					endingdat += "<td width=15%>[active_character.jumpsuit_style == PREF_SKIRT && !isnull(G.skirt_display_name) ? G.skirt_display_name : G.display_name]</td>"
 
 					//Second column for the purchase or donator button since we have not purchased items in this loop
 					endingdat += "<td width = 10% style='vertical-align:top'>"
@@ -842,7 +842,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /*					//Third column
 					endingdat += "<td width = 12%>"
-					if(G.allowed_roles)
 						endingdat += "<font size=2>"
 						for(var/role in G.allowed_roles)
 							endingdat += role + ", "
@@ -850,7 +849,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					endingdat += "</td>"
 */
 					//fourth column
-					endingdat += "<td><font size=2><i>[G.description]</i></font></td>"
+					endingdat += "<td><font size=2><i>[active_character.jumpsuit_style == PREF_SKIRT && !isnull(G.skirt_display_name) ? G.skirt_description : G.description]</i></font></td>"
 
 					//end of row
 					endingdat += "</tr>"
@@ -858,17 +857,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			//time to combine our purchased and non-purchased rows and end the table
 			dat += endingdat
 			dat += "</table>"
-
-		if(3) //OOC Preferences
-			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-			dat += "<h2>OOC Settings</h2>"
-			dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(toggles2 & PREFTOGGLE_2_WINDOW_FLASHING) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<br>"
-			dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & PREFTOGGLE_SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & PREFTOGGLE_SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Play Game Soundtrack:</b> <a href='?_src_=prefs;preference=soundtrack'>[(toggles2 & PREFTOGGLE_2_SOUNDTRACK) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<br>"
 
 
 			if(user.client)
@@ -977,7 +965,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 		var/datum/job/overflow = SSjob.GetJob(SSjob.overflow_role)
 
-		for(var/datum/job/job in sortList(SSjob.occupations, GLOBAL_PROC_REF(cmp_job_display_asc)))
+		for(var/datum/job/job in sort_list(SSjob.occupations, GLOBAL_PROC_REF(cmp_job_display_asc)))
 			if(job.gimmick) //Gimmick jobs run off of a single pref
 				continue
 			index += 1
@@ -1801,7 +1789,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							friendlyname += " (disabled)"
 						maplist[friendlyname] = VM.map_name
 					maplist[default] = null
-					var/pickedmap = input(user, "Choose your preferred map. This will be used to help weight random map selection.", "Character Preference")  as null|anything in sortList(maplist)
+					var/pickedmap = input(user, "Choose your preferred map. This will be used to help weight random map selection.", "Character Preference")  as null|anything in sort_list(maplist)
 					if (pickedmap)
 						preferred_map = maplist[pickedmap]
 
@@ -2104,7 +2092,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(old_key && (old_key in key_bindings))
 						key_bindings[old_key] -= kb_name
 					key_bindings[full_key] += list(kb_name)
-					key_bindings[full_key] = sortList(key_bindings[full_key])
+					key_bindings[full_key] = sort_list(key_bindings[full_key])
 
 					save_preferences()
 					user << browse(null, "window=capturekeypress")
@@ -2115,7 +2103,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					user << browse(null, "window=keybindings")
 
 				if("keybindings_reset")
-					key_bindings = deepCopyList(GLOB.keybinding_list_by_key)
+					key_bindings = deep_copy_list(GLOB.keybinding_list_by_key)
 					save_preferences()
 					ShowKeybindings(user)
 					return

@@ -153,7 +153,7 @@
 					else
 						var/obj/o = H.get_item_by_slot(G.slot)
 						H.doUnEquip(H.get_item_by_slot(G.slot), newloc = H.drop_location(), invdrop = FALSE, silent = TRUE)
-						if(H.equip_to_slot_or_del(G.spawn_item(H), G.slot))
+						if(H.equip_to_slot_or_del(G.spawn_item(H, skirt_pref = M.client.prefs?.active_character?.jumpsuit_style), G.slot))
 							to_chat(H, "<span class='notice'>Equipping you with [G.display_name]!</span>")
 							qdel(o)
 						else
@@ -169,14 +169,14 @@
 			var/obj/item/storage/B = (locate() in H)
 			var/metadata = parent.prefs.active_character.equipped_gear[G.id]
 
-			//Try putting it in their bag first. All roles spawn with a bag, so this should always succeed unless that has changed. 
+			//Try putting it in their bag first. All roles spawn with a bag, so this should always succeed unless that has changed.
 			if(B)
-				G.spawn_item(B, metadata)
+				G.spawn_item(B, metadata, skirt_pref = M.client.prefs?.active_character?.jumpsuit_style)
 				to_chat(M, "<span class='notice'>Placing [G.display_name] in [B.name]!</span>")
 				continue
 
-			//This is where it is placed at their feet - the next two steps try to move it before we give up and send an error message. 
-			var/item = G.spawn_item(H.loc, metadata) 
+			//This is where it is placed at their feet - the next two steps try to move it before we give up and send an error message.
+			var/item = G.spawn_item(H.loc, metadata, skirt_pref = M.client.prefs?.active_character?.jumpsuit_style)
 
 			if(H.equip_to_appropriate_slot(item))
 				to_chat(M, "<span class='notice'>Placing [G.display_name] in your inventory!</span>")
