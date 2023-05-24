@@ -63,13 +63,8 @@
 	say_mod = "hisses"
 	taste_sensitivity = 10 // combined nose + tongue, extra sensitive
 	modifies_speech = TRUE
-<<<<<<< HEAD
-	disliked_food = GRAIN | DAIRY
-	liked_food = GROSS | MEAT
-=======
 	disliked_food = GRAIN | DAIRY | CLOTH | GROSS
 	liked_food = GORE | MEAT
->>>>>>> 8bee5d5c1f (Adds new foodtype, GORE, split from GROSS. Shuffles tongue food preferences. (#9004))
 
 /obj/item/organ/tongue/lizard/handle_speech(datum/source, list/speech_args)
 	var/static/regex/lizard_hiss = new("s+", "g")
@@ -95,13 +90,9 @@
 	say_mod = "buzzes"
 	taste_sensitivity = 25 // you eat vomit, this is a mercy
 	modifies_speech = TRUE
-<<<<<<< HEAD
-	liked_food = GROSS | MEAT | RAW | FRUIT
-=======
 	liked_food = GROSS | RAW | GORE // Limit how much food they actually like. They already have carte blanche on like 90% of food
 	disliked_food = NONE
 	toxic_food = NONE
->>>>>>> 8bee5d5c1f (Adds new foodtype, GORE, split from GROSS. Shuffles tongue food preferences. (#9004))
 
 /obj/item/organ/tongue/fly/handle_speech(datum/source, list/speech_args)
 	var/static/regex/fly_buzz = new("z+", "g")
@@ -333,13 +324,8 @@
 	name = "cat tongue"
 	desc = "A rough tongue, full of small, boney spines all over it's surface."
 	say_mod = "meows"
-<<<<<<< HEAD
-	disliked_food = VEGETABLES | SUGAR
-	liked_food = DAIRY | MEAT
-=======
 	disliked_food = GROSS | VEGETABLES | SUGAR | CLOTH
 	liked_food = DAIRY | MEAT | GORE
->>>>>>> 8bee5d5c1f (Adds new foodtype, GORE, split from GROSS. Shuffles tongue food preferences. (#9004))
 
 /obj/item/organ/tongue/slime
 	name = "slimey tongue"
@@ -370,12 +356,8 @@
 	desc = "It's a tongue that looks off... Must be from a creature that shouldn't exist."
 	say_mod = "mumbles"
 	icon_state = "tonguefly"
-<<<<<<< HEAD
-	liked_food = JUNKFOOD | FRIED | GROSS | RAW
-=======
 	disliked_food = CLOTH
 	liked_food = JUNKFOOD | FRIED | GROSS | RAW | GORE
->>>>>>> 8bee5d5c1f (Adds new foodtype, GORE, split from GROSS. Shuffles tongue food preferences. (#9004))
 
 /obj/item/organ/tongue/podperson
 	name = "plant tongue"

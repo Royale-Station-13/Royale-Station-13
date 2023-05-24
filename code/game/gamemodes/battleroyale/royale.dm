@@ -41,7 +41,7 @@
             continue
         active_players += player
         CHECK_TICK
-    //Adjust this to >= for debugging so the game mode doesn't end immediately. 
+    //Adjust this to >= for debugging so the game mode doesn't end immediately.
     if(length(active_players) > 1) //There are two or more living players, round continues
         return ..()
     if(length(active_players) == 0) //There are zero living players, round ends in draw
@@ -221,7 +221,7 @@
                 /obj/item/ammo_box/magazine/sniper_rounds/inferno
     )
     var/static/lmg = list(
-                /obj/item/ammo_box/magazine/mm712x82, 
+                /obj/item/ammo_box/magazine/mm712x82,
                 /obj/item/ammo_box/magazine/mm712x82/ap,
                 /obj/item/ammo_box/magazine/mm712x82/hollow,
                 /obj/item/ammo_box/magazine/mm712x82/incen,
@@ -314,7 +314,7 @@
     desc = "A weapon favored by those who choose quantity over quality. Synthesizes bolts from thin air, but slow to fire."
     color = "#a0d1ff" //slightly recolor it
     ammo_type = list(/obj/item/ammo_casing/energy/bolt/royale)
-    overheat_time = 30 //Three seconds between shots. 
+    overheat_time = 30 //Three seconds between shots.
 
 /obj/item/ammo_casing/energy/bolt/royale
     projectile_type = /obj/item/projectile/energy/bolt/royale
@@ -362,7 +362,7 @@
 
 /obj/item/paper/royale_toolbox
     name = "Note"
-    info = "If you find any tiny red crystals, keep them in here. The box feeds on them to make you stronger."
+    default_raw_text = "If you find any tiny red crystals, keep them in here. The box feeds on them to make you stronger."
 
 /obj/item/kitchen/knife/poison/royale/Initialize(mapload)
     . = ..()
@@ -391,7 +391,7 @@
     desc = "The most advanced tool in a custodian's arsenal, now with a pointy tip!"
     force = 15
     throwforce = 18
-	
+
 /datum/crafting_recipe/sharpmop_advanced
 	name = "Sharpened Advanced Mop"
 	result = /obj/item/mop/advanced/sharp
@@ -443,7 +443,7 @@
 /obj/item/storage/box/royale/assorted_syringes/PopulateContents()
     for(var/i in 1 to 14) //twice as many
         new /obj/item/reagent_containers/syringe/royale/random(src)
-    
+
 /obj/item/storage/box/royale/unlabeled_syringes
     name = "box of syringes"
     desc = "None of these have labels, what am I supposed to do with this?"
@@ -542,7 +542,7 @@
 
 /obj/item/reagent_containers/syringe/bluespace/plasma
     list_reagents = list(/datum/reagent/toxin/plasma = 60)
-    
+
 
 /obj/item/reagent_containers/syringe/royale/random/Initialize(mapload)
     ..()
@@ -719,7 +719,7 @@
 /obj/item/clothing/suit/hooded/cloak/goliath/royale/magenta
     name = "magenta cloak"
     desc = "A tattered cloak made of goliath leather. This one has been dyed magenta and definitely not purple."
-    icon_state = "goliath_cloak_purple" //it's not purple. 
+    icon_state = "goliath_cloak_purple" //it's not purple.
     hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/royale/magenta
 
 /obj/item/clothing/head/hooded/cloakhood/goliath/royale/magenta
@@ -861,7 +861,7 @@
             new /obj/item/dice/d20/fate/one_use/stealth/d8(src)
     else
         new /obj/item/dice/d8(src)
-    
+
     if(prob(10))
         if(prob(10))
             new /obj/item/dice/d20/fate/stealth/d10(src)
