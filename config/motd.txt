@@ -1,6 +1,8 @@
 <h1>Welcome to Royale Station 13!</h1>
+
+<br><b>Website: 	<a href="https://royalestation13.com/">Click Me!</a></b>
 <br><b>Discord: 	<a href="https://discord.gg/m5wTK9fxa3">Click Me!</a></b>
-<br><b>Donate:	<a href="https://ko-fi.com/rukofamicom">Click Me!</a></b>
+<br><b>Donate:	<a href="https://www.patreon.com/RoyaleStation13">Click Me!</a></b>
 
 <b>Change your loadout in preferences to adjust your starting gear</b>
 <b>All jobs have unlimited slots, but mostly only offer different spawn locations</b>

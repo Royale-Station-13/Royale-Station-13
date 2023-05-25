@@ -269,17 +269,17 @@ GUEST_BAN
 #WIKIURL https://wiki.beestation13.com/view
 
 ## Rules address
-#RULESURL https://discord.gg/m5wTK9fxa3
+#RULESURL https://royalestation13.com/rules
 
 ## Github address
-#GITHUBURL https://github.com/Rukofamicom/Royale-Station-13
+#GITHUBURL https://github.com/Royale-Station-13/Royale-Station-13
 
 ## Label to tag ingame-registered issues with.
 ## Uncomment this to enable them.
 #ISSUE_LABEL Ingame Issue Report
 
 ## Donation URL
-DONATEURL https://ko-fi.com/rukofamicom
+DONATEURL https://www.patreon.com/RoyaleStation13
 
 ## Discord Invite
 DISCORDURL https://discord.gg/m5wTK9fxa3

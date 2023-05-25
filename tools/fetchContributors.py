@@ -15,7 +15,7 @@ blacklist = [
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--pages', type=int, default=15, help='The program looks at the past 100*pages commits. Default: 15')
-parser.add_argument('--repo',  type=str, default=None, help='author/repo e.g. Rukofamicom/Royale-Station-13')
+parser.add_argument('--repo',  type=str, default=None, help='author/repo e.g. Royale-Station-13/Royale-Station-13')
 parser.add_argument('--token', type=str, default=None, help="Github personal access token (optional)")
 
 args_ns = parser.parse_args()
