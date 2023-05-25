@@ -279,7 +279,7 @@ GUEST_BAN
 #ISSUE_LABEL Ingame Issue Report
 
 ## Donation URL
-DONATEURL https://ko-fi.com/rukofamicom
+DONATEURL https://www.patreon.com/RoyaleStation13
 
 ## Discord Invite
 DISCORDURL https://discord.gg/m5wTK9fxa3
