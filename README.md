@@ -1,10 +1,13 @@
 <h1 align="center">RoyaleStation 13 Codebase</h1>
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
-[![Build Status](https://github.com/Rukofamicom/Royale-Station-13/workflows/Run%20tests/badge.svg)](https://github.com/Rukofamicom/Royale-Station-13/actions?query=workflow%3A%22Run+tests%22)
-![Open Issues](https://isitmaintained.com/badge/open/Rukofamicom/Royale-Station-13.svg)
+[![Build Status](https://github.com/Royale-Station-13/Royale-Station-13/workflows/Run%20tests/badge.svg)](https://github.com/Royale-Station-13/Royale-Station-13/actions?query=workflow%3A%22Run+tests%22)
+![Open Issues](https://isitmaintained.com/badge/open/Royale-Station-13/Royale-Station-13.svg)
 
-**Code:** https://github.com/Rukofamicom/Royale-Station-13
+**Website:** https://royalestation13.com/
+
+**Code:** https://github.com/Royale-Station-13/Royale-Station-13
+
 **Wiki:** https://wiki.beestation13.com/view/Main_Page
 
 ## DOWNLOADING
@@ -16,7 +19,7 @@ Follow this: https://wiki.beestation13.com/view/Guide_to_git
 Clone the repository using `git clone`.
 
 Option 2: Download the source code as a zip by clicking the ZIP button in the
-code tab of https://github.com/Rukofamicom/Royale-Station-13
+code tab of https://github.com/Royale-Station-13/Royale-Station-13
 (note: this will use a lot of bandwidth if you wish to update and is a lot of
 hassle if you want to make any changes at all, so it's not recommended.)
 

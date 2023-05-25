@@ -222,7 +222,7 @@
 	config_entry_value = "https://discord.gg/m5wTK9fxa3"
 
 /datum/config_entry/string/githuburl
-	config_entry_value = "https://github.com/Rukofamicom/Royale-Station-13"
+	config_entry_value = "https://github.com/Royale-Station-13/Royale-Station-13"
 
 /datum/config_entry/string/issue_label
 
