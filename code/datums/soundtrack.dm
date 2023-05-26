@@ -58,11 +58,11 @@ GLOBAL_LIST_EMPTY(soundtrack_this_round) // A running list of soundtrack songs t
 	length = (3 MINUTES) + (16 SECONDS)
 	station_only = TRUE
 
-/datum/soundtrack_song/bee/heirophant
-	title = "Heirophant"
+/datum/soundtrack_song/bee/hierophant
+	title = "Hierophant"
 	artist = "qwertyquerty"
 	url = "https://www.youtube.com/watch?v=Zafd-0ehSpQ"
-	file = 'sound/soundtrack/heirophant.ogg'
+	file = 'sound/soundtrack/hierophant.ogg'
 	length = (4 MINUTES) + (3 SECONDS)
 	station_only = TRUE
 
