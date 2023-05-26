@@ -39,3 +39,37 @@ GLOBAL_LIST_EMPTY(soundtrack_this_round) // A running list of soundtrack songs t
 	file = 'sound/soundtrack/mind_crawler.ogg'
 	length = (2 MINUTES) + (50 SECONDS)
 	station_only = TRUE
+
+/datum/soundtrack_song/bee/malf_ai
+	title = "Malf AI"
+	artist = "qwertyquerty"
+	url = "https://www.youtube.com/watch?v=jNzfjcHxcMs"
+	file = 'sound/soundtrack/malf_ai.ogg'
+	length = (4 MINUTES) + (22 SECONDS)
+	station_only = TRUE
+	volume = 50
+
+
+/datum/soundtrack_song/bee/bubblegum
+	title = "Bubblegum"
+	artist = "qwertyquerty"
+	url = "https://www.youtube.com/watch?v=bOn7B3Xw_Rs"
+	file = 'sound/soundtrack/bubblegum.ogg'
+	length = (3 MINUTES) + (16 SECONDS)
+	station_only = TRUE
+
+/datum/soundtrack_song/bee/heirophant
+	title = "Heirophant"
+	artist = "qwertyquerty"
+	url = "https://www.youtube.com/watch?v=Zafd-0ehSpQ"
+	file = 'sound/soundtrack/heirophant.ogg'
+	length = (4 MINUTES) + (3 SECONDS)
+	station_only = TRUE
+
+/datum/soundtrack_song/bee/finale
+	title = "Finale"
+	artist = "qwertyquerty"
+	url = "https://www.youtube.com/watch?v=4N6MNV1bjk8"
+	file = 'sound/soundtrack/finale.ogg'
+	length = (3 MINUTES) + (9 SECONDS)
+	station_only = TRUE

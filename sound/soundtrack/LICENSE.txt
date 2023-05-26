@@ -1,0 +1,3 @@
+BeeStation soundtrack audio created by qwertyquerty, CC-BY
+
+Links to originals in code/datums/soundtrack.dm
