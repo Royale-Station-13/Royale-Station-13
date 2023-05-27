@@ -411,9 +411,7 @@
 /obj/item/book/granter/martial/karate/royale
     pages_to_mastery = 0
 
-/obj/item/melee/curator_whip/royale
-    force = 5 //this one actually stings
-    desc= "Somewhat eccentric and outdated, but this one actually hurts"
+
 
 /obj/item/storage/firstaid/royale
     name = "compact medical kit"

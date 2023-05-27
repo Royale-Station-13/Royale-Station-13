@@ -108,7 +108,7 @@
 
 /datum/gear/equipment/whip
     display_name = "whip"
-    path = /obj/item/melee/curator_whip/royale
+    path = /obj/item/melee/curator_whip
 
 /datum/gear/equipment/mop
     display_name = "advanced mop"
