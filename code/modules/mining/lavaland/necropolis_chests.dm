@@ -825,7 +825,7 @@
 	. = ..()
 	spirits = list()
 	START_PROCESSING(SSobj, src)
-	GLOB.poi_list |= src
+	AddElement(/datum/element/point_of_interest)
 	AddComponent(/datum/component/butchering, 150, 90)
 
 /obj/item/melee/ghost_sword/Destroy()
@@ -833,7 +833,6 @@
 		G.invisibility = GLOB.observer_default_invisibility
 	spirits.Cut()
 	STOP_PROCESSING(SSobj, src)
-	GLOB.poi_list -= src
 	. = ..()
 
 /obj/item/melee/ghost_sword/attack_self(mob/user)
