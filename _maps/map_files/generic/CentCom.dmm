@@ -515,6 +515,24 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"cf" = (
+/obj/item/clipboard,
+/obj/structure/table/reinforced,
+/obj/item/detective_scanner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/obj/item/storage/box/ids{
+	pixel_x = 6;
+	pixel_y = 12
+	},
+/obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
+/obj/item/storage/fancy/donut_box,
+/turf/open/floor/plasteel/dark,
+/area/centcom/ferry)
 "cg" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner/north,
@@ -1037,23 +1055,6 @@
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
-/area/centcom/control)
-"en" = (
-/obj/item/storage/box/emps{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/flashbangs,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/structure/table/reinforced,
-/obj/item/clothing/ears/earmuffs,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_y = 32
-	},
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel,
 /area/centcom/control)
 "eo" = (
 /obj/machinery/power/terminal{
@@ -1648,25 +1649,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
-"gK" = (
-/obj/item/storage/box/emps{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/flashbangs,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/structure/table/reinforced,
-/obj/item/clothing/ears/earmuffs,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/centcom/ferry)
 "gL" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -1890,18 +1872,6 @@
 /obj/machinery/door/window/westleft,
 /turf/open/floor/mineral/titanium,
 /area/centcom/evac)
-"hO" = (
-/obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/newscaster{
-	pixel_x = 32
-	},
-/obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
-/obj/machinery/fax/centcom,
-/turf/open/floor/plasteel/dark,
-/area/centcom/ferry)
 "hR" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel,
@@ -3783,6 +3753,23 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"pt" = (
+/obj/item/storage/box/emps{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashbangs,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/structure/table/reinforced,
+/obj/item/clothing/ears/earmuffs,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel,
+/area/centcom/control)
 "px" = (
 /obj/structure/chair{
 	dir = 8
@@ -5167,10 +5154,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/evac)
-"uC" = (
-/obj/machinery/computer/camera_advanced,
-/turf/open/floor/wood,
-/area/wizard_station)
 "uD" = (
 /obj/structure/table/wood/fancy,
 /obj/item/radio/headset,
@@ -6469,6 +6452,12 @@
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"zI" = (
+/obj/machinery/computer/camera_advanced/wizard{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/wizard_station)
 "zL" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -9378,12 +9367,6 @@
 	},
 /turf/open/floor/plating/asteroid/snow/airless,
 /area/syndicate_mothership)
-"ME" = (
-/obj/machinery/computer/camera_advanced{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/wizard_station)
 "MG" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -10609,6 +10592,10 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
+"RT" = (
+/obj/machinery/computer/camera_advanced/wizard,
+/turf/open/floor/wood,
+/area/wizard_station)
 "RU" = (
 /obj/machinery/airalarm{
 	dir = 1;
@@ -10857,6 +10844,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"Te" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
+/obj/machinery/fax/centcom,
+/turf/open/floor/plasteel/dark,
+/area/centcom/ferry)
 "Tf" = (
 /obj/item/clipboard,
 /obj/item/folder/red,
@@ -11307,6 +11306,14 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
+"UU" = (
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
+/obj/item/paper_bin,
+/obj/item/pen/fourcolor,
+/turf/open/floor/plasteel/dark,
+/area/centcom/ferry)
 "UV" = (
 /obj/machinery/computer/arcade,
 /turf/open/floor/wood,
@@ -11340,14 +11347,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/centcom/control)
-"Vc" = (
-/obj/structure/table/reinforced,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
-/obj/item/paper_bin,
-/obj/item/pen/fourcolor,
-/turf/open/floor/plasteel/dark,
-/area/centcom/ferry)
 "Ve" = (
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
 	dir = 4
@@ -11483,6 +11482,25 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"VJ" = (
+/obj/item/storage/box/emps{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashbangs,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/structure/table/reinforced,
+/obj/item/clothing/ears/earmuffs,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/ferry)
 "VK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/filingcabinet/chestdrawer,
@@ -12499,24 +12517,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/evac)
-"ZK" = (
-/obj/item/clipboard,
-/obj/structure/table/reinforced,
-/obj/item/detective_scanner,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
-/obj/item/storage/box/ids{
-	pixel_x = 6;
-	pixel_y = 12
-	},
-/obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
-/obj/item/storage/fancy/donut_box,
-/turf/open/floor/plasteel/dark,
-/area/centcom/ferry)
 "ZL" = (
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 4
@@ -17641,7 +17641,7 @@ lI
 lI
 qE
 qE
-ME
+zI
 vj
 ya
 qZ
@@ -18409,7 +18409,7 @@ lI
 lI
 lI
 qE
-uC
+RT
 vk
 vj
 vj
@@ -50788,7 +50788,7 @@ oI
 SZ
 mE
 Lf
-ZK
+cf
 OF
 oB
 US
@@ -51046,7 +51046,7 @@ bv
 qQ
 rx
 sB
-Vc
+UU
 us
 Ui
 mD
@@ -51303,7 +51303,7 @@ Rr
 mD
 ry
 sC
-hO
+Te
 oB
 FA
 mD
@@ -53359,7 +53359,7 @@ ct
 nT
 rE
 OQ
-gK
+VJ
 mD
 va
 oe
@@ -58983,7 +58983,7 @@ aa
 aa
 aa
 io
-en
+pt
 iE
 iE
 iW
