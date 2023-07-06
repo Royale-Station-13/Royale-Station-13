@@ -754,6 +754,23 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
+"db" = (
+/obj/item/storage/box/emps{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashbangs,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/structure/table/reinforced,
+/obj/item/clothing/ears/earmuffs,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel,
+/area/centcom/control)
 "dc" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
@@ -3753,23 +3770,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/centcom/control)
-"pt" = (
-/obj/item/storage/box/emps{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/flashbangs,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/structure/table/reinforced,
-/obj/item/clothing/ears/earmuffs,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_y = 32
-	},
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel,
-/area/centcom/control)
 "px" = (
 /obj/structure/chair{
 	dir = 8
@@ -5154,6 +5154,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/evac)
+"uC" = (
+/obj/machinery/computer/camera_advanced/wizard,
+/turf/open/floor/wood,
+/area/wizard_station)
 "uD" = (
 /obj/structure/table/wood/fancy,
 /obj/item/radio/headset,
@@ -6452,12 +6456,6 @@
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel,
 /area/centcom/control)
-"zI" = (
-/obj/machinery/computer/camera_advanced/wizard{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/wizard_station)
 "zL" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -9367,6 +9365,12 @@
 	},
 /turf/open/floor/plating/asteroid/snow/airless,
 /area/syndicate_mothership)
+"ME" = (
+/obj/machinery/computer/camera_advanced/wizard{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/wizard_station)
 "MG" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -10167,17 +10171,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
-"Qg" = (
-/obj/structure/closet,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/machinery/iv_drip,
-/obj/item/roller,
-/obj/item/storage/firstaid/regular,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/turf/open/floor/wood,
-/area/centcom/holding)
 "Qi" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -10592,10 +10585,6 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
-"RT" = (
-/obj/machinery/computer/camera_advanced/wizard,
-/turf/open/floor/wood,
-/area/wizard_station)
 "RU" = (
 /obj/machinery/airalarm{
 	dir = 1;
@@ -10933,6 +10922,25 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
+"To" = (
+/obj/item/storage/box/emps{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashbangs,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/structure/table/reinforced,
+/obj/item/clothing/ears/earmuffs,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/ferry)
 "Tq" = (
 /obj/structure/table/wood/bar,
 /obj/item/stack/sheet/glass/fifty,
@@ -11482,25 +11490,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
-"VJ" = (
-/obj/item/storage/box/emps{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/flashbangs,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/structure/table/reinforced,
-/obj/item/clothing/ears/earmuffs,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/centcom/ferry)
 "VK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/filingcabinet/chestdrawer,
@@ -12535,6 +12524,17 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
+"ZQ" = (
+/obj/structure/closet,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/iv_drip,
+/obj/item/deployable/rollerbed,
+/obj/item/storage/firstaid/regular,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/turf/open/floor/wood,
+/area/centcom/holding)
 "ZR" = (
 /obj/structure/window/plasma/reinforced{
 	dir = 1
@@ -17641,7 +17641,7 @@ lI
 lI
 qE
 qE
-zI
+ME
 vj
 ya
 qZ
@@ -18409,7 +18409,7 @@ lI
 lI
 lI
 qE
-RT
+uC
 vk
 vj
 vj
@@ -41576,7 +41576,7 @@ Xk
 NT
 vt
 Mx
-Qg
+ZQ
 Tb
 Uh
 tW
@@ -53359,7 +53359,7 @@ ct
 nT
 rE
 OQ
-VJ
+To
 mD
 va
 oe
@@ -58983,7 +58983,7 @@ aa
 aa
 aa
 io
-pt
+db
 iE
 iE
 iW
