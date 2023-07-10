@@ -12204,6 +12204,15 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/crew_quarters/toilet)
+"dMz" = (
+/obj/structure/rack,
+/obj/item/storage/box/sec_barricades,
+/obj/effect/turf_decal/delivery,
+/obj/item/storage/lockbox/loyalty,
+/obj/item/implantcase/tracking,
+/obj/item/implantcase/chem,
+/turf/open/floor/plasteel,
+/area/ai_monitored/security/armory)
 "dMB" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -12390,6 +12399,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
+"dQR" = (
+/obj/machinery/vending/boozeomat/pubby_captain,
+/turf/open/floor/wood,
+/area/crew_quarters/heads/captain)
 "dRf" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -37546,11 +37559,6 @@
 /obj/effect/turf_decal/tile/red/fourcorners/contrasted,
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/kitchen)
-"mgs" = (
-/obj/structure/reagent_dispensers,
-/obj/effect/turf_decal/delivery,
-/turf/open/floor/plasteel,
-/area/storage/tools)
 "mgw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -43663,15 +43671,6 @@
 	},
 /turf/open/floor/plating,
 /area/security/brig)
-"odI" = (
-/obj/structure/rack,
-/obj/item/storage/box/sec_barricades,
-/obj/effect/turf_decal/delivery,
-/obj/item/storage/lockbox/loyalty,
-/obj/item/implantcase/tracking,
-/obj/item/implantcase/chem,
-/turf/open/floor/plasteel,
-/area/ai_monitored/security/armory)
 "odP" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -56805,10 +56804,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
-"sup" = (
-/obj/machinery/vending/boozeomat/pubby_captain,
-/turf/open/floor/wood,
-/area/crew_quarters/heads/captain)
 "sut" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -73616,6 +73611,11 @@
 "xXa" = (
 /turf/closed/wall,
 /area/library)
+"xXb" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plasteel,
+/area/storage/tools)
 "xXj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
@@ -105068,7 +105068,7 @@ bxI
 ksC
 mog
 pSE
-mgs
+xXb
 bxI
 ijk
 dmI
@@ -109680,7 +109680,7 @@ iHM
 nkt
 qOU
 xtT
-sup
+dQR
 cCd
 fiI
 bSy
@@ -111738,7 +111738,7 @@ lbc
 vgb
 anT
 oXI
-odI
+dMz
 suN
 tFu
 qwN
