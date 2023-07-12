@@ -5661,6 +5661,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/bridge)
+"bPY" = (
+/obj/machinery/vending/boozeomat/pubby_captain,
+/turf/open/floor/plating,
+/area/crew_quarters/heads/hop)
 "bPZ" = (
 /obj/structure/sign/poster/random,
 /turf/closed/wall,
@@ -10720,6 +10724,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/vacant_room/commissary/commissary2)
+"dxJ" = (
+/obj/docking_port/stationary/random{
+	id = "pod_lavaland2";
+	name = "lavaland"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "dxK" = (
 /obj/item/stack/sheet/wood,
 /obj/effect/landmark/xeno_spawn,
@@ -15162,6 +15173,33 @@
 	},
 /turf/open/floor/carpet/grimy,
 /area/maintenance/department/science)
+"eOo" = (
+/obj/structure/table/reinforced,
+/obj/item/deployable/barricade/security{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/item/deployable/barricade/security{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/deployable/barricade/security{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/storage/box/trackimp{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/deployable/barricade/security{
+	pixel_y = 10
+	},
+/obj/item/deployable/barricade/security{
+	pixel_y = 5
+	},
+/obj/item/storage/lockbox/loyalty,
+/turf/open/floor/plasteel,
+/area/ai_monitored/security/armory)
 "eOD" = (
 /obj/machinery/biogenerator,
 /turf/open/floor/grass,
@@ -28285,10 +28323,6 @@
 	},
 /turf/open/floor/plating,
 /area/security/prison/shielded)
-"iPX" = (
-/obj/machinery/vending/boozeomat/pubby_maint,
-/turf/open/floor/plating,
-/area/maintenance/department/science)
 "iQa" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -32
@@ -28472,6 +28506,10 @@
 "iST" = (
 /turf/closed/wall/r_wall,
 /area/tcommsat/computer)
+"iTq" = (
+/obj/item/deployable/rollerbed,
+/turf/open/floor/plating,
+/area/maintenance/department/medical)
 "iTt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 6
@@ -30869,10 +30907,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark/telecomms,
 /area/tcommsat/computer)
-"jCr" = (
-/obj/item/deployable/rollerbed,
-/turf/open/floor/plating,
-/area/maintenance/department/medical)
 "jCx" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/railing,
@@ -55328,6 +55362,10 @@
 	icon_state = "wood-broken7"
 	},
 /area/vacant_room/office)
+"rsn" = (
+/obj/machinery/vending/boozeomat/pubby_maint,
+/turf/open/floor/plating,
+/area/maintenance/department/science)
 "rso" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/mapping_helpers/dead_body_placer,
@@ -59679,6 +59717,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/research)
+"sPs" = (
+/obj/docking_port/stationary/random{
+	dir = 8;
+	id = "pod_lavaland3";
+	name = "lavaland"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "sPX" = (
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	alpha = 180;
@@ -60691,6 +60737,13 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
+"tew" = (
+/obj/docking_port/stationary/random{
+	id = "pod_lavaland1";
+	name = "lavaland"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "teU" = (
 /obj/machinery/light{
 	dir = 1
@@ -61240,10 +61293,6 @@
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
 /area/engine/engine_room)
-"tmR" = (
-/obj/machinery/vending/boozeomat/pubby_captain,
-/turf/open/floor/plating,
-/area/crew_quarters/heads/hop)
 "tmS" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/layer_manifold{
@@ -66423,33 +66472,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/port)
-"uTJ" = (
-/obj/structure/table/reinforced,
-/obj/item/deployable/barricade/security{
-	pixel_x = 8;
-	pixel_y = 12
-	},
-/obj/item/deployable/barricade/security{
-	pixel_x = 8;
-	pixel_y = 7
-	},
-/obj/item/deployable/barricade/security{
-	pixel_x = 8;
-	pixel_y = 2
-	},
-/obj/item/storage/box/trackimp{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/deployable/barricade/security{
-	pixel_y = 10
-	},
-/obj/item/deployable/barricade/security{
-	pixel_y = 5
-	},
-/obj/item/storage/lockbox/loyalty,
-/turf/open/floor/plasteel,
-/area/ai_monitored/security/armory)
 "uTN" = (
 /turf/open/floor/plasteel/dark/corner{
 	dir = 4
@@ -96387,7 +96409,7 @@ gsA
 gsA
 gsA
 yeA
-yeA
+sPs
 yeA
 yeA
 yeA
@@ -101705,7 +101727,7 @@ yeA
 yeA
 yeA
 yeA
-yeA
+tew
 yeA
 yeA
 yeA
@@ -103098,7 +103120,7 @@ tIR
 cCS
 tDg
 mfO
-iPX
+rsn
 cCS
 dxK
 dLW
@@ -104540,7 +104562,7 @@ gsA
 uYx
 tqK
 hsz
-uTJ
+eOo
 uYx
 rtq
 rtq
@@ -110695,7 +110717,7 @@ rIN
 sKM
 iaB
 aIw
-tmR
+bPY
 wGM
 wGM
 gST
@@ -115409,7 +115431,7 @@ wdZ
 bWm
 blt
 tGK
-jCr
+iTq
 mrS
 iRY
 wAP
@@ -116868,7 +116890,7 @@ gsA
 gsA
 gsA
 pia
-yeA
+dxJ
 yeA
 yeA
 yeA

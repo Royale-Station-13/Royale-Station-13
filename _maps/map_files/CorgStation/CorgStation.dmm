@@ -4456,6 +4456,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/white,
 /area/science/research)
+"bdQ" = (
+/obj/machinery/vending/boozeomat/pubby_captain,
+/turf/open/floor/wood,
+/area/crew_quarters/heads/captain)
 "bdZ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -12399,10 +12403,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
-"dQR" = (
-/obj/machinery/vending/boozeomat/pubby_captain,
-/turf/open/floor/wood,
-/area/crew_quarters/heads/captain)
 "dRf" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -37559,6 +37559,11 @@
 /obj/effect/turf_decal/tile/red/fourcorners/contrasted,
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/kitchen)
+"mgs" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plasteel,
+/area/storage/tools)
 "mgw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -38680,6 +38685,13 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/medical/virology)
+"mwg" = (
+/obj/docking_port/stationary/random{
+	id = "pod_lavaland3";
+	name = "lavaland"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "mwl" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 1
@@ -39280,6 +39292,14 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/starboard)
+"mFN" = (
+/obj/docking_port/stationary/random{
+	id = "pod_lavaland1";
+	name = "lavaland";
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "mFO" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -40523,6 +40543,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/department/science)
+"ndU" = (
+/obj/docking_port/stationary/random{
+	id = "pod_lavaland2";
+	name = "lavaland";
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "nea" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -73611,11 +73639,6 @@
 "xXa" = (
 /turf/closed/wall,
 /area/library)
-"xXb" = (
-/obj/effect/turf_decal/delivery,
-/obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/plasteel,
-/area/storage/tools)
 "xXj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
@@ -93509,7 +93532,7 @@ xUf
 ivx
 kxH
 aMT
-aMT
+mFN
 aMT
 aMT
 aMT
@@ -105068,7 +105091,7 @@ bxI
 ksC
 mog
 pSE
-xXb
+mgs
 bxI
 ijk
 dmI
@@ -109680,7 +109703,7 @@ iHM
 nkt
 qOU
 xtT
-dQR
+bdQ
 cCd
 fiI
 bSy
@@ -110694,7 +110717,7 @@ aMT
 aMT
 aMT
 aMT
-aMT
+ndU
 aMT
 aMT
 anT
@@ -130748,7 +130771,7 @@ aMT
 aMT
 aMT
 aMT
-aMT
+mwg
 aMT
 aMT
 aMT
