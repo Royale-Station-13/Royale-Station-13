@@ -71,6 +71,7 @@
 		add_to_dead_mob_list()
 
 	SetSleeping(0, 0)
+	blind_eyes(1)
 
 	update_action_buttons_icon()
 	update_health_hud()
