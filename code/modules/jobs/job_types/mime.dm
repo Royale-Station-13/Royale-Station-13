@@ -22,6 +22,7 @@
 	species_outfits = list(
 		SPECIES_PLASMAMAN = /datum/outfit/plasmaman/mime
 	)
+	minimal_lightup_areas = list(/area/crew_quarters/theatre)
 
 /datum/job/mime/after_spawn(mob/living/carbon/human/H, mob/M, client/parent)
 	. = ..()
