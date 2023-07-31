@@ -1,6 +1,6 @@
 /turf
 	var/dynamic_lighting = TRUE
-	luminosity           = 1
+	luminosity = 1
 
 	var/tmp/lighting_corners_initialised = FALSE
 
@@ -91,6 +91,9 @@
 		reconsider_lights()
 
 /turf/proc/change_area(var/area/old_area, var/area/new_area)
+	old_area.turfs_to_uncontain += src
+	new_area.contents += src
+	new_area.contained_turfs += src
 	if(SSlighting.initialized)
 		if (new_area.dynamic_lighting != old_area.dynamic_lighting)
 			if (new_area.dynamic_lighting)
