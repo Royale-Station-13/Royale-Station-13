@@ -855,13 +855,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/nuke_storage)
-"aih" = (
-/obj/effect/landmark/start/janitor,
-/obj/effect/turf_decal/tile/green/opposingcorners{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/janitor)
 "aik" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -9394,6 +9387,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/maintenance/starboard/secondary)
+"cSg" = (
+/obj/machinery/vending/boozeomat/pubby_captain,
+/turf/open/floor/wood,
+/area/crew_quarters/heads/captain)
 "cSi" = (
 /obj/machinery/computer/cargo{
 	dir = 8
@@ -17017,13 +17014,6 @@
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
 /area/quartermaster/office)
-"fub" = (
-/obj/structure/sign/warning/securearea{
-	pixel_x = 32
-	},
-/obj/effect/landmark/carpspawn,
-/turf/open/space/basic,
-/area/space)
 "fuh" = (
 /turf/closed/wall,
 /area/hallway/secondary/service)
@@ -28208,6 +28198,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
+"jbv" = (
+/obj/machinery/portable_atmospherics/canister/water_vapor,
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/janitor)
 "jbA" = (
 /obj/item/flashlight/glowstick/red,
 /turf/open/floor/plating,
@@ -35397,6 +35397,13 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/quartermaster/miningdock)
+"lxi" = (
+/obj/effect/landmark/start/janitor,
+/obj/effect/turf_decal/tile/green/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/janitor)
 "lxt" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -44941,16 +44948,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
-"ozl" = (
-/obj/machinery/portable_atmospherics/canister/water_vapor,
-/obj/effect/turf_decal/tile/green/half/contrasted{
-	dir = 1
-	},
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/janitor)
 "ozr" = (
 /obj/machinery/advanced_airlock_controller/directional/north,
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
@@ -64722,10 +64719,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/warden)
-"vdh" = (
-/obj/machinery/vending/boozeomat/pubby_captain,
-/turf/open/floor/wood,
-/area/crew_quarters/heads/captain)
 "vdA" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -106224,7 +106217,7 @@ hzU
 aPI
 fHC
 dqj
-ozl
+jbv
 eUn
 fHC
 fHC
@@ -106481,7 +106474,7 @@ hzU
 aPI
 fHC
 hlR
-aih
+lxi
 hqm
 oDB
 fbg
@@ -109771,7 +109764,7 @@ iHM
 nkt
 qOU
 xtT
-vdh
+cSg
 cCd
 fiI
 bSy
@@ -111063,7 +111056,7 @@ anT
 aMT
 anT
 aMT
-qiD
+aMT
 aVq
 aMT
 ktc
@@ -113634,7 +113627,7 @@ aMT
 anT
 aMT
 aMT
-fub
+ams
 aMT
 tTo
 gIX
