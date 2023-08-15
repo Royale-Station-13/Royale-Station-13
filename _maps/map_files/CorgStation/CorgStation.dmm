@@ -569,6 +569,18 @@
 /obj/effect/turf_decal/tile/green/anticorner/contrasted,
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
+"aeA" = (
+/obj/structure/table/glass,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow/fourcorners/contrasted,
+/obj/effect/loot_jobscale/medical/medkits,
+/turf/open/floor/plasteel,
+/area/medical/storage)
 "aeC" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -843,6 +855,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/nuke_storage)
+"aih" = (
+/obj/effect/landmark/start/janitor,
+/obj/effect/turf_decal/tile/green/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/janitor)
 "aik" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -4028,6 +4047,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit)
+"aWy" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/delivery,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/east,
+/obj/effect/loot_jobscale/armoury/bulletproof_vest,
+/obj/effect/loot_jobscale/armoury/bulletproof_helmet,
+/turf/open/floor/plasteel,
+/area/ai_monitored/security/armory)
 "aWA" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -5501,14 +5534,6 @@
 "bxI" = (
 /turf/closed/wall,
 /area/storage/tools)
-"bxZ" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/delivery,
-/obj/effect/loot_jobscale/armoury/riot_suit,
-/obj/effect/loot_jobscale/armoury/riot_helmet,
-/obj/effect/loot_jobscale/armoury/riot_shield,
-/turf/open/floor/plasteel,
-/area/ai_monitored/security/armory)
 "byb" = (
 /obj/item/radio/intercom{
 	pixel_x = 28
@@ -9178,6 +9203,18 @@
 /obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating,
 /area/maintenance/starboard/secondary)
+"cNR" = (
+/obj/structure/table/glass,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow/fourcorners/contrasted,
+/obj/effect/loot_jobscale/medical/first_aid_kit,
+/turf/open/floor/plasteel,
+/area/medical/storage)
 "cNX" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -11120,6 +11157,14 @@
 /obj/machinery/power/solar,
 /turf/open/floor/plasteel/airless/solarpanel,
 /area/solar/port/fore)
+"dus" = (
+/obj/structure/rack,
+/obj/item/gun/energy/temperature/security,
+/obj/effect/turf_decal/delivery,
+/obj/item/beacon/nettingportal,
+/obj/effect/loot_jobscale/armoury/dragnet,
+/turf/open/floor/plasteel,
+/area/ai_monitored/security/armory)
 "duF" = (
 /turf/closed/wall/r_wall,
 /area/security/brig)
@@ -13588,18 +13633,6 @@
 	dir = 1
 	},
 /area/science/research)
-"ejW" = (
-/obj/structure/table/glass,
-/obj/machinery/door/window/eastleft{
-	dir = 8;
-	name = "First-Aid Supplies";
-	red_alert_access = 1;
-	req_access_txt = "5"
-	},
-/obj/effect/turf_decal/tile/yellow/fourcorners/contrasted,
-/obj/effect/loot_jobscale/medical/medkits,
-/turf/open/floor/plasteel,
-/area/medical/storage)
 "ejZ" = (
 /obj/structure/chair/fancy/comfy{
 	color = "#666666"
@@ -15999,15 +16032,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/engine/storage)
-"fdi" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/tile/red/fourcorners/contrasted,
-/obj/effect/loot_jobscale/armoury/energy_gun,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "fdl" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -16591,10 +16615,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/checkpoint/customs)
-"fmg" = (
-/obj/machinery/vending/boozeomat/pubby_captain,
-/turf/open/floor/wood,
-/area/crew_quarters/heads/captain)
 "fmx" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -26971,6 +26991,13 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
+"iGm" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/tile/red/fourcorners/contrasted,
+/obj/effect/loot_jobscale/armoury/laser_gun,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/security/armory)
 "iGp" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -28181,13 +28208,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
-"jbv" = (
-/obj/machinery/portable_atmospherics/canister/water_vapor,
-/obj/effect/turf_decal/tile/green/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/janitor)
 "jbA" = (
 /obj/item/flashlight/glowstick/red,
 /turf/open/floor/plating,
@@ -33390,20 +33410,6 @@
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
 /turf/open/floor/plasteel,
 /area/engine/atmos)
-"kOR" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/delivery,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/power/apc/auto_name/east,
-/obj/effect/loot_jobscale/armoury/bulletproof_vest,
-/obj/effect/loot_jobscale/armoury/bulletproof_helmet,
-/turf/open/floor/plasteel,
-/area/ai_monitored/security/armory)
 "kOS" = (
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner,
 /turf/open/floor/engine,
@@ -35056,6 +35062,17 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"lrH" = (
+/obj/structure/table/glass,
+/obj/machinery/door/window/eastleft{
+	name = "First-Aid Supplies";
+	red_alert_access = 1;
+	req_access_txt = "5"
+	},
+/obj/effect/turf_decal/tile/yellow/fourcorners/contrasted,
+/obj/effect/loot_jobscale/medical/medkits,
+/turf/open/floor/plasteel,
+/area/medical/storage)
 "lrJ" = (
 /obj/machinery/holopad,
 /obj/effect/turf_decal/delivery,
@@ -35380,16 +35397,6 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/quartermaster/miningdock)
-"lxi" = (
-/obj/effect/landmark/start/janitor,
-/obj/machinery/camera/autoname{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green/opposingcorners{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/janitor)
 "lxt" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -36092,6 +36099,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/hallway/primary/fore)
+"lIw" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/delivery,
+/obj/effect/loot_jobscale/armoury/riot_suit,
+/obj/effect/loot_jobscale/armoury/riot_helmet,
+/obj/effect/loot_jobscale/armoury/riot_shield,
+/turf/open/floor/plasteel,
+/area/ai_monitored/security/armory)
 "lIO" = (
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
@@ -42317,6 +42332,13 @@
 "nIH" = (
 /turf/closed/wall/r_wall,
 /area/hallway/primary/fore)
+"nIJ" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/tile/red/fourcorners/contrasted,
+/obj/effect/loot_jobscale/armoury/disabler,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/security/armory)
 "nIO" = (
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
@@ -44919,6 +44941,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
+"ozl" = (
+/obj/machinery/portable_atmospherics/canister/water_vapor,
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/janitor)
 "ozr" = (
 /obj/machinery/advanced_airlock_controller/directional/north,
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
@@ -49994,12 +50026,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
-"qmp" = (
-/obj/effect/turf_decal/delivery,
-/obj/structure/rack,
-/obj/effect/loot_jobscale/armoury/wt550,
-/turf/open/floor/plasteel,
-/area/ai_monitored/security/armory)
 "qmJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -56840,13 +56866,6 @@
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/carpet/green,
 /area/library)
-"suc" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/delivery,
-/obj/effect/turf_decal/tile/red/fourcorners/contrasted,
-/obj/effect/loot_jobscale/armoury/laser_gun,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "sud" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -57268,17 +57287,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/medical/chemistry)
-"sBc" = (
-/obj/structure/table/glass,
-/obj/machinery/door/window/eastleft{
-	name = "First-Aid Supplies";
-	red_alert_access = 1;
-	req_access_txt = "5"
-	},
-/obj/effect/turf_decal/tile/yellow/fourcorners/contrasted,
-/obj/effect/loot_jobscale/medical/medkits,
-/turf/open/floor/plasteel,
-/area/medical/storage)
 "sBn" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible{
 	dir = 8
@@ -57439,6 +57447,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/engine/atmos)
+"sFf" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/rack,
+/obj/effect/loot_jobscale/armoury/wt550,
+/turf/open/floor/plasteel,
+/area/ai_monitored/security/armory)
 "sFB" = (
 /obj/structure/chair/fancy/bench/pew/left{
 	dir = 8
@@ -59534,13 +59548,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
-"tsR" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/delivery,
-/obj/effect/turf_decal/tile/red/fourcorners/contrasted,
-/obj/effect/loot_jobscale/armoury/disabler,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "ttb" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -64715,6 +64722,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/warden)
+"vdh" = (
+/obj/machinery/vending/boozeomat/pubby_captain,
+/turf/open/floor/wood,
+/area/crew_quarters/heads/captain)
 "vdA" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -66465,14 +66476,6 @@
 	},
 /turf/open/floor/plating,
 /area/security/nuke_storage)
-"vEv" = (
-/obj/structure/rack,
-/obj/item/gun/energy/temperature/security,
-/obj/effect/turf_decal/delivery,
-/obj/item/beacon/nettingportal,
-/obj/effect/loot_jobscale/armoury/dragnet,
-/turf/open/floor/plasteel,
-/area/ai_monitored/security/armory)
 "vEz" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -68842,18 +68845,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/storage_shared)
-"wuG" = (
-/obj/structure/table/glass,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow/fourcorners/contrasted,
-/obj/effect/loot_jobscale/medical/medkits,
-/turf/open/floor/plasteel,
-/area/medical/storage)
 "wuI" = (
 /obj/machinery/vending/tool,
 /obj/effect/turf_decal/tile/yellow/fourcorners/contrasted,
@@ -68933,6 +68924,18 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/green,
 /area/crew_quarters/bar)
+"wvU" = (
+/obj/structure/table/glass,
+/obj/machinery/door/window/eastleft{
+	dir = 8;
+	name = "First-Aid Supplies";
+	red_alert_access = 1;
+	req_access_txt = "5"
+	},
+/obj/effect/turf_decal/tile/yellow/fourcorners/contrasted,
+/obj/effect/loot_jobscale/medical/medkits,
+/turf/open/floor/plasteel,
+/area/medical/storage)
 "wwk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
@@ -69313,18 +69316,6 @@
 /obj/effect/turf_decal/tile/red,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
-"wDf" = (
-/obj/structure/table/glass,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/yellow/fourcorners/contrasted,
-/obj/effect/loot_jobscale/medical/first_aid_kit,
-/turf/open/floor/plasteel,
-/area/medical/storage)
 "wDn" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/northleft{
@@ -70636,6 +70627,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
+"wYo" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/tile/red/fourcorners/contrasted,
+/obj/effect/loot_jobscale/armoury/energy_gun,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/security/armory)
 "wYq" = (
 /obj/machinery/status_display/evac{
 	pixel_y = 32
@@ -106224,7 +106224,7 @@ hzU
 aPI
 fHC
 dqj
-jbv
+ozl
 eUn
 fHC
 fHC
@@ -106481,7 +106481,7 @@ hzU
 aPI
 fHC
 hlR
-lxi
+aih
 hqm
 oDB
 fbg
@@ -109771,7 +109771,7 @@ iHM
 nkt
 qOU
 xtT
-fmg
+vdh
 cCd
 fiI
 bSy
@@ -111573,7 +111573,7 @@ vgb
 aMT
 oXI
 oXI
-qmp
+sFf
 iYF
 smX
 oXI
@@ -112089,7 +112089,7 @@ oXI
 xhX
 ipZ
 fNn
-tsR
+nIJ
 vZO
 oXI
 crF
@@ -112346,7 +112346,7 @@ oXI
 htD
 aae
 lXS
-fdi
+wYo
 jkd
 rPn
 sir
@@ -112603,7 +112603,7 @@ oXI
 hwK
 ipZ
 uHq
-suc
+iGm
 jbs
 oXI
 hIC
@@ -112857,7 +112857,7 @@ ksE
 vgb
 anT
 oXI
-vEv
+dus
 lSx
 eFY
 ucx
@@ -113116,8 +113116,8 @@ aMT
 oXI
 oXI
 hmQ
-kOR
-bxZ
+aWy
+lIw
 oXI
 oXI
 anT
@@ -115481,8 +115481,8 @@ ndt
 quz
 cap
 eJz
-wDf
-sBc
+cNR
+lrH
 qrT
 ndt
 kDi
@@ -116509,8 +116509,8 @@ ndt
 uqG
 yhw
 abS
-wuG
-ejW
+aeA
+wvU
 aIr
 ndt
 qTk
