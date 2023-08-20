@@ -754,23 +754,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
-"db" = (
-/obj/item/storage/box/emps{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/flashbangs,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/structure/table/reinforced,
-/obj/item/clothing/ears/earmuffs,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_y = 32
-	},
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel,
-/area/centcom/control)
 "dc" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
@@ -3153,10 +3136,6 @@
 	icon_state = "alien7"
 	},
 /area/abductor_ship)
-"mt" = (
-/obj/machinery/abductor/gland_dispenser,
-/turf/open/floor/plating/abductor,
-/area/abductor_ship)
 "mu" = (
 /obj/structure/table/abductor,
 /obj/item/surgicaldrill/alien,
@@ -3993,6 +3972,25 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/centcom/supply)
+"qs" = (
+/obj/item/storage/box/emps{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashbangs,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/structure/table/reinforced,
+/obj/item/clothing/ears/earmuffs,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/ferry)
 "qv" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -10171,6 +10169,17 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
+"Qg" = (
+/obj/structure/closet,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/iv_drip,
+/obj/item/deployable/rollerbed,
+/obj/item/storage/firstaid/regular,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/turf/open/floor/wood,
+/area/centcom/holding)
 "Qi" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -10922,25 +10931,6 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
-"To" = (
-/obj/item/storage/box/emps{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/flashbangs,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/structure/table/reinforced,
-/obj/item/clothing/ears/earmuffs,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/centcom/ferry)
 "Tq" = (
 /obj/structure/table/wood/bar,
 /obj/item/stack/sheet/glass/fifty,
@@ -11621,6 +11611,23 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"Wq" = (
+/obj/item/storage/box/emps{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashbangs,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/structure/table/reinforced,
+/obj/item/clothing/ears/earmuffs,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel,
+/area/centcom/control)
 "Wu" = (
 /obj/item/storage/briefcase{
 	pixel_x = -3;
@@ -12068,6 +12075,10 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"Yd" = (
+/obj/machinery/smartfridge/abductor,
+/turf/open/floor/plating/abductor,
+/area/abductor_ship)
 "Ye" = (
 /obj/structure/chair{
 	dir = 1
@@ -12524,17 +12535,6 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
-"ZQ" = (
-/obj/structure/closet,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/machinery/iv_drip,
-/obj/item/deployable/rollerbed,
-/obj/item/storage/firstaid/regular,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/turf/open/floor/wood,
-/area/centcom/holding)
 "ZR" = (
 /obj/structure/window/plasma/reinforced{
 	dir = 1
@@ -13769,7 +13769,7 @@ kM
 li
 lD
 li
-mt
+Yd
 nc
 Rk
 aa
@@ -13796,7 +13796,7 @@ Au
 li
 BQ
 li
-mt
+Yd
 nc
 Rk
 aa
@@ -13826,7 +13826,7 @@ JA
 li
 JM
 li
-mt
+Yd
 nc
 Rk
 aa
@@ -13853,7 +13853,7 @@ LK
 li
 LT
 li
-mt
+Yd
 nc
 Rk
 LV
@@ -41576,7 +41576,7 @@ Xk
 NT
 vt
 Mx
-ZQ
+Qg
 Tb
 Uh
 tW
@@ -53359,7 +53359,7 @@ ct
 nT
 rE
 OQ
-To
+qs
 mD
 va
 oe
@@ -58983,7 +58983,7 @@ aa
 aa
 aa
 io
-db
+Wq
 iE
 iE
 iW
