@@ -79,7 +79,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		return new path(src)
 
 	var/old_opacity = opacity
-	var/old_dynamic_lighting = dynamic_lighting
+	var/old_fullbright_type = fullbright_type
 	var/old_lighting_object = lighting_object
 	var/old_lighting_corner_NE = lighting_corner_NE
 	var/old_lighting_corner_SE = lighting_corner_SE
@@ -141,17 +141,14 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		recalc_atom_opacity()
 		lighting_object = old_lighting_object
 
-		if (old_opacity != opacity || dynamic_lighting != old_dynamic_lighting)
+		if (old_opacity != opacity || fullbright_type != old_fullbright_type)
 			reconsider_lights()
 
-		if (dynamic_lighting != old_dynamic_lighting)
-			if (IS_DYNAMIC_LIGHTING(src))
+		if(fullbright_type != old_fullbright_type)
+			if (!fullbright_type)
 				lighting_build_overlay()
 			else
 				lighting_clear_overlay()
-
-		for(var/turf/open/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
-			S.update_starlight()
 
 	if(old_opacity != opacity && SSticker)
 		GLOB.cameranet.bareMajorChunkChange(src)
