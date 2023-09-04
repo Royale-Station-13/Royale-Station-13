@@ -2927,6 +2927,15 @@
 /obj/effect/turf_decal/guideline/guideline_in/purple,
 /turf/open/floor/plasteel,
 /area/science/shuttledock)
+"aUl" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped/inverse,
+/turf/open/floor/plasteel,
+/area/engine/atmos)
 "aUt" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Maintenance Hatch";
@@ -7152,6 +7161,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/quartermaster/qm)
+"cmi" = (
+/obj/machinery/vending/boozeomat/pubby_captain,
+/turf/open/floor/plating,
+/area/crew_quarters/heads/hop)
 "cmj" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2
@@ -12686,6 +12699,10 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel,
 /area/maintenance/department/security)
+"dWg" = (
+/obj/machinery/vending/boozeomat/pubby_maint,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "dWi" = (
 /obj/machinery/airalarm/server{
 	dir = 4;
@@ -15575,33 +15592,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/shuttledock)
-"eOo" = (
-/obj/structure/table/reinforced,
-/obj/item/deployable/barricade/security{
-	pixel_x = 8;
-	pixel_y = 12
-	},
-/obj/item/deployable/barricade/security{
-	pixel_x = 8;
-	pixel_y = 7
-	},
-/obj/item/deployable/barricade/security{
-	pixel_x = 8;
-	pixel_y = 2
-	},
-/obj/item/storage/box/trackimp{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/deployable/barricade/security{
-	pixel_y = 10
-	},
-/obj/item/deployable/barricade/security{
-	pixel_y = 5
-	},
-/obj/item/storage/lockbox/loyalty,
-/turf/open/floor/plasteel,
-/area/ai_monitored/security/armory)
 "eOD" = (
 /obj/machinery/biogenerator,
 /turf/open/floor/grass,
@@ -25217,10 +25207,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/medical/medbay/central)
-"hEO" = (
-/obj/item/deployable/rollerbed,
-/turf/open/floor/plating,
-/area/maintenance/starboard/aft)
 "hES" = (
 /obj/machinery/airalarm/unlocked{
 	pixel_y = 22
@@ -35993,10 +35979,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/vacant_room/commissary/commissary1)
-"lhq" = (
-/obj/machinery/vending/boozeomat/pubby_captain,
-/turf/open/floor/plating,
-/area/crew_quarters/heads/hop)
 "lhu" = (
 /obj/machinery/vending/wardrobe/chem_wardrobe,
 /obj/effect/turf_decal/bot,
@@ -51049,10 +51031,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/port)
-"pRU" = (
-/obj/machinery/vending/boozeomat/pubby_maint,
-/turf/open/floor/plating,
-/area/maintenance/port/aft)
 "pRW" = (
 /obj/effect/landmark/blobstart,
 /obj/effect/decal/cleanable/dirt,
@@ -73673,6 +73651,10 @@
 /obj/structure/disposalpipe/junction/flip,
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
+"xeI" = (
+/obj/item/rollerbed,
+/turf/open/floor/plating,
+/area/maintenance/starboard/aft)
 "xeJ" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -74383,6 +74365,33 @@
 	},
 /turf/open/floor/plasteel,
 /area/medical/medbay/lobby)
+"xoH" = (
+/obj/structure/table/reinforced,
+/obj/item/security_barricade{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/item/security_barricade{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/security_barricade{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/storage/box/trackimp{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/security_barricade{
+	pixel_y = 10
+	},
+/obj/item/security_barricade{
+	pixel_y = 5
+	},
+/obj/item/storage/lockbox/loyalty,
+/turf/open/floor/plasteel,
+/area/ai_monitored/security/armory)
 "xoS" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 5
@@ -74585,15 +74594,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/sleeper)
-"xtm" = (
-/obj/effect/turf_decal/delivery,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped/inverse,
-/turf/open/floor/plasteel,
-/area/engine/atmos)
 "xtn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -103616,7 +103616,7 @@ fAl
 wfM
 taa
 aEY
-pRU
+dWg
 wfM
 eCS
 psU
@@ -105058,7 +105058,7 @@ gsA
 uYx
 tqK
 hsz
-eOo
+xoH
 uYx
 ovo
 ovo
@@ -111213,7 +111213,7 @@ rIN
 rnV
 pLM
 dGR
-lhq
+cmi
 wGM
 wGM
 gST
@@ -115693,7 +115693,7 @@ xac
 nGy
 dhP
 wSy
-xtm
+aUl
 uIy
 kiZ
 sOJ
@@ -115927,7 +115927,7 @@ wdZ
 bWm
 kII
 rAi
-hEO
+xeI
 xWd
 iRY
 wAP

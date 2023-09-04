@@ -11,6 +11,25 @@
 "ad" = (
 /turf/open/space,
 /area/space)
+"af" = (
+/obj/item/storage/box/emps{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashbangs,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/structure/table/reinforced,
+/obj/item/clothing/ears/earmuffs,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom/ferry)
 "ag" = (
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted{
 	dir = 4
@@ -3136,6 +3155,10 @@
 	icon_state = "alien7"
 	},
 /area/abductor_ship)
+"mt" = (
+/obj/machinery/smartfridge/abductor,
+/turf/open/floor/plating/abductor,
+/area/abductor_ship)
 "mu" = (
 /obj/structure/table/abductor,
 /obj/item/surgicaldrill/alien,
@@ -3947,6 +3970,23 @@
 /obj/machinery/light,
 /turf/open/floor/wood,
 /area/centcom/ferry)
+"qi" = (
+/obj/item/storage/box/emps{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashbangs,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/item/grenade/plastic/c4/x4,
+/obj/structure/table/reinforced,
+/obj/item/clothing/ears/earmuffs,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel,
+/area/centcom/control)
 "qn" = (
 /obj/structure/filingcabinet/filingcabinet,
 /obj/machinery/airalarm{
@@ -3972,25 +4012,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/centcom/supply)
-"qs" = (
-/obj/item/storage/box/emps{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/flashbangs,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/structure/table/reinforced,
-/obj/item/clothing/ears/earmuffs,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/centcom/ferry)
 "qv" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -7292,6 +7313,17 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/wizard_station)
+"DU" = (
+/obj/structure/closet,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/iv_drip,
+/obj/item/rollerbed,
+/obj/item/storage/firstaid/regular,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/turf/open/floor/wood,
+/area/centcom/holding)
 "DV" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-21"
@@ -10169,17 +10201,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
-"Qg" = (
-/obj/structure/closet,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/machinery/iv_drip,
-/obj/item/deployable/rollerbed,
-/obj/item/storage/firstaid/regular,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/turf/open/floor/wood,
-/area/centcom/holding)
 "Qi" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -11611,23 +11632,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
-"Wq" = (
-/obj/item/storage/box/emps{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/flashbangs,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/item/grenade/plastic/c4/x4,
-/obj/structure/table/reinforced,
-/obj/item/clothing/ears/earmuffs,
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_y = 32
-	},
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel,
-/area/centcom/control)
 "Wu" = (
 /obj/item/storage/briefcase{
 	pixel_x = -3;
@@ -12075,10 +12079,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
-"Yd" = (
-/obj/machinery/smartfridge/abductor,
-/turf/open/floor/plating/abductor,
-/area/abductor_ship)
 "Ye" = (
 /obj/structure/chair{
 	dir = 1
@@ -13769,7 +13769,7 @@ kM
 li
 lD
 li
-Yd
+mt
 nc
 Rk
 aa
@@ -13796,7 +13796,7 @@ Au
 li
 BQ
 li
-Yd
+mt
 nc
 Rk
 aa
@@ -13826,7 +13826,7 @@ JA
 li
 JM
 li
-Yd
+mt
 nc
 Rk
 aa
@@ -13853,7 +13853,7 @@ LK
 li
 LT
 li
-Yd
+mt
 nc
 Rk
 LV
@@ -41576,7 +41576,7 @@ Xk
 NT
 vt
 Mx
-Qg
+DU
 Tb
 Uh
 tW
@@ -53359,7 +53359,7 @@ ct
 nT
 rE
 OQ
-qs
+af
 mD
 va
 oe
@@ -58983,7 +58983,7 @@ aa
 aa
 aa
 io
-Wq
+qi
 iE
 iE
 iW

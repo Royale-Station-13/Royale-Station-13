@@ -15155,15 +15155,6 @@
 /obj/structure/sign/warning/docking,
 /turf/closed/wall,
 /area/maintenance/starboard)
-"bht" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/effect/loot_jobscale/armoury/riot_suit,
-/obj/effect/loot_jobscale/armoury/riot_helmet,
-/obj/effect/loot_jobscale/armoury/riot_shield,
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "bhu" = (
 /mob/living/simple_animal/slime,
 /turf/open/floor/engine,
@@ -43496,23 +43487,6 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/medical/medbay/central)
-"ekO" = (
-/obj/structure/table/glass,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/door/window/eastleft{
-	name = "First-Aid Supplies";
-	req_access_txt = "5"
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/loot_jobscale/medical/medkits,
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
-/turf/open/floor/plasteel/dark,
-/area/medical/storage)
 "ekY" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable/yellow{
@@ -47668,17 +47642,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office)
-"fYp" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/beacon/nettingportal,
-/obj/effect/loot_jobscale/armoury/dragnet,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "fYr" = (
 /obj/structure/sign/warning/electricshock,
 /turf/closed/wall,
@@ -52178,21 +52141,6 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/security/courtroom)
-"hVX" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/loot_jobscale/armoury/laser_gun,
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
-	dir = 1
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ai_monitored/security/armory)
 "hWi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/bombcloset/security,
@@ -55006,6 +54954,23 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/quartermaster/qm)
+"jdf" = (
+/obj/structure/table/glass,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/eastleft{
+	name = "First-Aid Supplies";
+	req_access_txt = "5"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/loot_jobscale/medical/medkits,
+/obj/effect/turf_decal/tile/neutral/half/contrasted,
+/turf/open/floor/plasteel/dark,
+/area/medical/storage)
 "jdg" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/donut_box,
@@ -56207,6 +56172,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/robotics/lab)
+"jzW" = (
+/obj/structure/table/glass,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/status_display/evac{
+	pixel_x = -32
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = 32
+	},
+/obj/effect/loot_jobscale/medical/medkits,
+/obj/effect/turf_decal/tile/neutral,
+/turf/open/floor/plasteel/dark,
+/area/medical/storage)
 "jAl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warning/xeno_mining{
@@ -57160,21 +57140,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/medical/morgue)
-"jVg" = (
-/obj/structure/table/glass,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/status_display/evac{
-	pixel_x = -32
-	},
-/obj/structure/sign/warning/nosmoking{
-	pixel_y = 32
-	},
-/obj/effect/loot_jobscale/medical/medkits,
-/obj/effect/turf_decal/tile/neutral,
-/turf/open/floor/plasteel/dark,
-/area/medical/storage)
 "jVo" = (
 /obj/structure/chair{
 	dir = 8
@@ -60297,6 +60262,17 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/medical/virology)
+"lsT" = (
+/obj/structure/table/glass,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/loot_jobscale/medical/medkits,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/medical/storage)
 "ltc" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -60892,22 +60868,6 @@
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
-"lEs" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/machinery/vending/wallmed/pubby{
-	pixel_x = 24
-	},
-/obj/structure/closet/secure_closet/brig_physician,
-/obj/item/storage/backpack/duffelbag/sec/surgery{
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/tile/red/anticorner/contrasted{
-	dir = 4
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/warden)
 "lEv" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -63193,6 +63153,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"mFv" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/loot_jobscale/armoury/bulletproof_vest,
+/obj/effect/loot_jobscale/armoury/bulletproof_helmet,
+/obj/effect/turf_decal/tile/neutral/half/contrasted,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/security/armory)
 "mFy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -64078,6 +64047,18 @@
 	},
 /turf/open/floor/plating/asteroid/airless,
 /area/space/nearstation)
+"mZB" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate{
+	name = "disposal supplies"
+	},
+/obj/item/bodybag,
+/obj/item/bodybag,
+/obj/item/shovel,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/maintenance/aft)
 "nao" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -64249,20 +64230,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
-"ndl" = (
-/obj/structure/table/glass,
-/obj/structure/window/reinforced,
-/obj/machinery/door/window/eastleft{
-	dir = 8;
-	name = "First-Aid Supplies";
-	req_access_txt = "5"
-	},
-/obj/effect/loot_jobscale/medical/medkits,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/medical/storage)
 "ndx" = (
 /obj/machinery/holopad,
 /obj/structure/cable/yellow{
@@ -64806,6 +64773,21 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating,
 /area/quartermaster/warehouse)
+"nuk" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/loot_jobscale/armoury/energy_gun,
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ai_monitored/security/armory)
 "nuo" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -67143,20 +67125,6 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/maintenance/department/science)
-"osw" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/loot_jobscale/armoury/riot_shotgun,
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
-	dir = 8
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ai_monitored/security/armory)
 "osF" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -67449,6 +67417,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
+"oAi" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/effect/loot_jobscale/armoury/riot_suit,
+/obj/effect/loot_jobscale/armoury/riot_helmet,
+/obj/effect/loot_jobscale/armoury/riot_shield,
+/obj/effect/turf_decal/tile/neutral/half/contrasted,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/security/armory)
 "oAA" = (
 /obj/effect/turf_decal/loading_area,
 /obj/effect/turf_decal/stripes/line{
@@ -67693,6 +67670,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/bar)
+"oHb" = (
+/obj/structure/table/glass,
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/eastleft{
+	dir = 8;
+	name = "First-Aid Supplies";
+	req_access_txt = "5"
+	},
+/obj/effect/loot_jobscale/medical/medkits,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/medical/storage)
 "oHA" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -69799,18 +69790,6 @@
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig)
-"pxu" = (
-/obj/effect/turf_decal/bot,
-/obj/structure/closet/crate{
-	name = "disposal supplies"
-	},
-/obj/item/deployable/bodybag,
-/obj/item/deployable/bodybag,
-/obj/item/shovel,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/maintenance/aft)
 "pxA" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -74558,17 +74537,6 @@
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/prison)
-"rtT" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/effect/loot_jobscale/armoury/disabler,
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
-/turf/open/floor/plasteel/showroomfloor,
-/area/ai_monitored/security/armory)
 "rtV" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -76255,6 +76223,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
+"sds" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/beacon/nettingportal,
+/obj/effect/loot_jobscale/armoury/dragnet,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/security/armory)
 "sdt" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -77362,6 +77341,20 @@
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/plasteel/dark/corner,
 /area/hallway/primary/fore)
+"sxf" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/loot_jobscale/armoury/riot_shotgun,
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
+	dir = 8
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ai_monitored/security/armory)
 "sxj" = (
 /obj/structure/table,
 /obj/effect/turf_decal/stripes/corner,
@@ -77611,6 +77604,21 @@
 	icon_state = "panelscorched"
 	},
 /area/quartermaster/exploration_dock)
+"sCj" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/loot_jobscale/armoury/laser_gun,
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ai_monitored/security/armory)
 "sCu" = (
 /obj/structure/frame/machine,
 /obj/item/stack/rods,
@@ -78811,21 +78819,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/quartermaster/warehouse)
-"tdm" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/effect/loot_jobscale/armoury/energy_gun,
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
-	dir = 4
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ai_monitored/security/armory)
 "tdU" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -83741,6 +83734,22 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/science/shuttledock)
+"voi" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/machinery/vending/wallmed/pubby{
+	pixel_x = 24
+	},
+/obj/structure/closet/secure_closet/brig_physician,
+/obj/item/storage/backpack/duffelbag/sec/surgery{
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/tile/red/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/security/warden)
 "vox" = (
 /obj/item/kirbyplants{
 	icon_state = "applebush"
@@ -86343,15 +86352,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/robotics/lab)
-"wmy" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/loot_jobscale/armoury/bulletproof_vest,
-/obj/effect/loot_jobscale/armoury/bulletproof_helmet,
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "wmQ" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/stripes/corner{
@@ -88056,6 +88056,17 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/engine,
 /area/science/explab)
+"wSg" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/loot_jobscale/armoury/disabler,
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
+/turf/open/floor/plasteel/showroomfloor,
+/area/ai_monitored/security/armory)
 "wSl" = (
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/plasteel/dark/corner,
@@ -89725,17 +89736,6 @@
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
 /turf/open/floor/plasteel/dark,
 /area/chapel/office)
-"xEA" = (
-/obj/structure/table/glass,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/effect/loot_jobscale/medical/medkits,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/medical/storage)
 "xEB" = (
 /obj/machinery/disposal/bin,
 /obj/effect/turf_decal/bot,
@@ -108616,8 +108616,8 @@ aZw
 aPA
 aPA
 aPa
-jVg
-ekO
+jzW
+jdf
 iBA
 wwO
 wOq
@@ -109644,8 +109644,8 @@ jsL
 fCe
 rEP
 aOZ
-xEA
-ndl
+lsT
+oHb
 aRx
 bGQ
 iOi
@@ -110712,7 +110712,7 @@ aaT
 wKm
 vvt
 aaT
-lEs
+voi
 xCO
 wpz
 nGR
@@ -112011,8 +112011,8 @@ tLZ
 sSE
 aka
 oic
-wmy
-bht
+mFv
+oAi
 fJm
 lCD
 xHh
@@ -112526,10 +112526,10 @@ cOG
 cOH
 iTZ
 tYE
-hVX
-osw
+sCj
+sxf
 kZk
-fYp
+sds
 aka
 aeu
 aeu
@@ -112783,8 +112783,8 @@ coa
 coR
 pij
 geB
-tdm
-rtT
+nuk
+wSg
 kZk
 jeU
 aka
@@ -122284,7 +122284,7 @@ cgD
 che
 bGG
 bEV
-pxu
+mZB
 awN
 ate
 aCx
