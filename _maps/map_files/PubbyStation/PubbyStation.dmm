@@ -1215,11 +1215,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "aim" = (
-/obj/item/grenade/barrier{
+/obj/item/deployable/barricade{
 	pixel_x = 4
 	},
-/obj/item/grenade/barrier,
-/obj/item/grenade/barrier{
+/obj/item/deployable/barricade,
+/obj/item/deployable/barricade{
 	pixel_x = -4
 	},
 /obj/structure/table,
