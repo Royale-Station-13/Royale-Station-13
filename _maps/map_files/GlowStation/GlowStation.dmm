@@ -18359,16 +18359,16 @@
 /turf/open/floor/plasteel/white,
 /area/hallway/upper/primary/starboard)
 "dXG" = (
-/obj/item/deployable/barricade{
+/obj/item/security_barricade{
 	pixel_x = -3;
 	pixel_y = 1
 	},
-/obj/item/deployable/barricade,
-/obj/item/deployable/barricade{
+/obj/item/security_barricade,
+/obj/item/security_barricade{
 	pixel_x = 3;
 	pixel_y = -1
 	},
-/obj/item/deployable/barricade{
+/obj/item/security_barricade{
 	pixel_x = 6;
 	pixel_y = -2
 	},
