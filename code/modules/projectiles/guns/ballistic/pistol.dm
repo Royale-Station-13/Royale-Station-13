@@ -15,7 +15,37 @@
 	bolt_wording = "slide"
 	fire_rate = 3
 	automatic = 0
+	var/combine_count = 0
 	weapon_weight = WEAPON_LIGHT
+
+
+/obj/item/gun/ballistic/automatic/pistol/attack_self(mob/living/user)
+	if(istype(user, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = user
+		var/P = H.get_inactive_held_item()
+		if(istype(P,/obj/item/gun/ballistic/automatic/pistol))
+			var/obj/item/gun/ballistic/automatic/pistol/I = P
+			combine_count += 1
+			combine_count += I.combine_count
+			full_auto = TRUE
+			fire_rate = initial(fire_rate) * combine_count
+			fire_sound_volume = 100
+			if(magazine)
+				magazine.max_ammo *= combine_count
+				var/ammonumber = magazine.ammo_count()
+				for (var/i in 1 to (combine_count - 1) * ammonumber)
+					magazine.give_round(new magazine.ammo_type(magazine))
+			name = "stechkin"
+			for (var/i in 1 to combine_count)
+				if(prob(0.1))
+					name += "cookie"
+				else
+					name += "inator"
+			qdel(I)
+			to_chat(user, "<span class='notice'>You combine the two pistols.</span>")
+			return
+	. = ..()
+
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
