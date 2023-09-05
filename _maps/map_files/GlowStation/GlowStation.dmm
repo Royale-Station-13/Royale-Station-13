@@ -74023,7 +74023,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/crowbar,
 /obj/item/storage/pill_bottle,
-/obj/item/roller,
+/obj/item/rollerbed,
 /turf/open/floor/plating,
 /area/maintenance/upper/central)
 "pAc" = (
