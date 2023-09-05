@@ -249,7 +249,7 @@ SECURITY_SCALING_COEFF 10
 
 ## The number of objectives traitors get.
 ## Not including escaping/hijacking.
-TRAITOR_OBJECTIVES_AMOUNT 3
+TRAITOR_OBJECTIVES_AMOUNT 2
 BROTHER_OBJECTIVES_AMOUNT 2
 
 ## Uncomment to prohibit jobs that start with loyalty
@@ -649,3 +649,6 @@ MAX_SLIMEPERSON_BODIES 2
 
 ## Uncomment to disable local bans, effectively enforcing only global bans
 DISABLE_LOCAL_BANS
+
+## Comment this to disable roundstart lights being turned off in non-staffed departments
+#DARK_UNSTAFFED_DEPARTMENTS

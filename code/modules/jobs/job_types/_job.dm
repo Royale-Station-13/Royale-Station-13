@@ -90,9 +90,23 @@
 	///RPG job names, for the memes
 	var/rpg_title
 
+	/**
+	 * A list of job-specific areas to enable lights for if this job is present at roundstart, whenever minimal access is not in effect.
+	 * This will be combined with minimal_lightup_areas, so no need to duplicate entries.
+	 * Areas within their department will have their lights turned on automatically, so you should really only use this for areas outside of their department.
+	 */
+	var/list/lightup_areas = list()
+	/**
+	 * A list of job-specific areas to enable lights for if this job is present at roundstart.
+	 * Areas within their department will have their lights turned on automatically, so you should really only use this for areas outside of their department.
+	 */
+	var/list/minimal_lightup_areas = list()
+
 
 /datum/job/New()
 	. = ..()
+	lightup_areas = typecacheof(lightup_areas)
+	minimal_lightup_areas = typecacheof(minimal_lightup_areas)
 
 //Only override this proc, unless altering loadout code. Loadouts act on H but get info from M
 //H is usually a human unless an /equip override transformed it
@@ -236,7 +250,7 @@
 
 	if(!visualsOnly && announce)
 		announce(H)
-	dormant_disease_check(H)
+	H.give_random_dormant_disease(biohazard, (title == JOB_NAME_CLOWN || title == JOB_NAME_MIME) ? 0 : 4)
 
 /datum/job/proc/get_access()
 	if(!config)	//Needed for robots.
@@ -263,6 +277,22 @@
 		return TRUE	//Available in 0 days = available right now = player is old enough to play.
 	return FALSE
 
+/datum/job/proc/areas_to_light_up(minimal_access = TRUE)
+	. = minimal_lightup_areas.Copy()
+	if(!minimal_access)
+		. |= lightup_areas
+	if(CHECK_BITFIELD(departments, DEPT_BITFLAG_COM))
+		. |= GLOB.command_lightup_areas
+	if(CHECK_BITFIELD(departments, DEPT_BITFLAG_ENG))
+		. |= GLOB.engineering_lightup_areas
+	if(CHECK_BITFIELD(departments, DEPT_BITFLAG_MED))
+		. |= GLOB.medical_lightup_areas
+	if(CHECK_BITFIELD(departments, DEPT_BITFLAG_SCI))
+		. |= GLOB.science_lightup_areas
+	if(CHECK_BITFIELD(departments, DEPT_BITFLAG_CAR))
+		. |= GLOB.supply_lightup_areas
+	if(CHECK_BITFIELD(departments, DEPT_BITFLAG_SEC))
+		. |= GLOB.security_lightup_areas
 
 /datum/job/proc/available_in_days(client/C)
 	if(!C)
@@ -366,32 +396,3 @@
 	if(CONFIG_GET(flag/security_has_maint_access))
 		return list(ACCESS_MAINT_TUNNELS)
 	return list()
-
-//why is this as part of a job? because it's something every human receives at roundstart after all other initializations and factors job in. it fits best with the equipment proc
-//this gives a dormant disease for the virologist to check for. if this disease actually does something to the mob... call me, or your local coder
-/datum/job/proc/dormant_disease_check(mob/living/carbon/human/H)
-	var/datum/symptom/guaranteed
-	var/sickrisk = 1
-	var/unfunny = 4
-	if((flag == CLOWN) || (flag == MIME))
-		unfunny = 0
-	if(islizard(H) || iscatperson(H))
-		sickrisk += 0.5 //these races like eating diseased mice, ew
-	if(MOB_INORGANIC in H.mob_biotypes)
-		sickrisk -= 0.5
-		guaranteed = /datum/symptom/inorganic_adaptation
-	else if(MOB_ROBOTIC in H.mob_biotypes)
-		sickrisk -= 0.75
-		guaranteed = /datum/symptom/robotic_adaptation
-	else if(MOB_UNDEAD in H.mob_biotypes)//this doesnt matter if it's not halloween, but...
-		sickrisk -= 0.25
-		guaranteed = /datum/symptom/undead_adaptation
-	else if(!(MOB_ORGANIC in H.mob_biotypes))
-		return //this mob cant be given a disease
-	if(prob (min(100, (biohazard * sickrisk))))
-		var/datum/disease/advance/scandisease = new /datum/disease/advance/random(rand(2, 4), 9, unfunny, guaranteed, infected = H)
-		scandisease.dormant = TRUE
-		scandisease.spread_flags = DISEASE_SPREAD_NON_CONTAGIOUS
-		scandisease.spread_text = "None"
-		scandisease.visibility_flags |= HIDDEN_SCANNER
-		H.ForceContractDisease(scandisease)

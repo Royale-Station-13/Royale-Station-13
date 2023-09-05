@@ -1239,7 +1239,7 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 	if(isicon(icon) && isfile(icon))
 		//icons compiled in from 'icons/path/to/dmi_file.dmi' at compile time are weird and arent really /icon objects,
 		///but they pass both isicon() and isfile() checks. theyre the easiest case since stringifying them gives us the path we want
-		var/icon_ref = "\ref[icon]"
+		var/icon_ref = FAST_REF(icon)
 		var/locate_icon_string = "[locate(icon_ref)]"
 
 		icon_path = locate_icon_string
@@ -1250,7 +1250,7 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 		// the rsc reference returned by fcopy_rsc() will be stringifiable to "icons/path/to/dmi_file.dmi"
 		var/rsc_ref = fcopy_rsc(icon)
 
-		var/icon_ref = "\ref[rsc_ref]"
+		var/icon_ref = FAST_REF(rsc_ref)
 
 		var/icon_path_string = "[locate(icon_ref)]"
 
@@ -1260,7 +1260,7 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 		var/rsc_ref = fcopy_rsc(icon)
 		//if its the text path of an existing dmi file, the rsc reference returned by fcopy_rsc() will be stringifiable to a dmi path
 
-		var/rsc_ref_ref = "\ref[rsc_ref]"
+		var/rsc_ref_ref = FAST_REF(rsc_ref)
 		var/rsc_ref_string = "[locate(rsc_ref_ref)]"
 
 		icon_path = rsc_ref_string
@@ -1307,7 +1307,8 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 	if (!isicon(icon2collapse))
 		if (isfile(thing)) //special snowflake
 			var/name = SANITIZE_FILENAME("[generate_asset_name(thing)].png")
-			SSassets.transport.register_asset(name, thing)
+			if (!SSassets.cache[name])
+				SSassets.transport.register_asset(name, thing)
 			for (var/thing2 in targets)
 				SSassets.transport.send_assets(thing2, name)
 			if(sourceonly)
@@ -1346,7 +1347,8 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 	var/file_hash = name_and_ref[2]
 	key = "[name_and_ref[3]].png"
 
-	SSassets.transport.register_asset(key, rsc_ref, file_hash, icon_path)
+	if(!SSassets.cache[key])
+		SSassets.transport.register_asset(key, rsc_ref, file_hash, icon_path)
 	for (var/client_target in targets)
 		SSassets.transport.send_assets(client_target, key)
 	if(sourceonly)
@@ -1372,11 +1374,12 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 
 	// Either an atom or somebody fucked up and is gonna get a runtime, which I'm fine with.
 	var/atom/A = thing
-	var/key = "[istype(A.icon, /icon) ? "[REF(A.icon)]" : A.icon]:[A.icon_state]"
+	var/icon/the_icon = A.icon
+	var/key = "[istype(the_icon) ? "[FAST_REF(the_icon)]" : the_icon]:[A.icon_state]"
 
 
 	if (!bicon_cache[key]) // Doesn't exist, make it.
-		var/icon/I = icon(A.icon, A.icon_state, SOUTH, 1)
+		var/icon/I = icon(the_icon, A.icon_state, SOUTH, 1)
 		if (ishuman(thing)) // Shitty workaround for a BYOND issue.
 			var/icon/temp = I
 			I = icon()

@@ -265,7 +265,7 @@
 
 /obj/item/storage/box/incendiary/PopulateContents()
     for(var/i in 1 to 7)
-        new /obj/item/projectile/bullet/incendiary/shotgun(src)
+        new /obj/projectile/bullet/incendiary/shotgun(src)
 
 /obj/item/storage/box/taser
     name = "box of taser slugs"
@@ -317,9 +317,9 @@
     overheat_time = 30 //Three seconds between shots.
 
 /obj/item/ammo_casing/energy/bolt/royale
-    projectile_type = /obj/item/projectile/energy/bolt/royale
+    projectile_type = /obj/projectile/energy/bolt/royale
 
-/obj/item/projectile/energy/bolt/royale
+/obj/projectile/energy/bolt/royale
 	name = "bolt"
 	icon_state = "cbbolt"
 	damage = 14

@@ -18,6 +18,7 @@
 	var/can_move = 0 //time of next allowed movement
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
+	var/step_multiplier = 1
 	var/step_restricted = 0 //applied on_entered() by things which slow or restrict mech movement. Resets to zero at the end of every movement
 	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
 	var/normal_step_energy_drain = 10 //How much energy the mech will consume each time it moves. This variable is a backup for when leg actuators affect the energy drain.
@@ -140,7 +141,7 @@
 	add_scanmod()
 	add_capacitor()
 	START_PROCESSING(SSobj, src)
-	GLOB.poi_list |= src
+	AddElement(/datum/element/point_of_interest)
 	log_message("[src.name] created.", LOG_MECHA)
 	GLOB.mechas_list += src //global mech list
 	prepare_huds()
@@ -150,6 +151,7 @@
 	diag_hud_set_mechcell()
 	diag_hud_set_mechstat()
 	become_hearing_sensitive(trait_source = ROUNDSTART_TRAIT)
+	update_step_speed()
 
 /obj/mecha/update_icon()
 	if (silicon_pilot && silicon_icon_state)
@@ -188,7 +190,6 @@
 	if(AI)
 		AI.gib() //No wreck, no AI to recover
 	STOP_PROCESSING(SSobj, src)
-	GLOB.poi_list.Remove(src)
 	equipment.Cut()
 	cell = null
 	scanmod = null
@@ -383,7 +384,7 @@
 
 	if(occupant)
 		if(cell)
-			var/cellcharge = cell.charge/cell.maxcharge
+			var/cellcharge = cell.maxcharge ? cell.charge / cell.maxcharge : 0 //Division by 0 protection
 			switch(cellcharge)
 				if(0.75 to INFINITY)
 					occupant.clear_alert("charge")
@@ -527,6 +528,12 @@
 ////////  Movement procs  ////////
 //////////////////////////////////
 
+/obj/mecha/proc/update_step_speed()
+	// Calculate the speed delta
+	// Calculate the move multiplier speed, to be proportional to mob speed
+	// 1.5 was the previous value, so calculate hte multiplier in proportion to that
+	step_multiplier = CONFIG_GET(number/movedelay/run_delay) / 1.5
+
 /obj/mecha/Move(atom/newloc, direct)
 	. = ..()
 	if(.)
@@ -614,7 +621,7 @@
 		move_result = mechstep(direction)
 	if(move_result || loc != oldloc)// halfway done diagonal move still returns false
 		use_power(step_energy_drain)
-		can_move = world.time + step_in + step_restricted
+		can_move = world.time + (step_in * step_multiplier) + step_restricted
 		step_restricted = 0
 		return TRUE
 	return FALSE
@@ -654,13 +661,13 @@
 				var/turf/target = get_step(src, dir)
 				if(target.flags_1 & NOJAUNT_1)
 					occupant_message("Phasing anomaly detected, emergency deactivation initiated.")
-					sleep(step_in*3)
+					sleep(step_in*3*step_multiplier)
 					can_move = 1
 					phasing = FALSE
 					return
 				if(do_teleport(src, get_step(src, dir), no_effects = TRUE))
 					use_power(phasing_energy_drain)
-				sleep(step_in*3)
+				sleep(step_in*3*step_multiplier)
 				can_move = 1
 	else
 		if(..()) //mech was thrown

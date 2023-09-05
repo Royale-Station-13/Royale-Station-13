@@ -5,9 +5,7 @@ import { Window } from '../layouts';
 
 export const Signaler = (props, context) => {
   return (
-    <Window
-      width={280}
-      height={132}>
+    <Window width={280} height={132}>
       <Window.Content>
         <SignalerContent />
       </Window.Content>
@@ -17,11 +15,7 @@ export const Signaler = (props, context) => {
 
 export const SignalerContent = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    code,
-    frequency,
-    connection,
-  } = data;
+  const { code, frequency, connection } = data;
   return (
     <Section>
       <Grid>
@@ -35,20 +29,26 @@ export const SignalerContent = (props, context) => {
             step={0.2}
             stepPixelSize={6}
             value={frequency / 10}
-            format={value => toFixed(value, 1)}
+            format={(value) => toFixed(value, 1)}
             width="80px"
-            onDrag={(e, value) => act('freq', {
-              freq: value,
-            })} />
+            onDrag={(e, value) =>
+              act('freq', {
+                freq: value,
+              })
+            }
+          />
         </Grid.Column>
         <Grid.Column>
           <Button
             ml={1.3}
             icon="sync"
             content="Reset"
-            onClick={() => act('reset', {
-              reset: "freq",
-            })} />
+            onClick={() =>
+              act('reset', {
+                reset: 'freq',
+              })
+            }
+          />
         </Grid.Column>
       </Grid>
       <Grid mt={0.6}>
@@ -64,18 +64,24 @@ export const SignalerContent = (props, context) => {
             maxValue={20}
             value={code}
             width="80px"
-            onDrag={(e, value) => act('code', {
-              code: value,
-            })} />
+            onDrag={(e, value) =>
+              act('code', {
+                code: value,
+              })
+            }
+          />
         </Grid.Column>
         <Grid.Column>
           <Button
             ml={1.3}
             icon="sync"
             content="Reset"
-            onClick={() => act('reset', {
-              reset: "code",
-            })} />
+            onClick={() =>
+              act('reset', {
+                reset: 'code',
+              })
+            }
+          />
         </Grid.Column>
       </Grid>
       <Grid mt={0.8}>
@@ -87,7 +93,8 @@ export const SignalerContent = (props, context) => {
             content="Send Signal"
             textAlign="center"
             disabled={!connection}
-            onClick={() => act('signal')} />
+            onClick={() => act('signal')}
+          />
         </Grid.Column>
       </Grid>
     </Section>

@@ -64,7 +64,7 @@
 	tail_type = "Smooth"
 	var/spines = "None"
 
-/obj/item/organ/tail/lizard/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+/obj/item/organ/tail/lizard/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE, pref_load = FALSE)
 	..()
 	if(istype(H))
 		// Checks here are necessary so it wouldn't overwrite the tail of a lizard it spawned in
@@ -77,7 +77,7 @@
 			H.dna.species.mutant_bodyparts |= "spines"
 		H.update_body()
 
-/obj/item/organ/tail/lizard/Remove(mob/living/carbon/human/H,  special = 0)
+/obj/item/organ/tail/lizard/Remove(mob/living/carbon/human/H, special = 0)
 	..()
 	if(istype(H))
 		H.dna.species.mutant_bodyparts -= "tail_lizard"

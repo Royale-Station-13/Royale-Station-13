@@ -23,6 +23,11 @@
 	species_outfits = list(
 		SPECIES_PLASMAMAN = /datum/outfit/plasmaman/chaplain
 	)
+	minimal_lightup_areas = list(
+		/area/chapel,
+		/area/medical/morgue,
+		/area/crew_quarters/theatre
+	)
 
 /datum/job/chaplain/after_spawn(mob/living/H, mob/M, client/parent)
 	. = ..()
@@ -119,7 +124,7 @@
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
 	backpack_contents = list(
 		/obj/item/nullrod = 1,
-		/obj/item/choice_beacon/holy = 1,
+		/obj/item/choice_beacon/radial/holy = 1,
 		/obj/item/camera/spooky = 1
 	)
 	backpack = /obj/item/storage/backpack/cultpack

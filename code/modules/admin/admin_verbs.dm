@@ -20,7 +20,6 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/stop_sounds,
 	/client/proc/mark_datum_mapview,
 	/client/proc/requests,
-	/client/proc/fax_manager
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
@@ -77,12 +76,14 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/toggleadminalertsound,
 	/client/proc/respawn_character,
 	/datum/admins/proc/open_borgopanel,
+	/datum/admins/proc/view_all_circuits,
 	/client/proc/fix_say,
 	/client/proc/stabilize_atmos,
 	/client/proc/openTicketManager,
 	/client/proc/battle_royale,
 	/client/proc/delete_book,
 	/client/proc/cmd_admin_send_pda_msg,
+	/client/proc/fax_panel, /*send a paper to fax*/
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -111,6 +112,7 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/show_tip,
 	/client/proc/smite,
 	/client/proc/admin_away,
+	/client/proc/load_circuit,
 	/client/proc/healall,
 	/client/proc/spawn_floor_cluwne,
 	/client/proc/spawnhuman

@@ -248,6 +248,14 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				to_chat_immediate(src, "<span class='userdanger'>Debugger enabled. Make sure you untick \"Runtime errors\" in the bottom left of VSCode's Run and Debug tab.</span>")
 			var/datum/admin_rank/localhost_rank = new("!localhost!", R_EVERYTHING, R_DBRANKS, R_EVERYTHING) //+EVERYTHING -DBRANKS *EVERYTHING
 			new /datum/admins(localhost_rank, ckey, 1, 1)
+
+	// This needs to go after admin loading but before prefs
+	assign_mentor_datum_if_exists()
+
+	// Retrieve cached metabalance
+	get_metabalance_db()
+	// Retrieve cached antag token count
+	get_antag_token_count_db()
 	//preferences datum - also holds some persistent data for the client (because we may as well keep these datums to a minimum)
 	prefs = GLOB.preferences_datums[ckey]
 	if(prefs)
@@ -905,13 +913,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 /client/Click(atom/object, atom/location, control, params)
 	var/ab = FALSE
-	var/list/L = params2list(params)
+	var/list/modifiers = params2list(params)
 
-	var/dragged = L["drag"]
-	if(dragged && !L[dragged])
+	var/dragged = LAZYACCESS(modifiers, DRAG)
+	if(dragged && !LAZYACCESS(modifiers, dragged)) //I don't know what's going on here, but I don't trust it
 		return
 
-	if (object && object == middragatom && L["left"])
+	if (object && object == middragatom && LAZYACCESS(modifiers, LEFT_CLICK))
 		ab = max(0, 5 SECONDS-(world.time-middragtime)*0.1)
 
 	var/mcl = CONFIG_GET(number/minute_click_limit)
@@ -958,20 +966,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		winset(src, null, "input.background-color=[COLOR_INPUT_DISABLED]")
 
 	..()
-
-/client/proc/canGhostRole(role, use_cooldown = FALSE, spawned_by_admin)
-	if(!SSticker.HasRoundStarted())
-		return FALSE
-	if(!(GLOB.ghost_role_flags & GHOSTROLE_SPAWNER) && !(spawned_by_admin & ADMIN_SPAWNED_1))
-		to_chat(src, "<span class='warning'>An admin has temporarily disabled non-admin ghost roles!</span>")
-		return FALSE
-	if(role && is_banned_from(key, role)) //role can be null, no reason to check for a roleban if there is no special role assigned
-		to_chat(src, "<span class='warning'>You are jobanned!</span>")
-		return FALSE
-	if(use_cooldown && next_ghost_role_tick > world.time)
-		to_chat(src, "<span class='warning'>You have died recently, you must wait [(next_ghost_role_tick - world.time)/10] seconds until you can use a ghost spawner.</span>")
-		return FALSE
-	return TRUE
 
 /client/proc/add_verbs_from_config()
 	if (interviewee)
@@ -1032,6 +1026,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			return FALSE
 		if (NAMEOF(src, cached_badges))
 			return FALSE
+		if (NAMEOF(src, metabalance_cached))
+			return FALSE
 		if (NAMEOF(src, view))
 			view_size.setDefault(var_value)
 			return TRUE
@@ -1050,7 +1046,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if (isliving(mob))
 		var/mob/living/M = mob
 		M.update_damage_hud()
-	if (prefs.toggles2 & PREFTOGGLE_2_AUTO_FIT_VIEWPORT)
+	if (prefs && (prefs.toggles2 & PREFTOGGLE_2_AUTO_FIT_VIEWPORT))
 		addtimer(CALLBACK(src,.verb/fit_viewport,10)) //Delayed to avoid wingets from Login calls.
 
 /client/proc/generate_clickcatcher()
